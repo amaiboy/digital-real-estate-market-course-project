@@ -1,0 +1,16 @@
+D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.exe
+D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.deps.json
+D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.runtimeconfig.json
+D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.dll
+D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.pdb
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital_real_estate_market_course_project.mainAppForm.resources
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.csproj.GenerateResource.cache
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.AssemblyInfoInputs.cache
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.AssemblyInfo.cs
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.csproj.CoreCompileInputs.cache
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.dll
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\refint\digital-real-estate-market-course-project.dll
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.pdb
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.genruntimeconfig.cache
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\ref\digital-real-estate-market-course-project.dll
