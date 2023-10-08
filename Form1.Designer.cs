@@ -41,20 +41,22 @@ partial class mainAppForm
         // 
         // sidebarPanel
         // 
-        sidebarPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+        sidebarPanel.BackColor = Color.WhiteSmoke;
         sidebarPanel.Controls.Add(btnMarket);
         sidebarPanel.Controls.Add(btnHelp);
         sidebarPanel.Controls.Add(btnDevelopers);
-        sidebarPanel.Location = new Point(12, 12);
+        sidebarPanel.Dock = DockStyle.Left;
+        sidebarPanel.ForeColor = SystemColors.ControlText;
+        sidebarPanel.Location = new Point(0, 0);
         sidebarPanel.Name = "sidebarPanel";
-        sidebarPanel.Size = new Size(400, 720);
+        sidebarPanel.Size = new Size(400, 744);
         sidebarPanel.TabIndex = 0;
         // 
         // btnMarket
         // 
-        btnMarket.Location = new Point(0, 135);
+        btnMarket.Location = new Point(3, 135);
         btnMarket.Name = "btnMarket";
-        btnMarket.Size = new Size(394, 60);
+        btnMarket.Size = new Size(391, 60);
         btnMarket.TabIndex = 2;
         btnMarket.Text = "Ринок нерухомості";
         btnMarket.UseVisualStyleBackColor = true;
@@ -62,9 +64,9 @@ partial class mainAppForm
         // 
         // btnHelp
         // 
-        btnHelp.Location = new Point(0, 69);
+        btnHelp.Location = new Point(3, 69);
         btnHelp.Name = "btnHelp";
-        btnHelp.Size = new Size(394, 60);
+        btnHelp.Size = new Size(391, 60);
         btnHelp.TabIndex = 1;
         btnHelp.Text = "Інструкція з використання";
         btnHelp.UseVisualStyleBackColor = true;
@@ -74,7 +76,7 @@ partial class mainAppForm
         // 
         btnDevelopers.Location = new Point(3, 3);
         btnDevelopers.Name = "btnDevelopers";
-        btnDevelopers.Size = new Size(394, 60);
+        btnDevelopers.Size = new Size(391, 60);
         btnDevelopers.TabIndex = 0;
         btnDevelopers.Text = "Інформація про розробників";
         btnDevelopers.UseVisualStyleBackColor = true;
@@ -82,17 +84,19 @@ partial class mainAppForm
         // 
         // contentsPanel
         // 
-        contentsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        contentsPanel.BackColor = Color.White;
         contentsPanel.Controls.Add(testLabel);
-        contentsPanel.Location = new Point(415, 12);
+        contentsPanel.Dock = DockStyle.Fill;
+        contentsPanel.Location = new Point(400, 0);
         contentsPanel.Name = "contentsPanel";
-        contentsPanel.Size = new Size(751, 720);
+        contentsPanel.Padding = new Padding(4);
+        contentsPanel.Size = new Size(778, 744);
         contentsPanel.TabIndex = 1;
         // 
         // testLabel
         // 
         testLabel.AutoSize = true;
-        testLabel.Location = new Point(3, 3);
+        testLabel.Location = new Point(7, 7);
         testLabel.Name = "testLabel";
         testLabel.Size = new Size(59, 25);
         testLabel.TabIndex = 0;
