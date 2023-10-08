@@ -49,14 +49,15 @@ partial class mainAppForm
         sidebarPanel.ForeColor = SystemColors.ControlText;
         sidebarPanel.Location = new Point(0, 0);
         sidebarPanel.Name = "sidebarPanel";
-        sidebarPanel.Size = new Size(400, 744);
+        sidebarPanel.Size = new Size(318, 744);
         sidebarPanel.TabIndex = 0;
         // 
         // btnMarket
         // 
+        btnMarket.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         btnMarket.Location = new Point(3, 135);
         btnMarket.Name = "btnMarket";
-        btnMarket.Size = new Size(391, 60);
+        btnMarket.Size = new Size(308, 60);
         btnMarket.TabIndex = 2;
         btnMarket.Text = "Ринок нерухомості";
         btnMarket.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@ partial class mainAppForm
         // 
         // btnHelp
         // 
+        btnHelp.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         btnHelp.Location = new Point(3, 69);
         btnHelp.Name = "btnHelp";
-        btnHelp.Size = new Size(391, 60);
+        btnHelp.Size = new Size(308, 60);
         btnHelp.TabIndex = 1;
         btnHelp.Text = "Інструкція з використання";
         btnHelp.UseVisualStyleBackColor = true;
@@ -74,9 +76,10 @@ partial class mainAppForm
         // 
         // btnDevelopers
         // 
+        btnDevelopers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
         btnDevelopers.Location = new Point(3, 3);
         btnDevelopers.Name = "btnDevelopers";
-        btnDevelopers.Size = new Size(391, 60);
+        btnDevelopers.Size = new Size(308, 60);
         btnDevelopers.TabIndex = 0;
         btnDevelopers.Text = "Інформація про розробників";
         btnDevelopers.UseVisualStyleBackColor = true;
@@ -87,10 +90,10 @@ partial class mainAppForm
         contentsPanel.BackColor = Color.White;
         contentsPanel.Controls.Add(testLabel);
         contentsPanel.Dock = DockStyle.Fill;
-        contentsPanel.Location = new Point(400, 0);
+        contentsPanel.Location = new Point(318, 0);
         contentsPanel.Name = "contentsPanel";
         contentsPanel.Padding = new Padding(4);
-        contentsPanel.Size = new Size(778, 744);
+        contentsPanel.Size = new Size(860, 744);
         contentsPanel.TabIndex = 1;
         // 
         // testLabel
