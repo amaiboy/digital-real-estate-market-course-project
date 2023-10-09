@@ -3,7 +3,7 @@ D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digi
 D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.runtimeconfig.json
 D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.dll
 D:\repos\digital-real-estate-market-course-project\bin\Debug\net6.0-windows\digital-real-estate-market-course-project.pdb
-D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital_real_estate_market_course_project.mainAppForm.resources
+D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital_real_estate_market_course_project.DevelopersForm.resources
 D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.csproj.GenerateResource.cache
 D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.GeneratedMSBuildEditorConfig.editorconfig
 D:\repos\digital-real-estate-market-course-project\obj\Debug\net6.0-windows\digital-real-estate-market-course-project.AssemblyInfoInputs.cache
