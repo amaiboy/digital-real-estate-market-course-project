@@ -67,6 +67,7 @@ partial class DevelopersForm
         btnMarket.TabIndex = 2;
         btnMarket.Text = "Ринок нерухомості";
         btnMarket.UseVisualStyleBackColor = true;
+        btnMarket.Click += btnMarket_Click;
         // 
         // btnHelp
         // 
@@ -77,6 +78,7 @@ partial class DevelopersForm
         btnHelp.TabIndex = 1;
         btnHelp.Text = "Інструкція з використання";
         btnHelp.UseVisualStyleBackColor = true;
+        btnHelp.Click += btnHelp_Click;
         // 
         // btnDevelopers
         // 
@@ -87,6 +89,7 @@ partial class DevelopersForm
         btnDevelopers.TabIndex = 0;
         btnDevelopers.Text = "Інформація про розробників";
         btnDevelopers.UseVisualStyleBackColor = true;
+        btnDevelopers.Click += btnDevelopers_Click;
         // 
         // contentsPanel
         // 
@@ -177,7 +180,7 @@ partial class DevelopersForm
         Icon = (Icon)resources.GetObject("$this.Icon");
         MinimumSize = new Size(1200, 800);
         Name = "DevelopersForm";
-        Text = "Цифровий ринок нерухомості";
+        Text = "Інформація про розробників - Цифровий ринок нерухомості";
         sidebarPanel.ResumeLayout(false);
         contentsPanel.ResumeLayout(false);
         ResumeLayout(false);

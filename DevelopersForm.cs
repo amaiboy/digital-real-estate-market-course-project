@@ -6,4 +6,21 @@ public partial class DevelopersForm : Form
     {
         InitializeComponent();
     }
+
+    private void btnDevelopers_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnHelp_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnMarket_Click(object sender, EventArgs e)
+    {
+        MarketForm marketForm = new MarketForm();
+        this.Hide();
+        marketForm.Show();
+    }
 }

@@ -7,6 +7,9 @@
     <Compile Update="HeadingLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="MarketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ParagraphLabel.cs">
       <SubType>Component</SubType>
     </Compile>
