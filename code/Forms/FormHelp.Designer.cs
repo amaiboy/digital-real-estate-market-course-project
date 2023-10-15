@@ -33,10 +33,10 @@
             // FormHelp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(748, 522);
+            this.ClientSize = new System.Drawing.Size(754, 551);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(764, 561);
-            this.MinimumSize = new System.Drawing.Size(764, 561);
+            this.MaximumSize = new System.Drawing.Size(770, 590);
+            this.MinimumSize = new System.Drawing.Size(770, 590);
             this.Name = "FormHelp";
             this.Text = "FormHelp";
             this.ResumeLayout(false);

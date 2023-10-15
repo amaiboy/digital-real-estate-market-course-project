@@ -50,15 +50,15 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 561);
+            this.panelMenu.Size = new System.Drawing.Size(200, 561);
             this.panelMenu.TabIndex = 0;
             // 
             // panelFormContainer
             // 
             this.panelFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormContainer.Location = new System.Drawing.Point(220, 0);
+            this.panelFormContainer.Location = new System.Drawing.Point(200, 0);
             this.panelFormContainer.Name = "panelFormContainer";
-            this.panelFormContainer.Size = new System.Drawing.Size(764, 561);
+            this.panelFormContainer.Size = new System.Drawing.Size(784, 561);
             this.panelFormContainer.TabIndex = 1;
             // 
             // buttonProfile
@@ -69,9 +69,11 @@
             this.buttonProfile.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonProfile.Location = new System.Drawing.Point(0, 441);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(220, 60);
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonProfile.Size = new System.Drawing.Size(200, 60);
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Профіль";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = true;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
@@ -83,9 +85,11 @@
             this.buttonSettings.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonSettings.Location = new System.Drawing.Point(0, 501);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(220, 60);
+            this.buttonSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonSettings.Size = new System.Drawing.Size(200, 60);
             this.buttonSettings.TabIndex = 4;
             this.buttonSettings.Text = "Налаштування";
+            this.buttonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
@@ -97,9 +101,11 @@
             this.buttonDevelopers.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonDevelopers.Location = new System.Drawing.Point(0, 120);
             this.buttonDevelopers.Name = "buttonDevelopers";
-            this.buttonDevelopers.Size = new System.Drawing.Size(220, 60);
+            this.buttonDevelopers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonDevelopers.Size = new System.Drawing.Size(200, 60);
             this.buttonDevelopers.TabIndex = 3;
             this.buttonDevelopers.Text = "Про розробників";
+            this.buttonDevelopers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDevelopers.UseVisualStyleBackColor = true;
             this.buttonDevelopers.Click += new System.EventHandler(this.buttonDevelopers_Click);
             // 
@@ -111,9 +117,11 @@
             this.buttonHelp.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonHelp.Location = new System.Drawing.Point(0, 60);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(220, 60);
+            this.buttonHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonHelp.Size = new System.Drawing.Size(200, 60);
             this.buttonHelp.TabIndex = 2;
             this.buttonHelp.Text = "Допомога";
+            this.buttonHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
@@ -125,9 +133,11 @@
             this.buttonMarket.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonMarket.Location = new System.Drawing.Point(0, 0);
             this.buttonMarket.Name = "buttonMarket";
-            this.buttonMarket.Size = new System.Drawing.Size(220, 60);
+            this.buttonMarket.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMarket.Size = new System.Drawing.Size(200, 60);
             this.buttonMarket.TabIndex = 1;
             this.buttonMarket.Text = "Ринок нерухомості";
+            this.buttonMarket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMarket.UseVisualStyleBackColor = true;
             this.buttonMarket.Click += new System.EventHandler(this.buttonMarket_Click);
             // 

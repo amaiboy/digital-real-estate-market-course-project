@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(748, 522);
-            this.panel1.TabIndex = 0;
             // 
             // FormMarket
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(748, 522);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(754, 551);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(764, 561);
-            this.MinimumSize = new System.Drawing.Size(764, 561);
+            this.MaximumSize = new System.Drawing.Size(770, 590);
+            this.MinimumSize = new System.Drawing.Size(770, 590);
             this.Name = "FormMarket";
             this.Text = "FormMarket";
             this.ResumeLayout(false);
@@ -54,7 +44,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
     }
 }
