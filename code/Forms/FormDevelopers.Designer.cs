@@ -32,9 +32,11 @@
             // 
             // FormDevelopers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 488);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(748, 522);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(764, 561);
+            this.MinimumSize = new System.Drawing.Size(764, 561);
             this.Name = "FormDevelopers";
             this.Text = "FormDevelopers";
             this.ResumeLayout(false);

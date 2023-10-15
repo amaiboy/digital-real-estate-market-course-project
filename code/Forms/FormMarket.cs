@@ -15,6 +15,8 @@ namespace code.Forms
         public FormMarket()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = false;
         }
     }
 }

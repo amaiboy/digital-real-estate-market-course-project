@@ -15,6 +15,8 @@ namespace code.Forms
         public FormHelp()
         {
             InitializeComponent();
+            this.Text = string.Empty;
+            this.ControlBox = this.ControlBox = false;
         }
     }
 }

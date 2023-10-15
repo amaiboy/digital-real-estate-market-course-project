@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelFormContainer = new System.Windows.Forms.Panel();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonDevelopers = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonMarket = new System.Windows.Forms.Button();
-            this.panelFormContainer = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,8 +50,16 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 544);
+            this.panelMenu.Size = new System.Drawing.Size(220, 561);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelFormContainer
+            // 
+            this.panelFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormContainer.Location = new System.Drawing.Point(220, 0);
+            this.panelFormContainer.Name = "panelFormContainer";
+            this.panelFormContainer.Size = new System.Drawing.Size(764, 561);
+            this.panelFormContainer.TabIndex = 1;
             // 
             // buttonProfile
             // 
@@ -59,7 +67,7 @@
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 424);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 441);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(220, 60);
             this.buttonProfile.TabIndex = 5;
@@ -73,7 +81,7 @@
             this.buttonSettings.FlatAppearance.BorderSize = 0;
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 484);
+            this.buttonSettings.Location = new System.Drawing.Point(0, 501);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(220, 60);
             this.buttonSettings.TabIndex = 4;
@@ -123,24 +131,16 @@
             this.buttonMarket.UseVisualStyleBackColor = true;
             this.buttonMarket.Click += new System.EventHandler(this.buttonMarket_Click);
             // 
-            // panelFormContainer
-            // 
-            this.panelFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormContainer.Location = new System.Drawing.Point(220, 0);
-            this.panelFormContainer.Name = "panelFormContainer";
-            this.panelFormContainer.Size = new System.Drawing.Size(758, 544);
-            this.panelFormContainer.TabIndex = 1;
-            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 544);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.panelFormContainer);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FormMenu";
             this.Text = "Цифровий ринок нерухомості";

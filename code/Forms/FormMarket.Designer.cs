@@ -28,35 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.inputSearch = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // buttonSearch
+            // panel1
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(624, 12);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(100, 35);
-            this.buttonSearch.TabIndex = 0;
-            this.buttonSearch.Text = "Пошук";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
-            // inputSearch
-            // 
-            this.inputSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputSearch.Location = new System.Drawing.Point(12, 12);
-            this.inputSearch.Name = "inputSearch";
-            this.inputSearch.Size = new System.Drawing.Size(606, 35);
-            this.inputSearch.TabIndex = 1;
-            this.inputSearch.Text = "";
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(748, 522);
+            this.panel1.TabIndex = 0;
             // 
             // FormMarket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 488);
-            this.Controls.Add(this.inputSearch);
-            this.Controls.Add(this.buttonSearch);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(748, 522);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(764, 561);
+            this.MinimumSize = new System.Drawing.Size(764, 561);
             this.Name = "FormMarket";
             this.Text = "FormMarket";
             this.ResumeLayout(false);
@@ -65,7 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.RichTextBox inputSearch;
+        private System.Windows.Forms.Panel panel1;
     }
 }
