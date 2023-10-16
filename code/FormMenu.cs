@@ -28,7 +28,7 @@ namespace code
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
-                    currentButton.BackColor = Color.FromArgb(51, 51, 100);
+                    currentButton.BackColor = Color.FromArgb(64, 64, 100);
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular);
                 }
