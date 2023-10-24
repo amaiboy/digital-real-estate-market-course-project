@@ -8,17 +8,25 @@ namespace code
 {
     public class Listing
     {
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public string Address { get; set; }
-        public string Seller { get; set; }
-
-        public Listing(string name, int price, string address, string seller)
+        public string Name
         {
-            Name = name;
-            Price = price;
-            Address = address;
-            Seller = seller;
+            get; set;
+        }
+        public string Description
+        {
+            get; set;
+        }
+        public int Price
+        {
+            get; set;
+        }
+        public string Address
+        {
+            get; set;
+        }
+        public string Seller
+        {
+            get; set;
         }
     }
 }

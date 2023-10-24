@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.FormTitle();
             this.textBoxSearchQuery = new System.Windows.Forms.RichTextBox();
             this.btnExecuteSearch = new code.StyledButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ListingName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ListingDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ListingSeller = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ListingLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ListingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // formTitle
@@ -98,12 +95,6 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ListingName,
-            this.ListingDescription,
-            this.ListingSeller,
-            this.ListingLocation,
-            this.ListingPrice});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(17, 113);
             this.dataGridView1.Name = "dataGridView1";
@@ -114,38 +105,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(739, 436);
             this.dataGridView1.TabIndex = 3;
             // 
-            // ListingName
+            // listingBindingSource
             // 
-            this.ListingName.HeaderText = "Назва";
-            this.ListingName.Name = "ListingName";
-            this.ListingName.ReadOnly = true;
-            // 
-            // ListingDescription
-            // 
-            this.ListingDescription.HeaderText = "Опис";
-            this.ListingDescription.Name = "ListingDescription";
-            this.ListingDescription.ReadOnly = true;
-            // 
-            // ListingSeller
-            // 
-            this.ListingSeller.HeaderText = "Продавець";
-            this.ListingSeller.Name = "ListingSeller";
-            this.ListingSeller.ReadOnly = true;
-            // 
-            // ListingLocation
-            // 
-            this.ListingLocation.HeaderText = "Адреса";
-            this.ListingLocation.Name = "ListingLocation";
-            this.ListingLocation.ReadOnly = true;
-            // 
-            // ListingPrice
-            // 
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.ListingPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ListingPrice.HeaderText = "Ціна";
-            this.ListingPrice.Name = "ListingPrice";
-            this.ListingPrice.ReadOnly = true;
+            this.listingBindingSource.DataSource = typeof(code.Listing);
             // 
             // FormMarket
             // 
@@ -161,6 +123,7 @@
             this.Name = "FormMarket";
             this.Text = "FormMarket";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,10 +135,6 @@
         private System.Windows.Forms.RichTextBox textBoxSearchQuery;
         private StyledButton btnExecuteSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ListingName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ListingDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ListingSeller;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ListingLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ListingPrice;
+        private System.Windows.Forms.BindingSource listingBindingSource;
     }
 }
