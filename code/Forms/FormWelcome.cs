@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormWelcome : Form
     {
-        private List<string> tips = new List<string> {
+        private readonly List<string> tips = new List<string> {
             "У секції Профіль можна переглянути всі публікації, які ви створили",
             "У секції Профіль можна переглянути всі нерухомості, які ви придбали",
             "У секції Профіль можна змінити персональні дані",
@@ -25,7 +25,7 @@ namespace code.Forms
             "У секції Про розробників можна дізнатися більше про розробників",
         };
 
-        private Random rnd = new Random();
+        private readonly Random rnd = new Random();
 
         public FormWelcome()
         {
@@ -38,8 +38,8 @@ namespace code.Forms
         private void DisplayRandomTip()
         {
             // TODO: add exception handling
-            int randomTipIndex = rnd.Next(tips.Count);
-            string randomTip = tips[randomTipIndex];
+            var randomTipIndex = rnd.Next(tips.Count);
+            var randomTip = tips[randomTipIndex];
 
             labelRandomTip.Text = randomTip;
         }

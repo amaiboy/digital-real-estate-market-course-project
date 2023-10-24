@@ -38,7 +38,7 @@
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(13, 61);
+            this.labelUserName.Location = new System.Drawing.Point(12, 70);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(136, 20);
             this.labelUserName.TabIndex = 0;
@@ -49,7 +49,7 @@
             this.formTitle.AutoSize = true;
             this.formTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formTitle.ForeColor = System.Drawing.Color.Black;
-            this.formTitle.Location = new System.Drawing.Point(12, 19);
+            this.formTitle.Location = new System.Drawing.Point(12, 24);
             this.formTitle.Name = "formTitle";
             this.formTitle.Size = new System.Drawing.Size(108, 26);
             this.formTitle.TabIndex = 2;
