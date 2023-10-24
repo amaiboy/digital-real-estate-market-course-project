@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelFormContainer = new System.Windows.Forms.Panel();
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonDevelopers = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonMarket = new System.Windows.Forms.Button();
+            this.panelFormContainer = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +42,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.buttonProfile);
-            this.panelMenu.Controls.Add(this.buttonSettings);
             this.panelMenu.Controls.Add(this.buttonDevelopers);
             this.panelMenu.Controls.Add(this.buttonHelp);
             this.panelMenu.Controls.Add(this.buttonMarket);
@@ -53,21 +51,13 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 561);
             this.panelMenu.TabIndex = 0;
             // 
-            // panelFormContainer
-            // 
-            this.panelFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormContainer.Location = new System.Drawing.Point(200, 0);
-            this.panelFormContainer.Name = "panelFormContainer";
-            this.panelFormContainer.Size = new System.Drawing.Size(784, 561);
-            this.panelFormContainer.TabIndex = 1;
-            // 
             // buttonProfile
             // 
             this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 441);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 501);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonProfile.Size = new System.Drawing.Size(200, 60);
@@ -76,22 +66,6 @@
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = true;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 501);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonSettings.Size = new System.Drawing.Size(200, 60);
-            this.buttonSettings.TabIndex = 4;
-            this.buttonSettings.Text = "Налаштування";
-            this.buttonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSettings.UseVisualStyleBackColor = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonDevelopers
             // 
@@ -141,6 +115,14 @@
             this.buttonMarket.UseVisualStyleBackColor = true;
             this.buttonMarket.Click += new System.EventHandler(this.buttonMarket_Click);
             // 
+            // panelFormContainer
+            // 
+            this.panelFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormContainer.Location = new System.Drawing.Point(200, 0);
+            this.panelFormContainer.Name = "panelFormContainer";
+            this.panelFormContainer.Size = new System.Drawing.Size(784, 561);
+            this.panelFormContainer.TabIndex = 1;
+            // 
             // FormMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -165,7 +147,6 @@
         private System.Windows.Forms.Button buttonMarket;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonDevelopers;
         private System.Windows.Forms.Panel panelFormContainer;
     }

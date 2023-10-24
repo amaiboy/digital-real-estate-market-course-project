@@ -18,6 +18,7 @@ namespace code
         public FormMenu()
         {
             InitializeComponent();
+            OpenChildForm(new Forms.FormWelcome(), null);
         }
 
         private void ActivateButton(object btnSender)
@@ -83,11 +84,6 @@ namespace code
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormProfile(), sender);
-        }
-
-        private void buttonSettings_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.FormSettings(), sender);
         }
     }
 }

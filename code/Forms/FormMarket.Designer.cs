@@ -33,10 +33,10 @@
             // FormMarket
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(754, 551);
+            this.ClientSize = new System.Drawing.Size(768, 551);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(770, 590);
-            this.MinimumSize = new System.Drawing.Size(770, 590);
+            this.MaximumSize = new System.Drawing.Size(784, 590);
+            this.MinimumSize = new System.Drawing.Size(784, 590);
             this.Name = "FormMarket";
             this.Text = "FormMarket";
             this.ResumeLayout(false);
