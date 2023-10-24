@@ -37,7 +37,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::code.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(311, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(310, 106);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(179, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -48,7 +48,7 @@
             // 
             this.labelWelcomeMessage.AutoSize = true;
             this.labelWelcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcomeMessage.Location = new System.Drawing.Point(258, 283);
+            this.labelWelcomeMessage.Location = new System.Drawing.Point(257, 289);
             this.labelWelcomeMessage.Name = "labelWelcomeMessage";
             this.labelWelcomeMessage.Size = new System.Drawing.Size(297, 37);
             this.labelWelcomeMessage.TabIndex = 1;
@@ -57,7 +57,7 @@
             // labelRandomTip
             // 
             this.labelRandomTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRandomTip.Location = new System.Drawing.Point(265, 351);
+            this.labelRandomTip.Location = new System.Drawing.Point(264, 357);
             this.labelRandomTip.Name = "labelRandomTip";
             this.labelRandomTip.Size = new System.Drawing.Size(290, 182);
             this.labelRandomTip.TabIndex = 2;
@@ -67,12 +67,12 @@
             // FormWelcome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(768, 551);
+            this.ClientSize = new System.Drawing.Size(768, 561);
             this.Controls.Add(this.labelRandomTip);
             this.Controls.Add(this.labelWelcomeMessage);
             this.Controls.Add(this.pictureBox1);
-            this.MaximumSize = new System.Drawing.Size(784, 590);
-            this.MinimumSize = new System.Drawing.Size(784, 590);
+            this.MaximumSize = new System.Drawing.Size(784, 600);
+            this.MinimumSize = new System.Drawing.Size(784, 600);
             this.Name = "FormWelcome";
             this.Text = "FormWelcome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
