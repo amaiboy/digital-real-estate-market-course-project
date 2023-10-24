@@ -61,7 +61,7 @@
             this.labelRandomTip.Name = "labelRandomTip";
             this.labelRandomTip.Size = new System.Drawing.Size(290, 182);
             this.labelRandomTip.TabIndex = 2;
-            this.labelRandomTip.Text = "Чи знали ви що шось там шось є та?";
+            this.labelRandomTip.Text = "Випадкова підказка буде тут";
             this.labelRandomTip.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormWelcome
