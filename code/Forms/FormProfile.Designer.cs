@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelUserName = new System.Windows.Forms.Label();
             this.formTitle = new code.FormTitle();
-            this.buttonAddListing = new code.StyledButton();
-            this.buttonDeleteProfile = new code.StyledButton();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.RichTextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.RichTextBox();
+            this.btnLogin = new code.StyledButton();
+            this.btnSignUp = new code.StyledButton();
             this.SuspendLayout();
-            // 
-            // labelUserName
-            // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(12, 70);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(136, 20);
-            this.labelUserName.TabIndex = 0;
-            this.labelUserName.Text = "Ім\'я користувача";
             // 
             // formTitle
             // 
@@ -55,42 +48,85 @@
             this.formTitle.TabIndex = 2;
             this.formTitle.Text = "Профіль";
             // 
-            // buttonAddListing
+            // lblUsername
             // 
-            this.buttonAddListing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.buttonAddListing.FlatAppearance.BorderSize = 0;
-            this.buttonAddListing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddListing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddListing.Location = new System.Drawing.Point(12, 514);
-            this.buttonAddListing.Name = "buttonAddListing";
-            this.buttonAddListing.Size = new System.Drawing.Size(201, 35);
-            this.buttonAddListing.TabIndex = 3;
-            this.buttonAddListing.Text = "Додати оголошення";
-            this.buttonAddListing.UseVisualStyleBackColor = false;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(195, 176);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(117, 16);
+            this.lblUsername.TabIndex = 4;
+            this.lblUsername.Text = "Ім\'я користувача";
             // 
-            // buttonDeleteProfile
+            // txtUsername
             // 
-            this.buttonDeleteProfile.BackColor = System.Drawing.Color.Firebrick;
-            this.buttonDeleteProfile.FlatAppearance.BorderSize = 0;
-            this.buttonDeleteProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteProfile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonDeleteProfile.Location = new System.Drawing.Point(219, 514);
-            this.buttonDeleteProfile.Name = "buttonDeleteProfile";
-            this.buttonDeleteProfile.Size = new System.Drawing.Size(201, 35);
-            this.buttonDeleteProfile.TabIndex = 3;
-            this.buttonDeleteProfile.Text = "Видалити профіль";
-            this.buttonDeleteProfile.UseVisualStyleBackColor = false;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Location = new System.Drawing.Point(198, 197);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(400, 30);
+            this.txtUsername.TabIndex = 5;
+            this.txtUsername.Text = "";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(195, 243);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 16);
+            this.lblPassword.TabIndex = 4;
+            this.lblPassword.Text = "Пароль";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Location = new System.Drawing.Point(197, 264);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(400, 30);
+            this.txtPassword.TabIndex = 5;
+            this.txtPassword.Text = "";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogin.Location = new System.Drawing.Point(197, 315);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(114, 30);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Увійти";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.BackColor = System.Drawing.Color.Teal;
+            this.btnSignUp.FlatAppearance.BorderSize = 0;
+            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSignUp.Location = new System.Drawing.Point(317, 315);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(167, 30);
+            this.btnSignUp.TabIndex = 6;
+            this.btnSignUp.Text = "Зарєструватись";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // FormProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(768, 561);
-            this.Controls.Add(this.buttonDeleteProfile);
-            this.Controls.Add(this.buttonAddListing);
+            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.formTitle);
-            this.Controls.Add(this.labelUserName);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(784, 600);
             this.MinimumSize = new System.Drawing.Size(784, 600);
@@ -102,10 +138,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelUserName;
         private FormTitle formTitle;
-        private StyledButton buttonAddListing;
-        private StyledButton buttonDeleteProfile;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.RichTextBox txtUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.RichTextBox txtPassword;
+        private StyledButton btnLogin;
+        private StyledButton btnSignUp;
     }
 }

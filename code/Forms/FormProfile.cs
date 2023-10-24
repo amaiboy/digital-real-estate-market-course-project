@@ -18,5 +18,15 @@ namespace code.Forms
             this.Text = string.Empty;
             this.ControlBox = false;
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            // TODO: Add exception handling for when the username already exists
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // TODO: Add form validation. Check for username and password validity.
+        }
     }
 }
