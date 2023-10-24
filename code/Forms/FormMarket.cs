@@ -113,5 +113,12 @@ namespace code.Forms
             this.ControlBox = false;
             dataGridViewListings.DataSource = listings;
         }
+
+        private void btnExecuteSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = txtSearch.Text;
+            var filteredList = listings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
+            dataGridViewListings.DataSource = filteredList.ToList();
+        }
     }
 }

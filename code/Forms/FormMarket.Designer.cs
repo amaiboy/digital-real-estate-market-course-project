@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.FormTitle();
-            this.textBoxSearchQuery = new System.Windows.Forms.RichTextBox();
-            this.btnExecuteSearch = new code.StyledButton();
+            this.txtSearch = new System.Windows.Forms.RichTextBox();
+            this.btnSearch = new code.StyledButton();
             this.dataGridViewListings = new System.Windows.Forms.DataGridView();
             this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -58,29 +60,30 @@
             this.formTitle.TabIndex = 0;
             this.formTitle.Text = "Ринок нерухомості";
             // 
-            // textBoxSearchQuery
+            // txtSearch
             // 
-            this.textBoxSearchQuery.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearchQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchQuery.Location = new System.Drawing.Point(17, 64);
-            this.textBoxSearchQuery.Name = "textBoxSearchQuery";
-            this.textBoxSearchQuery.Size = new System.Drawing.Size(620, 29);
-            this.textBoxSearchQuery.TabIndex = 1;
-            this.textBoxSearchQuery.Text = "";
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(17, 64);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(620, 29);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.Text = "";
             // 
-            // btnExecuteSearch
+            // btnSearch
             // 
-            this.btnExecuteSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnExecuteSearch.FlatAppearance.BorderSize = 0;
-            this.btnExecuteSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExecuteSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExecuteSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExecuteSearch.Location = new System.Drawing.Point(643, 64);
-            this.btnExecuteSearch.Name = "btnExecuteSearch";
-            this.btnExecuteSearch.Size = new System.Drawing.Size(113, 29);
-            this.btnExecuteSearch.TabIndex = 2;
-            this.btnExecuteSearch.Text = "Пошук";
-            this.btnExecuteSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearch.Location = new System.Drawing.Point(643, 64);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 29);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Пошук";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnExecuteSearch_Click);
             // 
             // dataGridViewListings
             // 
@@ -88,21 +91,24 @@
             this.dataGridViewListings.AllowUserToDeleteRows = false;
             this.dataGridViewListings.AllowUserToOrderColumns = true;
             this.dataGridViewListings.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewListings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewListings.AutoGenerateColumns = false;
             this.dataGridViewListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListings.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewListings.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewListings.ColumnHeadersHeight = 35;
             this.dataGridViewListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewListings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -111,6 +117,14 @@
             this.sellerDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dataGridViewListings.DataSource = this.listingBindingSource1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewListings.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewListings.EnableHeadersVisualStyles = false;
             this.dataGridViewListings.Location = new System.Drawing.Point(17, 113);
             this.dataGridViewListings.Name = "dataGridViewListings";
@@ -132,6 +146,7 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 200F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Назва";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -139,7 +154,6 @@
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.FillWeight = 60F;
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Опис";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -154,7 +168,6 @@
             // sellerDataGridViewTextBoxColumn
             // 
             this.sellerDataGridViewTextBoxColumn.DataPropertyName = "Seller";
-            this.sellerDataGridViewTextBoxColumn.FillWeight = 80F;
             this.sellerDataGridViewTextBoxColumn.HeaderText = "Продавець";
             this.sellerDataGridViewTextBoxColumn.Name = "sellerDataGridViewTextBoxColumn";
             this.sellerDataGridViewTextBoxColumn.ReadOnly = true;
@@ -162,10 +175,10 @@
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.priceDataGridViewTextBoxColumn.FillWeight = 55F;
+            dataGridViewCellStyle7.Format = "C0";
+            dataGridViewCellStyle7.NullValue = "0";
+            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.priceDataGridViewTextBoxColumn.FillWeight = 60F;
             this.priceDataGridViewTextBoxColumn.HeaderText = "Ціна";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
@@ -175,8 +188,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(768, 561);
             this.Controls.Add(this.dataGridViewListings);
-            this.Controls.Add(this.btnExecuteSearch);
-            this.Controls.Add(this.textBoxSearchQuery);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.formTitle);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(784, 600);
@@ -194,8 +207,8 @@
         #endregion
 
         private FormTitle formTitle;
-        private System.Windows.Forms.RichTextBox textBoxSearchQuery;
-        private StyledButton btnExecuteSearch;
+        private System.Windows.Forms.RichTextBox txtSearch;
+        private StyledButton btnSearch;
         private System.Windows.Forms.DataGridView dataGridViewListings;
         private System.Windows.Forms.BindingSource listingBindingSource;
         private System.Windows.Forms.BindingSource listingBindingSource1;
