@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelOutro.Text" xml:space="preserve">
+    <value>У процесі розробки команда використовувала систему контролю версій Git, і проєкт має сторінку на платформі GitHub. Там також можна переглянути ліцензію MIT або ознайомитись з повним вихідним кодом програми.</value>
+  </data>
 </root>

@@ -18,5 +18,15 @@ namespace code.Forms
             this.Text = string.Empty;
             this.ControlBox = false;
         }
+
+        private void styledButtonGithubLink_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/amaiboy/digital-real-estate-market-course-project");
+        }
+
+        private void styledButtonLicense_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/amaiboy/digital-real-estate-market-course-project/blob/dev/LICENSE");
+        }
     }
 }
