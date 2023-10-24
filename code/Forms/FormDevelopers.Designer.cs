@@ -29,28 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDevelopers));
-            this.formTitle1 = new code.FormTitle();
             this.labelIntro = new System.Windows.Forms.Label();
             this.labelTeamLead = new System.Windows.Forms.Label();
             this.labelAlgorithms = new System.Windows.Forms.Label();
             this.labelData = new System.Windows.Forms.Label();
             this.labelUI = new System.Windows.Forms.Label();
             this.labelExceptions = new System.Windows.Forms.Label();
-            this.styledButtonGithubLink = new code.StyledButton();
             this.labelOutro = new System.Windows.Forms.Label();
             this.styledButtonLicense = new code.StyledButton();
+            this.styledButtonGithubLink = new code.StyledButton();
+            this.formTitle1 = new code.FormTitle();
             this.SuspendLayout();
-            // 
-            // formTitle1
-            // 
-            this.formTitle1.AutoSize = true;
-            this.formTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formTitle1.ForeColor = System.Drawing.Color.Black;
-            this.formTitle1.Location = new System.Drawing.Point(12, 24);
-            this.formTitle1.Name = "formTitle1";
-            this.formTitle1.Size = new System.Drawing.Size(329, 26);
-            this.formTitle1.TabIndex = 0;
-            this.formTitle1.Text = "Інформація про розробників";
             // 
             // labelIntro
             // 
@@ -107,21 +96,6 @@
             this.labelExceptions.TabIndex = 1;
             this.labelExceptions.Text = "- Васильєв Максим - обробка виняткових ситуацій - Exceptions";
             // 
-            // styledButtonGithubLink
-            // 
-            this.styledButtonGithubLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.styledButtonGithubLink.FlatAppearance.BorderSize = 0;
-            this.styledButtonGithubLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.styledButtonGithubLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.styledButtonGithubLink.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.styledButtonGithubLink.Location = new System.Drawing.Point(17, 287);
-            this.styledButtonGithubLink.Name = "styledButtonGithubLink";
-            this.styledButtonGithubLink.Size = new System.Drawing.Size(90, 30);
-            this.styledButtonGithubLink.TabIndex = 2;
-            this.styledButtonGithubLink.Text = "Гітхаб";
-            this.styledButtonGithubLink.UseVisualStyleBackColor = false;
-            this.styledButtonGithubLink.Click += new System.EventHandler(this.styledButtonGithubLink_Click);
-            // 
             // labelOutro
             // 
             this.labelOutro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +119,32 @@
             this.styledButtonLicense.Text = "Ліцензія";
             this.styledButtonLicense.UseVisualStyleBackColor = false;
             this.styledButtonLicense.Click += new System.EventHandler(this.styledButtonLicense_Click);
+            // 
+            // styledButtonGithubLink
+            // 
+            this.styledButtonGithubLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.styledButtonGithubLink.FlatAppearance.BorderSize = 0;
+            this.styledButtonGithubLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.styledButtonGithubLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.styledButtonGithubLink.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.styledButtonGithubLink.Location = new System.Drawing.Point(17, 287);
+            this.styledButtonGithubLink.Name = "styledButtonGithubLink";
+            this.styledButtonGithubLink.Size = new System.Drawing.Size(90, 30);
+            this.styledButtonGithubLink.TabIndex = 2;
+            this.styledButtonGithubLink.Text = "Гітхаб";
+            this.styledButtonGithubLink.UseVisualStyleBackColor = false;
+            this.styledButtonGithubLink.Click += new System.EventHandler(this.styledButtonGithubLink_Click);
+            // 
+            // formTitle1
+            // 
+            this.formTitle1.AutoSize = true;
+            this.formTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formTitle1.ForeColor = System.Drawing.Color.Black;
+            this.formTitle1.Location = new System.Drawing.Point(12, 24);
+            this.formTitle1.Name = "formTitle1";
+            this.formTitle1.Size = new System.Drawing.Size(329, 26);
+            this.formTitle1.TabIndex = 0;
+            this.formTitle1.Text = "Інформація про розробників";
             // 
             // FormDevelopers
             // 
