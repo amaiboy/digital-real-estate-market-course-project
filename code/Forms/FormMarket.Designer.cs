@@ -30,13 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.FormTitle();
             this.textBoxSearchQuery = new System.Windows.Forms.RichTextBox();
             this.btnExecuteSearch = new code.StyledButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListings = new System.Windows.Forms.DataGridView();
             this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.listingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // formTitle
@@ -74,17 +82,18 @@
             this.btnExecuteSearch.Text = "Пошук";
             this.btnExecuteSearch.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dataGridViewListings
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewListings.AllowUserToAddRows = false;
+            this.dataGridViewListings.AllowUserToDeleteRows = false;
+            this.dataGridViewListings.AllowUserToOrderColumns = true;
+            this.dataGridViewListings.AllowUserToResizeRows = false;
+            this.dataGridViewListings.AutoGenerateColumns = false;
+            this.dataGridViewListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListings.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,28 +101,80 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 50;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(739, 436);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewListings.ColumnHeadersHeight = 30;
+            this.dataGridViewListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewListings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.sellerDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dataGridViewListings.DataSource = this.listingBindingSource1;
+            this.dataGridViewListings.EnableHeadersVisualStyles = false;
+            this.dataGridViewListings.Location = new System.Drawing.Point(17, 113);
+            this.dataGridViewListings.Name = "dataGridViewListings";
+            this.dataGridViewListings.ReadOnly = true;
+            this.dataGridViewListings.RowHeadersVisible = false;
+            this.dataGridViewListings.RowTemplate.Height = 50;
+            this.dataGridViewListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListings.Size = new System.Drawing.Size(757, 436);
+            this.dataGridViewListings.TabIndex = 3;
             // 
             // listingBindingSource
             // 
             this.listingBindingSource.DataSource = typeof(code.Listing);
             // 
+            // listingBindingSource1
+            // 
+            this.listingBindingSource1.DataSource = typeof(code.Listing);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Назва";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Опис";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Адреса";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sellerDataGridViewTextBoxColumn
+            // 
+            this.sellerDataGridViewTextBoxColumn.DataPropertyName = "Seller";
+            this.sellerDataGridViewTextBoxColumn.FillWeight = 80F;
+            this.sellerDataGridViewTextBoxColumn.HeaderText = "Продавець";
+            this.sellerDataGridViewTextBoxColumn.Name = "sellerDataGridViewTextBoxColumn";
+            this.sellerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.priceDataGridViewTextBoxColumn.FillWeight = 55F;
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Ціна";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FormMarket
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(768, 561);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewListings);
             this.Controls.Add(this.btnExecuteSearch);
             this.Controls.Add(this.textBoxSearchQuery);
             this.Controls.Add(this.formTitle);
@@ -122,8 +183,9 @@
             this.MinimumSize = new System.Drawing.Size(784, 600);
             this.Name = "FormMarket";
             this.Text = "FormMarket";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +196,13 @@
         private FormTitle formTitle;
         private System.Windows.Forms.RichTextBox textBoxSearchQuery;
         private StyledButton btnExecuteSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewListings;
         private System.Windows.Forms.BindingSource listingBindingSource;
+        private System.Windows.Forms.BindingSource listingBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
