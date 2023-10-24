@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelWelcomeMessage = new System.Windows.Forms.Label();
             this.labelRandomTip = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // logoPictureBox
             // 
-            this.pictureBox1.Image = global::code.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(310, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 165);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.logoPictureBox.Image = global::code.Properties.Resources.logo;
+            this.logoPictureBox.Location = new System.Drawing.Point(310, 106);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(179, 165);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPictureBox.TabIndex = 0;
+            this.logoPictureBox.TabStop = false;
             // 
             // labelWelcomeMessage
             // 
@@ -70,12 +70,12 @@
             this.ClientSize = new System.Drawing.Size(768, 561);
             this.Controls.Add(this.labelRandomTip);
             this.Controls.Add(this.labelWelcomeMessage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logoPictureBox);
             this.MaximumSize = new System.Drawing.Size(784, 600);
             this.MinimumSize = new System.Drawing.Size(784, 600);
             this.Name = "FormWelcome";
             this.Text = "FormWelcome";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,7 +83,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label labelWelcomeMessage;
         private System.Windows.Forms.Label labelRandomTip;
     }
