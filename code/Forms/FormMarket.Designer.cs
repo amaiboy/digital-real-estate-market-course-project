@@ -37,16 +37,16 @@
             this.txtSearch = new System.Windows.Forms.RichTextBox();
             this.btnSearch = new code.StyledButton();
             this.dataGridViewListings = new System.Windows.Forms.DataGridView();
-            this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // formTitle
@@ -63,7 +63,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(17, 64);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(620, 29);
@@ -92,7 +92,6 @@
             this.dataGridViewListings.AllowUserToOrderColumns = true;
             this.dataGridViewListings.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Empty;
             this.dataGridViewListings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewListings.AutoGenerateColumns = false;
             this.dataGridViewListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -135,14 +134,6 @@
             this.dataGridViewListings.Size = new System.Drawing.Size(757, 436);
             this.dataGridViewListings.TabIndex = 3;
             // 
-            // listingBindingSource
-            // 
-            this.listingBindingSource.DataSource = typeof(code.Listing);
-            // 
-            // listingBindingSource1
-            // 
-            this.listingBindingSource1.DataSource = typeof(code.Listing);
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -183,6 +174,14 @@
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // listingBindingSource1
+            // 
+            this.listingBindingSource1.DataSource = typeof(code.Listing);
+            // 
+            // listingBindingSource
+            // 
+            this.listingBindingSource.DataSource = typeof(code.Listing);
+            // 
             // FormMarket
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -197,8 +196,8 @@
             this.Name = "FormMarket";
             this.Text = "FormMarket";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

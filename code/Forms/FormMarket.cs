@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormMarket : Form
     {
-        List<Listing> listings = new List<Listing> {
+        readonly List<Listing> listings = new List<Listing> {
             new Listing {
                 Name = "Однокімнатна квартира в центрі міста",
                 Description = "Компактна однокімнатна квартира в самому центрі міста. Ідеально підходить для однієї людини або пари. Поруч кафе, театри та зупинки громадського транспорту.",
@@ -67,35 +67,35 @@ namespace code.Forms
                 Description = "Трьохкімнатна квартира з прекрасним видом на річку Дніпро. Повністю мебльована та обладнана сучасною побутовою технікою. Зручне розташування біля парку та набережної.",
                 Address = "вул. Річкова, 456, Запоріжжя",
                 Price = 145000,
-                Seller = "Марія Петрова"
+                Seller = "Ліда Родрігес"
             },
             new Listing {
                 Name = "Компактний офіс в бізнес-центрі",
                 Description = "Невеликий офіс в сучасному бізнес-центрі. Ідеальний для стартапів та малих компаній. Зручна локація поруч із ресторанами та транспортом.",
                 Address = "пр-т. Бізнесовий, 123, офіс 7, Запоріжжя",
                 Price = 55000,
-                Seller = "Андрій Сидоренко"
+                Seller = "Белль Х'юстон"
             },
             new Listing {
                 Name = "Сімейний будинок з басейном",
                 Description = "Просторий п'ятикімнатний будинок з басейном та ландшафтним дизайном. Ідеальний для родини з дітьми. Розкішний інтер'єр та великий двір.",
                 Address = "вул. Сонячна, 777, Запоріжжя",
                 Price = 320000,
-                Seller = "Олександр Григоров"
+                Seller = "Вірджинія Берд"
             },
             new Listing {
                 Name = "Особняк у старовинному стилі",
                 Description = "Величний особняк у старовинному стилі з великим подвір'ям. Шість спалень, зручності для розкішного життя та розташування в історичному районі міста.",
                 Address = "провулок Старовинний, 987, Запоріжжя",
                 Price = 490000,
-                Seller = "Надія Коваленко"
+                Seller = "Шейн Хейнс"
             },
             new Listing {
                 Name = "Модерні апартаменти у бізнес-центрі",
                 Description = "Сучасні апартаменти в новому бізнес-центрі. Великий балкон з видом на місто, парковка та зручна інфраструктура. Ідеально для бізнес-подорожей.",
                 Address = "пр-т. Модерністський, 555, офіс 12, Запоріжжя",
                 Price = 85000,
-                Seller = "Михайло Іваненко"
+                Seller = "Ада Осборн"
             },
             new Listing {
                 Name = "Лісовий котедж з власним ставком",
@@ -112,11 +112,13 @@ namespace code.Forms
             this.Text = string.Empty;
             this.ControlBox = false;
             dataGridViewListings.DataSource = listings;
+            txtSearch.SelectionIndent = 10;
+            txtSearch.SelectionRightIndent = 10;
         }
 
         private void btnExecuteSearch_Click(object sender, EventArgs e)
         {
-            string searchQuery = txtSearch.Text;
+            var searchQuery = txtSearch.Text;
             var filteredList = listings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
             dataGridViewListings.DataSource = filteredList.ToList();
         }
