@@ -13,3 +13,4 @@ D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.For
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormHelp.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.ListingForm.resources

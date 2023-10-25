@@ -131,5 +131,12 @@ namespace code.Forms
             var filteredList = listings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
             dataGridViewListings.DataSource = filteredList.ToList();
         }
+
+        private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
+            ListingForm listingForm = new ListingForm(listing);
+            listingForm.ShowDialog();
+        }
     }
 }

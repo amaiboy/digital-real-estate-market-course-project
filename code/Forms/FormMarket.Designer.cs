@@ -139,6 +139,7 @@
             this.dataGridViewListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListings.Size = new System.Drawing.Size(757, 436);
             this.dataGridViewListings.TabIndex = 3;
+            this.dataGridViewListings.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListings_CellDoubleClick);
             // 
             // listingBindingSource1
             // 
