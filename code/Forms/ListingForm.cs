@@ -22,7 +22,7 @@ namespace code.Forms
             this.lblName.Text = listing.Name;
             this.lblDescription.Text = listing.Description;
             this.lblAddress.Text = listing.Address;
-            this.lblPrice.Text = $"${listing.Price}";
+            this.lblPrice.Text = $"{listing.Price} ₴";
             this.lblSeller.Text = listing.Seller;
         }
 
