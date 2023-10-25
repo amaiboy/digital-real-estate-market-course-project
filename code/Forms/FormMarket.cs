@@ -111,7 +111,16 @@ namespace code.Forms
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;
+
             dataGridViewListings.DataSource = listings;
+            dataGridViewListings.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            Padding cellPadding = new Padding(5, 5, 5, 5);
+            dataGridViewListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
+            foreach (DataGridViewColumn column in dataGridViewListings.Columns)
+            {
+                column.DefaultCellStyle.Padding = cellPadding;
+            }
+
             txtSearch.SelectionIndent = 10;
             txtSearch.SelectionRightIndent = 10;
         }
