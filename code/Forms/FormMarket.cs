@@ -151,9 +151,12 @@ namespace code.Forms
 
         private void reshowHint(ComboBox dropdown, string hint)
         {
-            dropdown.Items.Insert(0, hint);
-            dropdown.ForeColor = System.Drawing.Color.Gray;
-            dropdown.SelectedIndex = 0;
+            if (!dropdown.Items.Contains(hint))
+            {
+                dropdown.Items.Insert(0, hint);
+                dropdown.ForeColor = System.Drawing.Color.Gray;
+                dropdown.SelectedIndex = 0;
+            }
         }
 
         private void hideHint(ComboBox dropdown, string hint)
