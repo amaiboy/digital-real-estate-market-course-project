@@ -120,9 +120,6 @@ namespace code.Forms
             {
                 column.DefaultCellStyle.Padding = cellPadding;
             }
-
-            txtSearch.SelectionIndent = 10;
-            txtSearch.SelectionRightIndent = 10;
         }
 
         private void btnExecuteSearch_Click(object sender, EventArgs e)
@@ -137,6 +134,15 @@ namespace code.Forms
             var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
             ListingForm listingForm = new ListingForm(listing);
             listingForm.ShowDialog();
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Пошук за назвою чи описом...")
+            {
+                txtSearch.Text = string.Empty;
+                txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
         }
     }
 }
