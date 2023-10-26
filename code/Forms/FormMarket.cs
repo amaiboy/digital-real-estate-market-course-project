@@ -204,11 +204,60 @@ namespace code.Forms
             }
         }
 
-        private void SortListings()
+
+        private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortListings(dropdownSortByName);
+        }
+
+        private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortListings(dropdownSortByPrice);
+        }
+
+        private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortListings(dropdownSortBySeller);
+        }
+
+        private void SortListings(ComboBox dropdown)
         {
             var listingsCopy = listings.ToList();
+            var selectedItem = dropdown.SelectedIndex;
 
-            // TODO: Implement sorting
+            if (dropdown == dropdownSortByName)
+            {
+                if (selectedItem == 0)
+                {
+                    listingsCopy = listingsCopy.OrderBy(l => l.Name).ToList();
+                }
+                else
+                {
+                    listingsCopy = listingsCopy.OrderByDescending(l => l.Name).ToList();
+                }
+            }
+            else if (dropdown == dropdownSortBySeller)
+            {
+                if (selectedItem == 0)
+                {
+                    listingsCopy = listingsCopy.OrderBy(l => l.Seller).ToList();
+                }
+                else
+                {
+                    listingsCopy = listingsCopy.OrderByDescending(l => l.Seller).ToList();
+                }
+            }
+            else if (dropdown == dropdownSortByPrice)
+            {
+                if (selectedItem == 0)
+                {
+                    listingsCopy = listingsCopy.OrderBy(l => l.Price).ToList();
+                }
+                else
+                {
+                    listingsCopy = listingsCopy.OrderByDescending(l => l.Price).ToList();
+                }
+            }
 
             dataGridViewListings.DataSource = listingsCopy;
         }
