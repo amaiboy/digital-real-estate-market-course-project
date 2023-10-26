@@ -197,7 +197,6 @@
             this.dropdownSortByName.Size = new System.Drawing.Size(247, 21);
             this.dropdownSortByName.TabIndex = 4;
             this.dropdownSortByName.DropDown += new System.EventHandler(this.dropdownSortByName_DropDown);
-            this.dropdownSortByName.SelectedIndexChanged += new System.EventHandler(this.dropdownSortByName_SelectedIndexChanged);
             this.dropdownSortByName.DropDownClosed += new System.EventHandler(this.dropdownSortByName_DropDownClosed);
             // 
             // dropdownSortBySeller
@@ -215,7 +214,6 @@
             this.dropdownSortBySeller.Size = new System.Drawing.Size(240, 21);
             this.dropdownSortBySeller.TabIndex = 4;
             this.dropdownSortBySeller.DropDown += new System.EventHandler(this.dropdownSortBySeller_DropDown);
-            this.dropdownSortBySeller.SelectedIndexChanged += new System.EventHandler(this.dropdownSortBySeller_SelectedIndexChanged);
             this.dropdownSortBySeller.DropDownClosed += new System.EventHandler(this.dropdownSortBySeller_DropDownClosed);
             // 
             // dropdownSortByPrice
@@ -233,7 +231,6 @@
             this.dropdownSortByPrice.Size = new System.Drawing.Size(240, 21);
             this.dropdownSortByPrice.TabIndex = 4;
             this.dropdownSortByPrice.DropDown += new System.EventHandler(this.dropdownSortByPrice_DropDown);
-            this.dropdownSortByPrice.SelectedIndexChanged += new System.EventHandler(this.dropdownSortByPrice_SelectedIndexChanged);
             this.dropdownSortByPrice.DropDownClosed += new System.EventHandler(this.dropdownSortByPrice_DropDownClosed);
             // 
             // txtSearch

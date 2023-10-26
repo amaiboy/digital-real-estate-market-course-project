@@ -182,81 +182,25 @@ namespace code.Forms
 
         private void dropdownSortByName_DropDownClosed(object sender, EventArgs e)
         {
-            reshowHint(dropdownSortByName, "Сортування за назвою");
+            if (dropdownSortByName.SelectedIndex == -1)
+            {
+                reshowHint(dropdownSortByName, "Сортування за назвою");
+            }
         }
 
         private void dropdownSortBySeller_DropDownClosed(object sender, EventArgs e)
         {
-
-            reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+            if (dropdownSortBySeller.SelectedIndex == -1)
+            {
+                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+            }
         }
 
         private void dropdownSortByPrice_DropDownClosed(object sender, EventArgs e)
         {
-
-            reshowHint(dropdownSortByPrice, "Сортування за ціною");
-        }
-
-        private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
+            if (dropdownSortByPrice.SelectedIndex == -1)
             {
-                if (dropdownSortByName.SelectedIndex == 0 || dropdownSortByName.SelectedIndex == 1)
-                {
-                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                    dropdownSortByPrice.SelectedIndex = 0;
-                    dropdownSortBySeller.SelectedIndex = 0;
-                }
-
-                SortListings();
-            }
-            catch (Exception ex)
-            {
-                // GeneralException.Show(ex);
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dropdownSortBySeller.SelectedIndex == 0 || dropdownSortBySeller.SelectedIndex == 1)
-                {
-                    reshowHint(dropdownSortByName, "Сортування за назвою");
-                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                    dropdownSortByName.SelectedIndex = 0;
-                    dropdownSortByPrice.SelectedIndex = 0;
-                }
-
-                SortListings();
-            }
-            catch (Exception ex)
-            {
-                // GeneralException.Show(ex);
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dropdownSortByPrice.SelectedIndex == 0 || dropdownSortByPrice.SelectedIndex == 1)
-                {
-                    reshowHint(dropdownSortByName, "Сортування за назвою");
-                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                    dropdownSortByName.SelectedIndex = 0;
-                    dropdownSortBySeller.SelectedIndex = 0;
-                }
-
-                SortListings();
-            }
-            catch (Exception ex)
-            {
-                // GeneralException.Show(ex);
-                MessageBox.Show(ex.Message);
+                reshowHint(dropdownSortByPrice, "Сортування за ціною");
             }
         }
 
@@ -264,32 +208,7 @@ namespace code.Forms
         {
             var listingsCopy = listings.ToList();
 
-            if (dropdownSortByName.SelectedIndex == 0)
-            {
-                listingsCopy = listings.OrderBy(l => l.Name).ToList();
-            }
-            else if (dropdownSortByName.SelectedIndex == 1)
-            {
-                listingsCopy = listings.OrderByDescending(l => l.Name).ToList();
-            }
-
-            if (dropdownSortBySeller.SelectedIndex == 0)
-            {
-                listingsCopy = listings.OrderBy(l => l.Seller).ToList();
-            }
-            else if (dropdownSortBySeller.SelectedIndex == 1)
-            {
-                listingsCopy = listings.OrderByDescending(l => l.Seller).ToList();
-            }
-
-            if (dropdownSortByPrice.SelectedIndex == 0)
-            {
-                listingsCopy = listings.OrderBy(l => l.Price).ToList();
-            }
-            else if (dropdownSortByPrice.SelectedIndex == 1)
-            {
-                listingsCopy = listings.OrderByDescending(l => l.Price).ToList();
-            }
+            // TODO: Implement sorting
 
             dataGridViewListings.DataSource = listingsCopy;
         }
