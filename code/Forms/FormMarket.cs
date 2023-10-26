@@ -120,6 +120,10 @@ namespace code.Forms
             {
                 column.DefaultCellStyle.Padding = cellPadding;
             }
+
+            dropdownSortByName.SelectedIndex = 0;
+            dropdownSortBySeller.SelectedIndex = 0;
+            dropdownSortByPrice.SelectedIndex = 0;
         }
 
         private void btnExecuteSearch_Click(object sender, EventArgs e)
@@ -142,6 +146,33 @@ namespace code.Forms
             {
                 txtSearch.Text = string.Empty;
                 txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void dropdownSortByName_DropDown(object sender, EventArgs e)
+        {
+            if (dropdownSortByName.Items.Contains("Сортування за назвою"))
+            {
+                dropdownSortByName.Items.Remove("Сортування за назвою");
+                dropdownSortByName.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void dropdownSortBySeller_DropDown(object sender, EventArgs e)
+        {
+            if (dropdownSortBySeller.Items.Contains("Сортування за продавцем"))
+            {
+                dropdownSortBySeller.Items.Remove("Сортування за продавцем");
+                dropdownSortBySeller.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void dropdownSortByPrice_DropDown(object sender, EventArgs e)
+        {
+            if (dropdownSortByPrice.Items.Contains("Сортування за ціною"))
+            {
+                dropdownSortByPrice.Items.Remove("Сортування за ціною");
+                dropdownSortByPrice.ForeColor = System.Drawing.Color.Black;
             }
         }
     }
