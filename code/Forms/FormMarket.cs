@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormMarket : Form
     {
-        List<Listing> listings = new List<Listing> {
+        readonly List<Listing> listings = new List<Listing> {
             new Listing {
                 Name = "Однокімнатна квартира в центрі міста",
                 Description = "Компактна однокімнатна квартира в самому центрі міста. Ідеально підходить для однієї людини або пари. Поруч кафе, театри та зупинки громадського транспорту.",
@@ -252,6 +252,10 @@ namespace code.Forms
 
         private void SortListings(ComboBox dropdown)
         {
+            var nameHeading = "Назва";
+            var sellerHeading = "Продавець";
+            var priceHeading = "Ціна";
+
             var listingsCopy = listings.ToList();
             var selectedItem = dropdown.SelectedIndex;
 
@@ -260,10 +264,12 @@ namespace code.Forms
                 if (selectedItem == 0)
                 {
                     listingsCopy = listingsCopy.OrderBy(l => l.Name).ToList();
+                    nameHeading = "Назва »";
                 }
                 else
                 {
                     listingsCopy = listingsCopy.OrderByDescending(l => l.Name).ToList();
+                    nameHeading = "Назва «";
                 }
             }
             else if (dropdown == dropdownSortBySeller)
@@ -271,10 +277,12 @@ namespace code.Forms
                 if (selectedItem == 0)
                 {
                     listingsCopy = listingsCopy.OrderBy(l => l.Seller).ToList();
+                    sellerHeading = "Продавець »";
                 }
                 else
                 {
                     listingsCopy = listingsCopy.OrderByDescending(l => l.Seller).ToList();
+                    sellerHeading = "Продавець «";
                 }
             }
             else if (dropdown == dropdownSortByPrice)
@@ -282,14 +290,19 @@ namespace code.Forms
                 if (selectedItem == 0)
                 {
                     listingsCopy = listingsCopy.OrderBy(l => l.Price).ToList();
+                    priceHeading = "Ціна »";
                 }
                 else
                 {
                     listingsCopy = listingsCopy.OrderByDescending(l => l.Price).ToList();
+                    priceHeading = "Ціна «";
                 }
             }
 
             dataGridViewListings.DataSource = listingsCopy;
+            dataGridViewListings.Columns[0].HeaderText = nameHeading;
+            dataGridViewListings.Columns[3].HeaderText = sellerHeading;
+            dataGridViewListings.Columns[4].HeaderText = priceHeading;
         }
     }
 }
