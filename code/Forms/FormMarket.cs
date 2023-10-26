@@ -207,17 +207,44 @@ namespace code.Forms
 
         private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SortListings(dropdownSortByName);
+            if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
+            {
+                SortListings(dropdownSortByName);
+
+                reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                dropdownSortByPrice.SelectedIndex = 0;
+
+                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                dropdownSortBySeller.SelectedIndex = 0;
+            }
         }
 
         private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SortListings(dropdownSortByPrice);
+            if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
+            {
+                SortListings(dropdownSortByPrice);
+
+                reshowHint(dropdownSortByName, "Сортування за назвою");
+                dropdownSortByName.SelectedIndex = 0;
+
+                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                dropdownSortBySeller.SelectedIndex = 0;
+            }
         }
 
         private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SortListings(dropdownSortBySeller);
+            if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
+            {
+                SortListings(dropdownSortBySeller);
+
+                reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                dropdownSortByPrice.SelectedIndex = 0;
+
+                reshowHint(dropdownSortByName, "Сортування за назвою");
+                dropdownSortByName.SelectedIndex = 0;
+            }
         }
 
         private void SortListings(ComboBox dropdown)
