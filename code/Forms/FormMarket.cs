@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormMarket : Form
     {
-        readonly List<Listing> listings = new List<Listing> {
+        List<Listing> listings = new List<Listing> {
             new Listing {
                 Name = "Однокімнатна квартира в центрі міста",
                 Description = "Компактна однокімнатна квартира в самому центрі міста. Ідеально підходить для однієї людини або пари. Поруч кафе, театри та зупинки громадського транспорту.",
@@ -149,63 +149,149 @@ namespace code.Forms
             }
         }
 
+        private void reshowHint(ComboBox dropdown, string hint)
+        {
+            dropdown.Items.Insert(0, hint);
+            dropdown.ForeColor = System.Drawing.Color.Gray;
+            dropdown.SelectedIndex = 0;
+        }
+
+        private void hideHint(ComboBox dropdown, string hint)
+        {
+            if (dropdown.Items.Contains(hint))
+            {
+                dropdown.Items.Remove(hint);
+                dropdown.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
         private void dropdownSortByName_DropDown(object sender, EventArgs e)
         {
-            if (dropdownSortByName.Items.Contains("Сортування за назвою"))
-            {
-                dropdownSortByName.Items.Remove("Сортування за назвою");
-                dropdownSortByName.ForeColor = System.Drawing.Color.Black;
-            }
+            hideHint(dropdownSortByName, "Сортування за назвою");
         }
 
         private void dropdownSortBySeller_DropDown(object sender, EventArgs e)
         {
-            if (dropdownSortBySeller.Items.Contains("Сортування за продавцем"))
-            {
-                dropdownSortBySeller.Items.Remove("Сортування за продавцем");
-                dropdownSortBySeller.ForeColor = System.Drawing.Color.Black;
-            }
+            hideHint(dropdownSortBySeller, "Сортування за продавцем");
         }
 
         private void dropdownSortByPrice_DropDown(object sender, EventArgs e)
         {
-            if (dropdownSortByPrice.Items.Contains("Сортування за ціною"))
-            {
-                dropdownSortByPrice.Items.Remove("Сортування за ціною");
-                dropdownSortByPrice.ForeColor = System.Drawing.Color.Black;
-            }
+            hideHint(dropdownSortByPrice, "Сортування за ціною");
         }
 
         private void dropdownSortByName_DropDownClosed(object sender, EventArgs e)
         {
-            if (dropdownSortByName.SelectedIndex == -1)
-            {
-                dropdownSortByName.Items.Insert(0, "Сортування за назвою");
-                dropdownSortByName.ForeColor = System.Drawing.Color.Gray;
-                dropdownSortByName.SelectedIndex = 0;
-            }
+            reshowHint(dropdownSortByName, "Сортування за назвою");
         }
 
         private void dropdownSortBySeller_DropDownClosed(object sender, EventArgs e)
         {
 
-            if (dropdownSortBySeller.SelectedIndex == -1)
-            {
-                dropdownSortBySeller.Items.Insert(0, "Сортування за продавцем");
-                dropdownSortBySeller.ForeColor = System.Drawing.Color.Gray;
-                dropdownSortBySeller.SelectedIndex = 0;
-            }
+            reshowHint(dropdownSortBySeller, "Сортування за продавцем");
         }
 
         private void dropdownSortByPrice_DropDownClosed(object sender, EventArgs e)
         {
 
-            if (dropdownSortByPrice.SelectedIndex == -1)
+            reshowHint(dropdownSortByPrice, "Сортування за ціною");
+        }
+
+        private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
             {
-                dropdownSortByPrice.Items.Insert(0, "Сортування за ціною");
-                dropdownSortByPrice.ForeColor = System.Drawing.Color.Gray;
-                dropdownSortByPrice.SelectedIndex = 0;
+                if (dropdownSortByName.SelectedIndex == 0 || dropdownSortByName.SelectedIndex == 1)
+                {
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByPrice.SelectedIndex = 0;
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+
+                SortListings();
             }
+            catch (Exception ex)
+            {
+                // GeneralException.Show(ex);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dropdownSortBySeller.SelectedIndex == 0 || dropdownSortBySeller.SelectedIndex == 1)
+                {
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByName.SelectedIndex = 0;
+                    dropdownSortByPrice.SelectedIndex = 0;
+                }
+
+                SortListings();
+            }
+            catch (Exception ex)
+            {
+                // GeneralException.Show(ex);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dropdownSortByPrice.SelectedIndex == 0 || dropdownSortByPrice.SelectedIndex == 1)
+                {
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    dropdownSortByName.SelectedIndex = 0;
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+
+                SortListings();
+            }
+            catch (Exception ex)
+            {
+                // GeneralException.Show(ex);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SortListings()
+        {
+            var listingsCopy = listings.ToList();
+
+            if (dropdownSortByName.SelectedIndex == 0)
+            {
+                listingsCopy = listings.OrderBy(l => l.Name).ToList();
+            }
+            else if (dropdownSortByName.SelectedIndex == 1)
+            {
+                listingsCopy = listings.OrderByDescending(l => l.Name).ToList();
+            }
+
+            if (dropdownSortBySeller.SelectedIndex == 0)
+            {
+                listingsCopy = listings.OrderBy(l => l.Seller).ToList();
+            }
+            else if (dropdownSortBySeller.SelectedIndex == 1)
+            {
+                listingsCopy = listings.OrderByDescending(l => l.Seller).ToList();
+            }
+
+            if (dropdownSortByPrice.SelectedIndex == 0)
+            {
+                listingsCopy = listings.OrderBy(l => l.Price).ToList();
+            }
+            else if (dropdownSortByPrice.SelectedIndex == 1)
+            {
+                listingsCopy = listings.OrderByDescending(l => l.Price).ToList();
+            }
+
+            dataGridViewListings.DataSource = listingsCopy;
         }
     }
 }
