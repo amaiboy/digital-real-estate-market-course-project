@@ -175,5 +175,37 @@ namespace code.Forms
                 dropdownSortByPrice.ForeColor = System.Drawing.Color.Black;
             }
         }
+
+        private void dropdownSortByName_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dropdownSortByName.SelectedIndex == -1)
+            {
+                dropdownSortByName.Items.Insert(0, "Сортування за назвою");
+                dropdownSortByName.ForeColor = System.Drawing.Color.Gray;
+                dropdownSortByName.SelectedIndex = 0;
+            }
+        }
+
+        private void dropdownSortBySeller_DropDownClosed(object sender, EventArgs e)
+        {
+
+            if (dropdownSortBySeller.SelectedIndex == -1)
+            {
+                dropdownSortBySeller.Items.Insert(0, "Сортування за продавцем");
+                dropdownSortBySeller.ForeColor = System.Drawing.Color.Gray;
+                dropdownSortBySeller.SelectedIndex = 0;
+            }
+        }
+
+        private void dropdownSortByPrice_DropDownClosed(object sender, EventArgs e)
+        {
+
+            if (dropdownSortByPrice.SelectedIndex == -1)
+            {
+                dropdownSortByPrice.Items.Insert(0, "Сортування за ціною");
+                dropdownSortByPrice.ForeColor = System.Drawing.Color.Gray;
+                dropdownSortByPrice.SelectedIndex = 0;
+            }
+        }
     }
 }
