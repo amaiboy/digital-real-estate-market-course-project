@@ -1,0 +1,16 @@
+D:\repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
+D:\repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe
+D:\repos\digital-real-estate-market-course-project\code\bin\Debug\code.pdb
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.AssemblyReference.cache
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Properties.Resources.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.GenerateResource.cache
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CoreCompileInputs.cache
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.exe
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.pdb
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.FormMenu.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormMarket.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormDevelopers.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormHelp.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.ListingForm.resources
