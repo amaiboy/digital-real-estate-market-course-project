@@ -249,7 +249,162 @@ namespace code.Forms
                 dropdownSortByName.SelectedIndex = 0;
             }
         }
+        private void QuickSort(string type,List<Listing> list)
+        {
+       
+                Sort(list, 0, list.Count - 1, type);
+        }
+        private void Sort(List<Listing> list, int left, int right, string type)
+        {
+            if(left<right)
+            {
+                int pivotIndex = Partition(list, left, right, type);
+                Sort(list, left, pivotIndex - 1, type);
+                Sort(list, pivotIndex + 1, right, type);
+            }
+        }
+        private int Partition(List<Listing> list, int left, int right, string type)
+        {
+            if(type == "Ціна")
+            {
+                int pivot = list[right].Price;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if (list[j].Price < pivot)
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            } 
+            if (type == "Назва")
+            {
+                string pivot = list[right].Name;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if ((string.Compare(list[j].Name, pivot) < 0))
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            }
+            if (type == "Продавець")
+            {
+                string pivot = list[right].Seller;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if ((string.Compare(list[j].Seller, pivot) < 0))
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            }
+            return 0;
+        }
+        private void QuickSortDescending(string type, List<Listing> list)
+        {
 
+            SortDescending(list, 0, list.Count - 1, type);
+        }
+        private void SortDescending(List<Listing> list, int left, int right, string type)
+        {
+            if (left < right)
+            {
+                int pivotIndex = PartitionDescending(list, left, right, type);
+                SortDescending(list, left, pivotIndex - 1, type);
+                SortDescending(list, pivotIndex + 1, right, type);
+            }
+        }
+        private int PartitionDescending(List<Listing> list, int left, int right, string type)
+        {
+            if (type == "Ціна")
+            {
+                int pivot = list[right].Price;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if (list[j].Price > pivot)
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            }
+            if (type == "Назва")
+            {
+                string pivot = list[right].Name;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if ((string.Compare(list[j].Name, pivot) > 0))
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            }
+            if (type == "Продавець")
+            {
+                string pivot = list[right].Seller;
+                int i = left - 1;
+                Listing temp;
+                for (int j = left; j < right; j++)
+                {
+                    if ((string.Compare(list[j].Seller, pivot) > 0))
+                    {
+                        i++;
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+                temp = list[i + 1];
+                list[i + 1] = list[right];
+                list[right] = temp;
+                return i + 1;
+            }
+            return 0;
+        }
         private void SortListings(ComboBox dropdown)
         {
             var nameHeading = "Назва";
@@ -263,12 +418,12 @@ namespace code.Forms
             {
                 if (selectedItem == 0)
                 {
-                    listingsCopy = listingsCopy.OrderBy(l => l.Name).ToList();
+                    QuickSort(nameHeading, listingsCopy);
                     nameHeading = "Назва »";
                 }
                 else
                 {
-                    listingsCopy = listingsCopy.OrderByDescending(l => l.Name).ToList();
+                    QuickSortDescending(nameHeading, listingsCopy);
                     nameHeading = "Назва «";
                 }
             }
@@ -276,12 +431,12 @@ namespace code.Forms
             {
                 if (selectedItem == 0)
                 {
-                    listingsCopy = listingsCopy.OrderBy(l => l.Seller).ToList();
+                    QuickSort(sellerHeading, listingsCopy);
                     sellerHeading = "Продавець »";
                 }
                 else
                 {
-                    listingsCopy = listingsCopy.OrderByDescending(l => l.Seller).ToList();
+                    QuickSortDescending(sellerHeading, listingsCopy);
                     sellerHeading = "Продавець «";
                 }
             }
@@ -289,12 +444,12 @@ namespace code.Forms
             {
                 if (selectedItem == 0)
                 {
-                    listingsCopy = listingsCopy.OrderBy(l => l.Price).ToList();
+                    QuickSort(priceHeading, listingsCopy);
                     priceHeading = "Ціна »";
                 }
                 else
                 {
-                    listingsCopy = listingsCopy.OrderByDescending(l => l.Price).ToList();
+                    QuickSortDescending(priceHeading, listingsCopy);
                     priceHeading = "Ціна «";
                 }
             }
