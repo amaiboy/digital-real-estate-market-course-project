@@ -28,30 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.FormTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.dataGridViewBoughtListings = new System.Windows.Forms.DataGridView();
-            this.dataGridViewAddedListings = new System.Windows.Forms.DataGridView();
-            this.btnSaveChanges = new code.StyledButton();
-            this.btnAddListing = new code.StyledButton();
-            this.btnRefreshBoughtListings = new code.StyledButton();
-            this.btnClearBoughtListings = new code.StyledButton();
             this.btnTogglePasswordVisibility = new code.StyledButton();
+            this.btnClearBoughtListings = new code.StyledButton();
+            this.btnRefreshBoughtListings = new code.StyledButton();
+            this.btnAddListing = new code.StyledButton();
+            this.btnSaveChanges = new code.StyledButton();
+            this.dataGridViewAddedListings = new System.Windows.Forms.DataGridView();
+            this.listingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewBoughtListings = new System.Windows.Forms.DataGridView();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlMainContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBoughtListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBoughtListings)).BeginInit();
             this.SuspendLayout();
             // 
             // formTitle
@@ -88,147 +101,62 @@
             this.pnlMainContainer.Size = new System.Drawing.Size(768, 561);
             this.pnlMainContainer.TabIndex = 3;
             // 
-            // lblUsername
+            // btnTogglePasswordVisibility
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(14, 74);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(117, 16);
-            this.lblUsername.TabIndex = 3;
-            this.lblUsername.Text = "Ім\'я користувача";
+            this.btnTogglePasswordVisibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnTogglePasswordVisibility.FlatAppearance.BorderSize = 0;
+            this.btnTogglePasswordVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTogglePasswordVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTogglePasswordVisibility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTogglePasswordVisibility.Location = new System.Drawing.Point(597, 201);
+            this.btnTogglePasswordVisibility.Name = "btnTogglePasswordVisibility";
+            this.btnTogglePasswordVisibility.Size = new System.Drawing.Size(159, 22);
+            this.btnTogglePasswordVisibility.TabIndex = 7;
+            this.btnTogglePasswordVisibility.Text = "Показати пароль";
+            this.btnTogglePasswordVisibility.UseVisualStyleBackColor = false;
+            this.btnTogglePasswordVisibility.Click += new System.EventHandler(this.btnTogglePasswordVisibility_Click);
             // 
-            // txtUsername
+            // btnClearBoughtListings
             // 
-            this.txtUsername.Location = new System.Drawing.Point(17, 93);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(739, 22);
-            this.txtUsername.TabIndex = 4;
+            this.btnClearBoughtListings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnClearBoughtListings.FlatAppearance.BorderSize = 0;
+            this.btnClearBoughtListings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearBoughtListings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClearBoughtListings.Location = new System.Drawing.Point(202, 523);
+            this.btnClearBoughtListings.Name = "btnClearBoughtListings";
+            this.btnClearBoughtListings.Size = new System.Drawing.Size(175, 26);
+            this.btnClearBoughtListings.TabIndex = 6;
+            this.btnClearBoughtListings.Text = "Очистити список";
+            this.btnClearBoughtListings.UseVisualStyleBackColor = false;
             // 
-            // lblEmail
+            // btnRefreshBoughtListings
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(14, 128);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(131, 16);
-            this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "Електронна пошта";
+            this.btnRefreshBoughtListings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnRefreshBoughtListings.FlatAppearance.BorderSize = 0;
+            this.btnRefreshBoughtListings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshBoughtListings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefreshBoughtListings.Location = new System.Drawing.Point(17, 523);
+            this.btnRefreshBoughtListings.Name = "btnRefreshBoughtListings";
+            this.btnRefreshBoughtListings.Size = new System.Drawing.Size(175, 26);
+            this.btnRefreshBoughtListings.TabIndex = 6;
+            this.btnRefreshBoughtListings.Text = "Оновити список";
+            this.btnRefreshBoughtListings.UseVisualStyleBackColor = false;
             // 
-            // txtEmail
+            // btnAddListing
             // 
-            this.txtEmail.Location = new System.Drawing.Point(17, 147);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(739, 22);
-            this.txtEmail.TabIndex = 4;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(14, 182);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 16);
-            this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Пароль";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(17, 201);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(574, 22);
-            this.txtPassword.TabIndex = 4;
-            // 
-            // dataGridViewBoughtListings
-            // 
-            this.dataGridViewBoughtListings.AllowUserToAddRows = false;
-            this.dataGridViewBoughtListings.AllowUserToDeleteRows = false;
-            this.dataGridViewBoughtListings.AllowUserToOrderColumns = true;
-            this.dataGridViewBoughtListings.AllowUserToResizeRows = false;
-            this.dataGridViewBoughtListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewBoughtListings.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewBoughtListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewBoughtListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewBoughtListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewBoughtListings.ColumnHeadersHeight = 35;
-            this.dataGridViewBoughtListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewBoughtListings.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewBoughtListings.EnableHeadersVisualStyles = false;
-            this.dataGridViewBoughtListings.Location = new System.Drawing.Point(17, 299);
-            this.dataGridViewBoughtListings.Name = "dataGridViewBoughtListings";
-            this.dataGridViewBoughtListings.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBoughtListings.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewBoughtListings.RowHeadersVisible = false;
-            this.dataGridViewBoughtListings.RowTemplate.Height = 50;
-            this.dataGridViewBoughtListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBoughtListings.Size = new System.Drawing.Size(360, 209);
-            this.dataGridViewBoughtListings.TabIndex = 5;
-            // 
-            // dataGridViewAddedListings
-            // 
-            this.dataGridViewAddedListings.AllowUserToAddRows = false;
-            this.dataGridViewAddedListings.AllowUserToDeleteRows = false;
-            this.dataGridViewAddedListings.AllowUserToOrderColumns = true;
-            this.dataGridViewAddedListings.AllowUserToResizeRows = false;
-            this.dataGridViewAddedListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAddedListings.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewAddedListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewAddedListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewAddedListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAddedListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewAddedListings.ColumnHeadersHeight = 35;
-            this.dataGridViewAddedListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAddedListings.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewAddedListings.EnableHeadersVisualStyles = false;
-            this.dataGridViewAddedListings.Location = new System.Drawing.Point(396, 299);
-            this.dataGridViewAddedListings.Name = "dataGridViewAddedListings";
-            this.dataGridViewAddedListings.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAddedListings.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewAddedListings.RowHeadersVisible = false;
-            this.dataGridViewAddedListings.RowTemplate.Height = 50;
-            this.dataGridViewAddedListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAddedListings.Size = new System.Drawing.Size(360, 209);
-            this.dataGridViewAddedListings.TabIndex = 5;
+            this.btnAddListing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnAddListing.FlatAppearance.BorderSize = 0;
+            this.btnAddListing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddListing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddListing.Location = new System.Drawing.Point(396, 523);
+            this.btnAddListing.Name = "btnAddListing";
+            this.btnAddListing.Size = new System.Drawing.Size(360, 26);
+            this.btnAddListing.TabIndex = 6;
+            this.btnAddListing.Text = "Додати оголошення";
+            this.btnAddListing.UseVisualStyleBackColor = false;
             // 
             // btnSaveChanges
             // 
@@ -245,62 +173,243 @@
             this.btnSaveChanges.UseVisualStyleBackColor = false;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
-            // btnAddListing
+            // dataGridViewAddedListings
             // 
-            this.btnAddListing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnAddListing.FlatAppearance.BorderSize = 0;
-            this.btnAddListing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddListing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddListing.Location = new System.Drawing.Point(396, 514);
-            this.btnAddListing.Name = "btnAddListing";
-            this.btnAddListing.Size = new System.Drawing.Size(360, 35);
-            this.btnAddListing.TabIndex = 6;
-            this.btnAddListing.Text = "Додати оголошення";
-            this.btnAddListing.UseVisualStyleBackColor = false;
+            this.dataGridViewAddedListings.AllowUserToAddRows = false;
+            this.dataGridViewAddedListings.AllowUserToDeleteRows = false;
+            this.dataGridViewAddedListings.AllowUserToOrderColumns = true;
+            this.dataGridViewAddedListings.AllowUserToResizeRows = false;
+            this.dataGridViewAddedListings.AutoGenerateColumns = false;
+            this.dataGridViewAddedListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAddedListings.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewAddedListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewAddedListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewAddedListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAddedListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewAddedListings.ColumnHeadersHeight = 35;
+            this.dataGridViewAddedListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewAddedListings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn1,
+            this.descriptionDataGridViewTextBoxColumn1,
+            this.addressDataGridViewTextBoxColumn1,
+            this.sellerDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1});
+            this.dataGridViewAddedListings.DataSource = this.listingBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAddedListings.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewAddedListings.EnableHeadersVisualStyles = false;
+            this.dataGridViewAddedListings.Location = new System.Drawing.Point(396, 293);
+            this.dataGridViewAddedListings.Name = "dataGridViewAddedListings";
+            this.dataGridViewAddedListings.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAddedListings.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewAddedListings.RowHeadersVisible = false;
+            this.dataGridViewAddedListings.RowTemplate.Height = 50;
+            this.dataGridViewAddedListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAddedListings.Size = new System.Drawing.Size(360, 224);
+            this.dataGridViewAddedListings.TabIndex = 5;
             // 
-            // btnRefreshBoughtListings
+            // listingBindingSource
             // 
-            this.btnRefreshBoughtListings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnRefreshBoughtListings.FlatAppearance.BorderSize = 0;
-            this.btnRefreshBoughtListings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshBoughtListings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefreshBoughtListings.Location = new System.Drawing.Point(17, 514);
-            this.btnRefreshBoughtListings.Name = "btnRefreshBoughtListings";
-            this.btnRefreshBoughtListings.Size = new System.Drawing.Size(175, 35);
-            this.btnRefreshBoughtListings.TabIndex = 6;
-            this.btnRefreshBoughtListings.Text = "Оновити список";
-            this.btnRefreshBoughtListings.UseVisualStyleBackColor = false;
+            this.listingBindingSource.DataSource = typeof(code.Listing);
             // 
-            // btnClearBoughtListings
+            // dataGridViewBoughtListings
             // 
-            this.btnClearBoughtListings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnClearBoughtListings.FlatAppearance.BorderSize = 0;
-            this.btnClearBoughtListings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearBoughtListings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClearBoughtListings.Location = new System.Drawing.Point(202, 514);
-            this.btnClearBoughtListings.Name = "btnClearBoughtListings";
-            this.btnClearBoughtListings.Size = new System.Drawing.Size(175, 35);
-            this.btnClearBoughtListings.TabIndex = 6;
-            this.btnClearBoughtListings.Text = "Очистити список";
-            this.btnClearBoughtListings.UseVisualStyleBackColor = false;
+            this.dataGridViewBoughtListings.AllowUserToAddRows = false;
+            this.dataGridViewBoughtListings.AllowUserToDeleteRows = false;
+            this.dataGridViewBoughtListings.AllowUserToOrderColumns = true;
+            this.dataGridViewBoughtListings.AllowUserToResizeRows = false;
+            this.dataGridViewBoughtListings.AutoGenerateColumns = false;
+            this.dataGridViewBoughtListings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewBoughtListings.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewBoughtListings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewBoughtListings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewBoughtListings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewBoughtListings.ColumnHeadersHeight = 35;
+            this.dataGridViewBoughtListings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewBoughtListings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.sellerDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dataGridViewBoughtListings.DataSource = this.listingBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBoughtListings.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewBoughtListings.EnableHeadersVisualStyles = false;
+            this.dataGridViewBoughtListings.Location = new System.Drawing.Point(17, 293);
+            this.dataGridViewBoughtListings.Name = "dataGridViewBoughtListings";
+            this.dataGridViewBoughtListings.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBoughtListings.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewBoughtListings.RowHeadersVisible = false;
+            this.dataGridViewBoughtListings.RowTemplate.Height = 50;
+            this.dataGridViewBoughtListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewBoughtListings.Size = new System.Drawing.Size(360, 224);
+            this.dataGridViewBoughtListings.TabIndex = 5;
             // 
-            // btnTogglePasswordVisibility
+            // txtPassword
             // 
-            this.btnTogglePasswordVisibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnTogglePasswordVisibility.FlatAppearance.BorderSize = 0;
-            this.btnTogglePasswordVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTogglePasswordVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTogglePasswordVisibility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTogglePasswordVisibility.Location = new System.Drawing.Point(597, 201);
-            this.btnTogglePasswordVisibility.Name = "btnTogglePasswordVisibility";
-            this.btnTogglePasswordVisibility.Size = new System.Drawing.Size(159, 22);
-            this.btnTogglePasswordVisibility.TabIndex = 7;
-            this.btnTogglePasswordVisibility.Text = "Показати пароль";
-            this.btnTogglePasswordVisibility.UseVisualStyleBackColor = false;
-            this.btnTogglePasswordVisibility.Click += new System.EventHandler(this.btnTogglePasswordVisibility_Click);
+            this.txtPassword.Location = new System.Drawing.Point(17, 201);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(574, 22);
+            this.txtPassword.TabIndex = 4;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(17, 147);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(739, 22);
+            this.txtEmail.TabIndex = 4;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(17, 93);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(739, 22);
+            this.txtUsername.TabIndex = 4;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(14, 182);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 16);
+            this.lblPassword.TabIndex = 3;
+            this.lblPassword.Text = "Пароль";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(14, 128);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(131, 16);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "Електронна пошта";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(14, 74);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(117, 16);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "Ім\'я користувача";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.FillWeight = 150F;
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Назва";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn1
+            // 
+            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
+            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn1
+            // 
+            this.addressDataGridViewTextBoxColumn1.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.addressDataGridViewTextBoxColumn1.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn1.Name = "addressDataGridViewTextBoxColumn1";
+            this.addressDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // sellerDataGridViewTextBoxColumn1
+            // 
+            this.sellerDataGridViewTextBoxColumn1.DataPropertyName = "Seller";
+            this.sellerDataGridViewTextBoxColumn1.HeaderText = "Продавець";
+            this.sellerDataGridViewTextBoxColumn1.Name = "sellerDataGridViewTextBoxColumn1";
+            this.sellerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Ціна";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Назва";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sellerDataGridViewTextBoxColumn
+            // 
+            this.sellerDataGridViewTextBoxColumn.DataPropertyName = "Seller";
+            this.sellerDataGridViewTextBoxColumn.HeaderText = "Продавець";
+            this.sellerDataGridViewTextBoxColumn.Name = "sellerDataGridViewTextBoxColumn";
+            this.sellerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Ціна";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormProfile
             // 
@@ -314,8 +423,9 @@
             this.Text = "FormProfile";
             this.pnlMainContainer.ResumeLayout(false);
             this.pnlMainContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBoughtListings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBoughtListings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +446,16 @@
         private StyledButton btnClearBoughtListings;
         private StyledButton btnRefreshBoughtListings;
         private StyledButton btnTogglePasswordVisibility;
+        private System.Windows.Forms.BindingSource listingBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }

@@ -43,6 +43,25 @@ namespace code.Forms
             txtEmail.Text = UserSession.CurrentUser.Email;
             txtPassword.Text = UserSession.CurrentUser.Password;
             txtPassword.PasswordChar = '*';
+
+            var headingFont = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            Padding cellPadding = new Padding(5, 5, 5, 5);
+
+            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+            dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle.Font = headingFont;
+            dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
+            foreach (DataGridViewColumn column in dataGridViewBoughtListings.Columns)
+            {
+                column.DefaultCellStyle.Padding = cellPadding;
+            }
+
+            dataGridViewAddedListings.DataSource = UserSession.CurrentUser.AddedListings;
+            dataGridViewAddedListings.ColumnHeadersDefaultCellStyle.Font = headingFont;
+            dataGridViewAddedListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
+            foreach (DataGridViewColumn column in dataGridViewAddedListings.Columns)
+            {
+                column.DefaultCellStyle.Padding = cellPadding;
+            }
         }
 
         private void OpenChildForm(Form newForm)
@@ -78,8 +97,15 @@ namespace code.Forms
             var newUsername = txtUsername.Text;
             var newPassword = txtPassword.Text;
             var newEmail = txtEmail.Text;
+            var currentUsername = UserSession.CurrentUser.Name;
+            var currentPassword = UserSession.CurrentUser.Password;
+            var currentEmail = UserSession.CurrentUser.Email;
 
-            if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
+            if (newUsername == currentUsername && newPassword == currentPassword && newEmail == currentEmail)
+            {
+                MessageBox.Show("Ваші облікові дані не були оновлені, бо ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
+            }
+            else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
             {
                 DialogResult confirmResult = MessageBox.Show("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни", MessageBoxButtons.YesNo);
 
