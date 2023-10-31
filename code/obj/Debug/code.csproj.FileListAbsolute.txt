@@ -31,3 +31,4 @@ C:\Users\user\Desktop\projects\code\obj\Debug\code.csproj.CoreCompileInputs.cach
 C:\Users\user\Desktop\projects\code\obj\Debug\code.exe
 C:\Users\user\Desktop\projects\code\obj\Debug\code.pdb
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormLogin.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
