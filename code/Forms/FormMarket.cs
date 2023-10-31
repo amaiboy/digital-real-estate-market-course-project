@@ -129,13 +129,17 @@ namespace code.Forms
 
         public void AddListing(Listing listing)
         {
-            listings.Add(listing);
+            var updatedListings = listings.ToList();
+            updatedListings.Add(listing);
+            listings = updatedListings;
             dataGridViewListings.DataSource = listings;
         }
 
         public void RemoveListing(Listing listing)
         {
-            listings.Remove(listing);
+            var updatedListings = listings.ToList();
+            updatedListings.Remove(listing);
+            listings = updatedListings;
             dataGridViewListings.DataSource = listings;
         }
 
