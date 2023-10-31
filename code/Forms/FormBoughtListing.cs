@@ -16,6 +16,7 @@ namespace code.Forms
         {
             InitializeComponent();
 
+            this.Text = listing.Name;
             lblName.Text = listing.Name;
             lblSeller.Text = $"Куплено від: {listing.Seller}";
             lblDescription.Text = listing.Description;

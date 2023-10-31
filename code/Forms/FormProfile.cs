@@ -60,6 +60,15 @@ namespace code.Forms
             {
                 column.DefaultCellStyle.Padding = cellPadding;
             }
+
+            if (dataGridViewBoughtListings.Rows.Count != 0)
+            {
+                lblEmptyBoughtListings.Visible = false;
+            }
+            if (dataGridViewAddedListings.Rows.Count != 0)
+            {
+                lblEmptyAddedListings.Visible = false;
+            }
         }
 
         private void OpenChildForm(Form newForm)
@@ -122,6 +131,11 @@ namespace code.Forms
         {
             dataGridViewBoughtListings.DataSource = null;
             dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+
+            if (dataGridViewBoughtListings.Rows.Count != 0)
+            {
+                lblEmptyBoughtListings.Visible = false;
+            }
         }
 
         private void btnClearBoughtListings_Click(object sender, EventArgs e)
