@@ -37,11 +37,11 @@
             this.formTitle = new code.FormTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.dataGridViewBoughtListings = new System.Windows.Forms.DataGridView();
             this.dataGridViewAddedListings = new System.Windows.Forms.DataGridView();
             this.btnSaveChanges = new code.StyledButton();
@@ -72,9 +72,9 @@
             this.pnlMainContainer.Controls.Add(this.btnSaveChanges);
             this.pnlMainContainer.Controls.Add(this.dataGridViewAddedListings);
             this.pnlMainContainer.Controls.Add(this.dataGridViewBoughtListings);
-            this.pnlMainContainer.Controls.Add(this.textBox3);
-            this.pnlMainContainer.Controls.Add(this.textBox2);
-            this.pnlMainContainer.Controls.Add(this.textBox1);
+            this.pnlMainContainer.Controls.Add(this.txtPassword);
+            this.pnlMainContainer.Controls.Add(this.txtEmail);
+            this.pnlMainContainer.Controls.Add(this.txtUsername);
             this.pnlMainContainer.Controls.Add(this.lblPassword);
             this.pnlMainContainer.Controls.Add(this.lblEmail);
             this.pnlMainContainer.Controls.Add(this.lblUsername);
@@ -95,12 +95,12 @@
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Ім\'я користувача";
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(739, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtUsername.Location = new System.Drawing.Point(17, 93);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(739, 22);
+            this.txtUsername.TabIndex = 4;
             // 
             // lblEmail
             // 
@@ -111,12 +111,12 @@
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Електронна пошта";
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(739, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtEmail.Location = new System.Drawing.Point(17, 147);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(739, 22);
+            this.txtEmail.TabIndex = 4;
             // 
             // lblPassword
             // 
@@ -127,12 +127,12 @@
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Пароль";
             // 
-            // textBox3
+            // txtPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(17, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(739, 22);
-            this.textBox3.TabIndex = 4;
+            this.txtPassword.Location = new System.Drawing.Point(17, 201);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(739, 22);
+            this.txtPassword.TabIndex = 4;
             // 
             // dataGridViewBoughtListings
             // 
@@ -306,9 +306,9 @@
         private FormTitle formTitle;
         private System.Windows.Forms.Panel pnlMainContainer;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.DataGridView dataGridViewAddedListings;

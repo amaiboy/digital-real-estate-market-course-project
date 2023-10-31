@@ -29,7 +29,7 @@ namespace code.Forms
                 {
                     // User user = login.User;
                     // I think User class can hold properties like Name, Email, Password, and probably BoughtListings and AddedListings
-                    this.formTitle.Text = "Привіт, " + login.Username;
+                    this.formTitle.Text = "Привіт, " + UserSession.CurrentUser.Name + "!";
                     UserSession.IsLoggedIn = true;
                 }
                 else
@@ -37,6 +37,10 @@ namespace code.Forms
                     OpenChildForm(new FormProfileError());
                 }
             }
+
+            txtUsername.Text = UserSession.CurrentUser.Name;
+            txtEmail.Text = UserSession.CurrentUser.Email;
+            txtPassword.Text = UserSession.CurrentUser.Password;
         }
 
         private void OpenChildForm(Form newForm)

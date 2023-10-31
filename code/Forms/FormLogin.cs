@@ -12,15 +12,6 @@ namespace code.Forms
 {
     public partial class FormLogin : Form
     {
-        public string Username
-        {
-            get; set;
-        }
-        public string Password
-        {
-            get; set;
-        }
-
         public FormLogin()
         {
             InitializeComponent();
@@ -37,8 +28,11 @@ namespace code.Forms
             if (!string.IsNullOrEmpty(username) && password.Length >= 6)
             {
                 this.DialogResult = DialogResult.OK;
-                this.Username = username;
-                this.Password = password;
+
+                UserSession.CurrentUser.Name = username;
+                UserSession.CurrentUser.Password = password;
+                UserSession.CurrentUser.Email = "undefined@undefined.com";
+
                 UserSession.IsLoggedIn = true;
             }
             else
@@ -59,10 +53,16 @@ namespace code.Forms
             this.Hide();
             if (signUpForm.ShowDialog() == DialogResult.OK)
             {
-                this.DialogResult = DialogResult.OK;
-                this.Username = signUpForm.Username;
-                this.Password = signUpForm.Password;
+                var username = signUpForm.Username;
+                var password = signUpForm.Password;
+                var email = signUpForm.Email;
+
+                UserSession.CurrentUser.Name = username;
+                UserSession.CurrentUser.Password = password;
+                UserSession.CurrentUser.Email = email;
                 UserSession.IsLoggedIn = true;
+
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
