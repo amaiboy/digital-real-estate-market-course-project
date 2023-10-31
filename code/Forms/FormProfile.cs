@@ -125,7 +125,9 @@ namespace code.Forms
 
         private void btnClearBoughtListings_Click(object sender, EventArgs e)
         {
+            dataGridViewBoughtListings.DataSource = null;
             UserSession.CurrentUser.BoughtListings.Clear();
+            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
         }
 
         private void dataGridViewBoughtListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
