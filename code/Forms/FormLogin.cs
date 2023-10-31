@@ -42,7 +42,7 @@ namespace code.Forms
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введено невірний логін або пароль. Будь ласка, спробуйте ще раз", "Йой... Шось пішло не так", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoginAttempts++;
 
                 if (LoginAttempts >= 3)
