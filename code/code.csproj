@@ -64,6 +64,12 @@
     <Compile Include="Forms\FormHelp.Designer.cs">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormMarket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHelp.resx">
       <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMarket.resx">
       <DependentUpon>FormMarket.cs</DependentUpon>

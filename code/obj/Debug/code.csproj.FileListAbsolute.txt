@@ -30,3 +30,4 @@ C:\Users\user\Desktop\projects\code\obj\Debug\code.csproj.GenerateResource.cache
 C:\Users\user\Desktop\projects\code\obj\Debug\code.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\projects\code\obj\Debug\code.exe
 C:\Users\user\Desktop\projects\code\obj\Debug\code.pdb
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormLogin.resources

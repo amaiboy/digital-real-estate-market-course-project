@@ -17,6 +17,9 @@ namespace code.Forms
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;
+
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
