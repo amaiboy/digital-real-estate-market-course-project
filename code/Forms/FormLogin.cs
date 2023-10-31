@@ -39,6 +39,7 @@ namespace code.Forms
                 this.DialogResult = DialogResult.OK;
                 this.Username = username;
                 this.Password = password;
+                UserSession.IsLoggedIn = true;
             }
             else
             {
@@ -61,6 +62,7 @@ namespace code.Forms
                 this.DialogResult = DialogResult.OK;
                 this.Username = signUpForm.Username;
                 this.Password = signUpForm.Password;
+                UserSession.IsLoggedIn = true;
             }
             else
             {

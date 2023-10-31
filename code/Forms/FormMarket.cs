@@ -12,6 +12,7 @@ namespace code.Forms
 {
     public partial class FormMarket : Form
     {
+        // TODO: Convert list to file and load it
         readonly List<Listing> listings = new List<Listing> {
             new Listing {
                 Name = "Однокімнатна квартира в центрі міста",
@@ -124,6 +125,18 @@ namespace code.Forms
             dropdownSortByName.SelectedIndex = 0;
             dropdownSortBySeller.SelectedIndex = 0;
             dropdownSortByPrice.SelectedIndex = 0;
+        }
+
+        public void AddListing(Listing listing)
+        {
+            listings.Add(listing);
+            dataGridViewListings.DataSource = listings;
+        }
+
+        public void RemoveListing(Listing listing)
+        {
+            listings.Remove(listing);
+            dataGridViewListings.DataSource = listings;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

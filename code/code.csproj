@@ -115,6 +115,7 @@
     <Compile Include="StyledButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>

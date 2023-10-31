@@ -38,7 +38,7 @@
             // 
             this.labelWelcomeMessage.AutoSize = true;
             this.labelWelcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcomeMessage.Location = new System.Drawing.Point(89, 275);
+            this.labelWelcomeMessage.Location = new System.Drawing.Point(89, 281);
             this.labelWelcomeMessage.Name = "labelWelcomeMessage";
             this.labelWelcomeMessage.Size = new System.Drawing.Size(607, 37);
             this.labelWelcomeMessage.TabIndex = 4;
@@ -47,7 +47,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Image = global::code.Properties.Resources.sad;
-            this.logoPictureBox.Location = new System.Drawing.Point(291, 92);
+            this.logoPictureBox.Location = new System.Drawing.Point(291, 98);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(179, 165);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -57,7 +57,7 @@
             // labelRandomTip
             // 
             this.labelRandomTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRandomTip.Location = new System.Drawing.Point(244, 334);
+            this.labelRandomTip.Location = new System.Drawing.Point(244, 340);
             this.labelRandomTip.Name = "labelRandomTip";
             this.labelRandomTip.Size = new System.Drawing.Size(290, 98);
             this.labelRandomTip.TabIndex = 5;
