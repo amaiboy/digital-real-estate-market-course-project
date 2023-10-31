@@ -37,6 +37,7 @@ namespace code.Forms
                     Seller = UserSession.CurrentUser.Name
                 };
                 UserSession.AvailableListings.Add(listing);
+                UserSession.CurrentUser.AddedListings.Add(listing);
                 Close();
             }
         }
