@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace code.Forms
 {
@@ -69,6 +70,27 @@ namespace code.Forms
             else
             {
                 txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            var newUsername = txtUsername.Text;
+            var newPassword = txtPassword.Text;
+            var newEmail = txtEmail.Text;
+
+            if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
+            {
+                DialogResult confirmResult = MessageBox.Show("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    UserSession.CurrentUser.Name = newUsername;
+                    UserSession.CurrentUser.Password = newPassword;
+                    UserSession.CurrentUser.Email = newEmail;
+
+                    MessageBox.Show("Ваші облікові дані були успішно оновлено.", "Оновлено успішно");
+                }
             }
         }
     }
