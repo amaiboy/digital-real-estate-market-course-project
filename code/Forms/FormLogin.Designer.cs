@@ -50,6 +50,7 @@
             this.btnSignUp.TabIndex = 12;
             this.btnSignUp.Text = "Зарєструватись";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnLogin
             // 
@@ -64,6 +65,7 @@
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Увійти";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblPassword
             // 

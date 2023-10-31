@@ -19,17 +19,12 @@ namespace code.Forms
             this.ControlBox = false;
 
             FormLogin login = new FormLogin();
-            login.ShowDialog();
-        }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            // TODO: Add exception handling for when the username already exists
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            // TODO: Add form validation. Check for username and password validity.
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                // User user = login.User;
+                // I think User class can hold properties like Name, Email, Password, and probably BoughtListings and AddedListings
+                this.formTitle.Text = "Привіт, " + login.Username;
+            }
         }
     }
 }
