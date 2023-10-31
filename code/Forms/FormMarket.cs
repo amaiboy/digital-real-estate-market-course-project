@@ -126,11 +126,20 @@ namespace code.Forms
             dropdownSortByPrice.SelectedIndex = 0;
         }
 
-        private void btnExecuteSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
             var filteredList = listings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
             dataGridViewListings.DataSource = filteredList.ToList();
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Пошук за назвою чи описом...")
+            {
+                txtSearch.Text = string.Empty;
+                txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
         }
 
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -140,12 +149,17 @@ namespace code.Forms
             listingForm.ShowDialog();
         }
 
-        private void txtSearch_Enter(object sender, EventArgs e)
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txtSearch.Text == "Пошук за назвою чи описом...")
+            if (e.KeyCode == Keys.Enter)
             {
-                txtSearch.Text = string.Empty;
-                txtSearch.ForeColor = System.Drawing.Color.Black;
+                // Call the same method or perform the same operation as btnSearch does
+                btnSearch_Click(sender, e);
+
+                // Prevent the beep sound
+                e.SuppressKeyPress = true;
+                e.Handled = true;
             }
         }
 
@@ -249,23 +263,25 @@ namespace code.Forms
                 dropdownSortByName.SelectedIndex = 0;
             }
         }
-        private void QuickSort(string type,List<Listing> list)
+
+        private void QuickSort(string type, List<Listing> list)
         {
-       
-                Sort(list, 0, list.Count - 1, type);
+            Sort(list, 0, list.Count - 1, type);
         }
+
         private void Sort(List<Listing> list, int left, int right, string type)
         {
-            if(left<right)
+            if (left < right)
             {
                 int pivotIndex = Partition(list, left, right, type);
                 Sort(list, left, pivotIndex - 1, type);
                 Sort(list, pivotIndex + 1, right, type);
             }
         }
+
         private int Partition(List<Listing> list, int left, int right, string type)
         {
-            if(type == "Ціна")
+            if (type == "Ціна")
             {
                 int pivot = list[right].Price;
                 int i = left - 1;
@@ -284,7 +300,7 @@ namespace code.Forms
                 list[i + 1] = list[right];
                 list[right] = temp;
                 return i + 1;
-            } 
+            }
             if (type == "Назва")
             {
                 string pivot = list[right].Name;
@@ -327,11 +343,12 @@ namespace code.Forms
             }
             return 0;
         }
+
         private void QuickSortDescending(string type, List<Listing> list)
         {
-
             SortDescending(list, 0, list.Count - 1, type);
         }
+
         private void SortDescending(List<Listing> list, int left, int right, string type)
         {
             if (left < right)
@@ -341,6 +358,7 @@ namespace code.Forms
                 SortDescending(list, pivotIndex + 1, right, type);
             }
         }
+
         private int PartitionDescending(List<Listing> list, int left, int right, string type)
         {
             if (type == "Ціна")
@@ -405,6 +423,7 @@ namespace code.Forms
             }
             return 0;
         }
+
         private void SortListings(ComboBox dropdown)
         {
             var nameHeading = "Назва";
