@@ -229,6 +229,7 @@
             this.dataGridViewAddedListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAddedListings.Size = new System.Drawing.Size(360, 224);
             this.dataGridViewAddedListings.TabIndex = 5;
+            this.dataGridViewAddedListings.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAddedListings_CellDoubleClick);
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -326,6 +327,7 @@
             this.dataGridViewBoughtListings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBoughtListings.Size = new System.Drawing.Size(360, 224);
             this.dataGridViewBoughtListings.TabIndex = 5;
+            this.dataGridViewBoughtListings.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBoughtListings_CellDoubleClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 

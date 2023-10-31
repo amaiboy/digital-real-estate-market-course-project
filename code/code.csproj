@@ -52,6 +52,12 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormBoughtListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBoughtListing.Designer.cs">
+      <DependentUpon>FormBoughtListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBoughtListing.resx">
+      <DependentUpon>FormBoughtListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDevelopers.resx">
       <DependentUpon>FormDevelopers.cs</DependentUpon>

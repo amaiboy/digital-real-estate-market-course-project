@@ -33,3 +33,4 @@ D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.For
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfileError.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormListing.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBoughtListing.resources

@@ -126,5 +126,17 @@ namespace code.Forms
         {
             UserSession.CurrentUser.BoughtListings.Clear();
         }
+
+        private void dataGridViewBoughtListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var selectedListing = (Listing)dataGridViewBoughtListings.SelectedRows[0].DataBoundItem;
+            FormBoughtListing listingForm = new FormBoughtListing(selectedListing);
+            listingForm.ShowDialog();
+        }
+
+        private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
