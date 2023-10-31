@@ -28,9 +28,6 @@ namespace code.Forms
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
-                    // User user = login.User;
-                    // I think User class can hold properties like Name, Email, Password, and probably BoughtListings and AddedListings
-                    this.formTitle.Text = "Привіт, " + UserSession.CurrentUser.Name + "!";
                     UserSession.IsLoggedIn = true;
                 }
                 else
@@ -118,6 +115,16 @@ namespace code.Forms
                     MessageBox.Show("Ваші облікові дані були успішно оновлено.", "Оновлено успішно");
                 }
             }
+        }
+
+        private void btnRefreshBoughtListings_Click(object sender, EventArgs e)
+        {
+            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+        }
+
+        private void btnClearBoughtListings_Click(object sender, EventArgs e)
+        {
+            UserSession.CurrentUser.BoughtListings.Clear();
         }
     }
 }

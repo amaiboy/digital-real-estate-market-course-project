@@ -1,6 +1,6 @@
 ﻿namespace code.Forms
 {
-    partial class ListingForm
+    partial class FormListing
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListingForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListing));
             this.btnBuy = new code.StyledButton();
             this.btnClose = new code.StyledButton();
             this.lblName = new System.Windows.Forms.Label();

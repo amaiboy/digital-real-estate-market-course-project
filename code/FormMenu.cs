@@ -15,14 +15,13 @@ namespace code
     {
         private Button currentButton;
         private Form activeForm;
-        private readonly FormMarket formMarket;
 
         public FormMenu()
         {
             InitializeComponent();
             OpenChildForm(new Forms.FormWelcome(), null);
-            formMarket = new Forms.FormMarket();
-            UserSession.CurrentUser = new User(formMarket);
+            UserSession.CurrentUser = new User();
+            UserSession.IsLoggedIn = false;
         }
 
         private void ActivateButton(object btnSender)
@@ -72,7 +71,7 @@ namespace code
 
         private void buttonMarket_Click(object sender, EventArgs e)
         {
-            OpenChildForm(formMarket, sender);
+            OpenChildForm(new Forms.FormMarket(), sender);
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)

@@ -10,13 +10,15 @@ using System.Windows.Forms;
 
 namespace code.Forms
 {
-    public partial class ListingForm : Form
+    public partial class FormListing : Form
     {
         private readonly Listing listing;
+        private readonly FormMarket formMarket;
 
-        public ListingForm(Listing listing)
+        public FormListing(Listing listing, FormMarket formMarket)
         {
             InitializeComponent();
+            this.formMarket = formMarket;
             this.listing = listing;
             this.Text = listing.Name;
             this.lblName.Text = listing.Name;
@@ -33,7 +35,15 @@ namespace code.Forms
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            // TODO: Implement buying mechanism by removing the listing from the database
+            if (UserSession.IsLoggedIn)
+            {
+                UserSession.CurrentUser.BoughtListings.Add(listing);
+                formMarket.RemoveListing(listing);
+            }
+            else
+            {
+                MessageBox.Show("Ви повинні авторизуватися, щоб купити нерухомість.", "Помилка придбання об'єкту", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             Close();
         }
     }

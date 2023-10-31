@@ -13,7 +13,7 @@ namespace code.Forms
     public partial class FormMarket : Form
     {
         // TODO: Convert list to file and load it
-        readonly List<Listing> listings = new List<Listing> {
+        List<Listing> listings = new List<Listing> {
             new Listing {
                 Name = "Однокімнатна квартира в центрі міста",
                 Description = "Компактна однокімнатна квартира в самому центрі міста. Ідеально підходить для однієї людини або пари. Поруч кафе, театри та зупинки громадського транспорту.",
@@ -158,7 +158,7 @@ namespace code.Forms
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
-            ListingForm listingForm = new ListingForm(listing);
+            FormListing listingForm = new FormListing(listing, this);
             listingForm.ShowDialog();
         }
 

@@ -13,7 +13,6 @@ D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.For
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormHelp.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
-D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.ListingForm.resources
 C:\Users\user\Desktop\projects\code\bin\Debug\code.exe.config
 C:\Users\user\Desktop\projects\code\bin\Debug\code.exe
 C:\Users\user\Desktop\projects\code\bin\Debug\code.pdb
@@ -33,3 +32,4 @@ C:\Users\user\Desktop\projects\code\obj\Debug\code.pdb
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormLogin.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfileError.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormListing.resources
