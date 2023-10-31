@@ -41,6 +41,7 @@ namespace code.Forms
             txtUsername.Text = UserSession.CurrentUser.Name;
             txtEmail.Text = UserSession.CurrentUser.Email;
             txtPassword.Text = UserSession.CurrentUser.Password;
+            txtPassword.PasswordChar = '*';
         }
 
         private void OpenChildForm(Form newForm)
@@ -57,6 +58,18 @@ namespace code.Forms
             this.pnlMainContainer.Tag = newForm;
             newForm.BringToFront();
             newForm.Show();
+        }
+
+        private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
         }
     }
 }
