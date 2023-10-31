@@ -8,6 +8,13 @@ namespace code
 {
     public static class UserSession
     {
-        public static bool IsLoggedIn { get; set; }
+        public static bool IsLoggedIn
+        {
+            get; set;
+        }
+        public static User CurrentUser
+        {
+            get; set;
+        }
     }
 }

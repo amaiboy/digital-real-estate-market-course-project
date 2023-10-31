@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Forms;
 
 namespace code
 {
@@ -14,11 +15,14 @@ namespace code
     {
         private Button currentButton;
         private Form activeForm;
+        private readonly FormMarket formMarket;
 
         public FormMenu()
         {
             InitializeComponent();
             OpenChildForm(new Forms.FormWelcome(), null);
+            formMarket = new Forms.FormMarket();
+            UserSession.CurrentUser = new User(formMarket);
         }
 
         private void ActivateButton(object btnSender)
@@ -68,7 +72,7 @@ namespace code
 
         private void buttonMarket_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormMarket(), sender);
+            OpenChildForm(formMarket, sender);
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
