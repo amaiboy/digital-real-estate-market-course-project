@@ -40,6 +40,7 @@ namespace code.Forms
             txtEmail.Text = UserSession.CurrentUser.Email;
             txtPassword.Text = UserSession.CurrentUser.Password;
             txtPassword.PasswordChar = '*';
+            formTitle.Text = $"Профіль користувача {UserSession.CurrentUser.Name}";
 
             var headingFont = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             Padding cellPadding = new Padding(5, 5, 5, 5);
