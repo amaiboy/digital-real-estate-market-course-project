@@ -120,6 +120,7 @@ namespace code.Forms
 
         private void btnRefreshBoughtListings_Click(object sender, EventArgs e)
         {
+            dataGridViewBoughtListings.DataSource = null;
             dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
         }
 
@@ -140,6 +141,12 @@ namespace code.Forms
         private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAddListing_Click(object sender, EventArgs e)
+        {
+            FormNewListing listingForm = new FormNewListing();
+            listingForm.ShowDialog();
         }
     }
 }
