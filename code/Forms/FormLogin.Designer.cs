@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.btnSignUp = new code.StyledButton();
             this.btnLogin = new code.StyledButton();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(460, 240);
             this.MinimumSize = new System.Drawing.Size(460, 240);
             this.Name = "FormLogin";

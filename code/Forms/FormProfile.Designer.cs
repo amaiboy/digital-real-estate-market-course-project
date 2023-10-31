@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.formTitle = new code.FormTitle();
+            this.pnlMainContainer = new System.Windows.Forms.Panel();
+            this.pnlMainContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // formTitle
@@ -42,22 +44,33 @@
             this.formTitle.TabIndex = 2;
             this.formTitle.Text = "Профіль";
             // 
+            // pnlMainContainer
+            // 
+            this.pnlMainContainer.Controls.Add(this.formTitle);
+            this.pnlMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlMainContainer.Name = "pnlMainContainer";
+            this.pnlMainContainer.Size = new System.Drawing.Size(768, 561);
+            this.pnlMainContainer.TabIndex = 3;
+            // 
             // FormProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(768, 561);
-            this.Controls.Add(this.formTitle);
+            this.Controls.Add(this.pnlMainContainer);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(784, 600);
             this.MinimumSize = new System.Drawing.Size(784, 600);
             this.Name = "FormProfile";
             this.Text = "FormProfile";
+            this.pnlMainContainer.ResumeLayout(false);
+            this.pnlMainContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private FormTitle formTitle;
+        private System.Windows.Forms.Panel pnlMainContainer;
     }
 }
