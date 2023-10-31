@@ -26,6 +26,8 @@ namespace code.Forms
             InitializeComponent();
         }
 
+        public static int LoginAttempts = 0;
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var username = txtUsername.Text;
@@ -41,7 +43,12 @@ namespace code.Forms
             else
             {
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.DialogResult = DialogResult.Cancel;
+                LoginAttempts++;
+
+                if (LoginAttempts >= 3)
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
             }
         }
 

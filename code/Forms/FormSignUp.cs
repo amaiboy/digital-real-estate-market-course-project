@@ -25,6 +25,8 @@ namespace code.Forms
             get; set;
         }
 
+        public static int SignupAttempts = 0;
+
         public FormSignUp()
         {
             InitializeComponent();
@@ -54,7 +56,12 @@ namespace code.Forms
             else
             {
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.DialogResult = DialogResult.Cancel;
+                SignupAttempts++;
+
+                if (SignupAttempts >= 3)
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
             }
         }
     }
