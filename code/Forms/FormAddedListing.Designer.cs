@@ -34,7 +34,7 @@
             this.lblSeller = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnDelete = new code.StyledButton();
+            this.lblDateLastViewed = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPrice
@@ -85,27 +85,22 @@
             this.lblName.TabIndex = 13;
             this.lblName.Text = "Name here...";
             // 
-            // btnDelete
+            // lblDateLastViewed
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(18, 222);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(128, 27);
-            this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "Видалити";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.lblDateLastViewed.AutoSize = true;
+            this.lblDateLastViewed.Location = new System.Drawing.Point(15, 223);
+            this.lblDateLastViewed.Name = "lblDateLastViewed";
+            this.lblDateLastViewed.Size = new System.Drawing.Size(119, 13);
+            this.lblDateLastViewed.TabIndex = 17;
+            this.lblDateLastViewed.Text = "Date last viewed here...";
             // 
             // FormAddedListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 261);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblDateLastViewed);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblSeller);
             this.Controls.Add(this.lblDescription);
@@ -127,6 +122,6 @@
         private System.Windows.Forms.Label lblSeller;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblName;
-        private StyledButton btnDelete;
+        private System.Windows.Forms.Label lblDateLastViewed;
     }
 }

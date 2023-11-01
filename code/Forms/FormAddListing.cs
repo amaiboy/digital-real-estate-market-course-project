@@ -54,7 +54,7 @@ namespace code.Forms
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
-            int characterCount = txtDescription.Text.Length;
+            var characterCount = txtDescription.Text.Length;
             lblDescriptionCharactersCount.Text = characterCount.ToString();
 
             if (characterCount == 250)

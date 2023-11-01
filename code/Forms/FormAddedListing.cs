@@ -22,6 +22,7 @@ namespace code.Forms
             lblDescription.Text = listing.Description;
             lblAddress.Text = listing.Address;
             lblPrice.Text = $"{listing.Price} ₴";
+            lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
         }
     }
 }
