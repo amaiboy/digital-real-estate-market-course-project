@@ -38,9 +38,14 @@ namespace code.Forms
             login.ShowDialog();
         }
 
-        public bool DoesUsernameOrEmailExist(string username, string email)
+        public bool DoesUsernameExist(string username)
         {
-            return GlobalData.Users.Any(user => user.Name == username || user.Email == email);
+            return GlobalData.Users.Any(user => user.Name == username);
+        }
+
+        public bool DoesEmailExist(string email)
+        {
+            return GlobalData.Users.Any(user => user.Email == email);
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -56,10 +61,17 @@ namespace code.Forms
                 errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
             }
 
-            if (DoesUsernameOrEmailExist(username, email))
+            if (DoesUsernameExist(username))
             {
-                errors.Add("Ім'я користувача або електронна пошта вже існує.");
+                errors.Add("Ім'я користувача вже існує.");
             }
+
+            if (DoesEmailExist(email))
+            {
+                errors.Add("Електронна пошта вже існує.");
+                // TODO: Add account recovery ability by email
+            }
+
 
             if (username.Length < 3 || username.Length > 16)
             {
