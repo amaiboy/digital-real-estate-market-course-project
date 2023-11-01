@@ -25,8 +25,6 @@ namespace code.Forms
             get; set;
         }
 
-        public static int SignupAttempts = 0;
-
         public FormSignUp()
         {
             InitializeComponent();
@@ -45,24 +43,46 @@ namespace code.Forms
             var password = txtPassword.Text;
             var email = txtEmail.Text;
 
-            // TODO: Add better validation
-            if (!string.IsNullOrEmpty(username) && password.Length >= 6 && !string.IsNullOrEmpty(email))
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Username = username;
-                this.Password = password;
-                this.Email = email;
-            }
-            else
-            {
-                MessageBox.Show("Введено невірний логін або пароль. Будь ласка, спробуйте ще раз", "Йой... Шось пішло не так", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SignupAttempts++;
+            List<string> errors = new List<string>();
 
-                if (SignupAttempts >= 3)
-                {
-                    this.DialogResult = DialogResult.Cancel;
-                }
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
+            {
+                errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
             }
+
+            if (username.Length < 3 || username.Length > 16)
+            {
+                // TODO: Check for username uniqueness
+                errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
+            }
+
+            if (password.Length < 8)
+            {
+                errors.Add("Пароль повинен мати довжину не менше 8 символів.");
+            }
+
+            try
+            {
+                // TODO: Check for email uniqueness
+                // TODO: Add email verification
+                var validEmail = new System.Net.Mail.MailAddress(email);
+            }
+            catch (FormatException)
+            {
+                errors.Add("Електронна пошта не дійсна.");
+            }
+
+            if (errors.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errors), "Помилка реєстрації", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            this.Username = username;
+            this.Password = password;
+            this.Email = email;
+
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
