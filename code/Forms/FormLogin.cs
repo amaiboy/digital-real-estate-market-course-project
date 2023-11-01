@@ -75,6 +75,7 @@ namespace code.Forms
 
             this.DialogResult = DialogResult.OK;
             UserSession.CurrentUser = user;
+            GlobalData.AvailableListings.AddRange(user.AddedListings);
             UserSession.IsLoggedIn = true;
         }
 
