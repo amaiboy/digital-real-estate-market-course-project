@@ -81,7 +81,6 @@ namespace code.Forms
             this.Username = username;
             this.Password = password;
             this.Email = email;
-
             this.DialogResult = DialogResult.OK;
         }
     }

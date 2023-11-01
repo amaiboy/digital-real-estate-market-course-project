@@ -24,27 +24,41 @@ namespace code.Forms
             var username = txtUsername.Text;
             var password = txtPassword.Text;
 
-            // TODO: Add better validation
-            if (!string.IsNullOrEmpty(username) && password.Length >= 6)
+            List<string> errors = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                this.DialogResult = DialogResult.OK;
-
-                UserSession.CurrentUser.Name = username;
-                UserSession.CurrentUser.Password = password;
-                UserSession.CurrentUser.Email = "undefined@undefined.com";
-
-                UserSession.IsLoggedIn = true;
+                errors.Add("Ім'я користувача або пароль не можуть бути порожніми.");
             }
-            else
+
+            if (username.Length < 3 || username.Length > 16)
             {
-                MessageBox.Show("Введено невірний логін або пароль. Будь ласка, спробуйте ще раз", "Йой... Шось пішло не так", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
+            }
+
+            if (password.Length < 8)
+            {
+                errors.Add("Пароль має містити від 8 до 16 символів.");
+            }
+
+            if (errors.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errors), "Помилка авторизації", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoginAttempts++;
 
                 if (LoginAttempts >= 3)
                 {
                     this.DialogResult = DialogResult.Cancel;
                 }
+
+                return;
             }
+
+            this.DialogResult = DialogResult.OK;
+            UserSession.CurrentUser.Name = username;
+            UserSession.CurrentUser.Password = password;
+            UserSession.CurrentUser.Email = "undefined@undefined.com";
+            UserSession.IsLoggedIn = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
