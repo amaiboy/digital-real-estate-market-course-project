@@ -152,6 +152,18 @@ namespace code.Forms
             listingForm.ShowDialog();
         }
 
+        public void refreshAddedListings()
+        {
+            dataGridViewAddedListings.DataSource = null;
+            dataGridViewAddedListings.DataSource = UserSession.CurrentUser.AddedListings;
+            dataGridViewAddedListings.Refresh();
+
+            if (dataGridViewAddedListings.Rows.Count != 0)
+            {
+                lblEmptyAddedListings.Visible = false;
+            }
+        }
+
         private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -159,7 +171,7 @@ namespace code.Forms
 
         private void btnAddListing_Click(object sender, EventArgs e)
         {
-            FormAddListing formAddListing = new FormAddListing();
+            FormAddListing formAddListing = new FormAddListing(this);
             formAddListing.ShowDialog();
         }
     }
