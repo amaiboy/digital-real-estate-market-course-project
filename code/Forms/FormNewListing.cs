@@ -24,6 +24,15 @@ namespace code.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                string.IsNullOrWhiteSpace(txtAddress.Text) ||
+                numericUpDownPrice.Value == 0)
+            {
+                MessageBox.Show("Будь ласка, заповніть всі поля і переконайтеся, що ціна не дорівнює нулю", "Валідація полів");
+                return;
+            }
+
             DialogResult confirmResult = MessageBox.Show("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання", MessageBoxButtons.YesNo);
 
             if (confirmResult == DialogResult.Yes)

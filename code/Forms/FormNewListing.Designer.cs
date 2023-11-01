@@ -192,7 +192,7 @@
             this.MaximumSize = new System.Drawing.Size(460, 460);
             this.MinimumSize = new System.Drawing.Size(460, 460);
             this.Name = "FormNewListing";
-            this.Text = "FormNewListing";
+            this.Text = "Додайте нове оголошення";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
