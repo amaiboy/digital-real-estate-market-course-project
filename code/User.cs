@@ -17,6 +17,7 @@ namespace code
         {
             get; set;
         }
+        // TODO: Add password hashing
         public string Password
         {
             get; set;

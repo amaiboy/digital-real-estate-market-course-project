@@ -18,7 +18,7 @@ namespace code.Forms
             this.Text = string.Empty;
             this.ControlBox = false;
 
-            dataGridViewListings.DataSource = UserSession.AvailableListings;
+            dataGridViewListings.DataSource = GlobalData.AvailableListings;
             dataGridViewListings.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             Padding cellPadding = new Padding(5, 5, 5, 5);
             dataGridViewListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
@@ -34,24 +34,24 @@ namespace code.Forms
 
         public void AddListing(Listing listing)
         {
-            var updatedListings = UserSession.AvailableListings.ToList();
+            var updatedListings = GlobalData.AvailableListings.ToList();
             updatedListings.Add(listing);
-            UserSession.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = UserSession.AvailableListings;
+            GlobalData.AvailableListings = updatedListings;
+            dataGridViewListings.DataSource = GlobalData.AvailableListings;
         }
 
         public void RemoveListing(Listing listing)
         {
-            var updatedListings = UserSession.AvailableListings.ToList();
+            var updatedListings = GlobalData.AvailableListings.ToList();
             updatedListings.Remove(listing);
-            UserSession.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = UserSession.AvailableListings;
+            GlobalData.AvailableListings = updatedListings;
+            dataGridViewListings.DataSource = GlobalData.AvailableListings;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
-            var filteredList = UserSession.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
+            var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
             dataGridViewListings.DataSource = filteredList.ToList();
         }
 
@@ -351,7 +351,7 @@ namespace code.Forms
             var sellerHeading = "Продавець";
             var priceHeading = "Ціна";
 
-            var listingsCopy = UserSession.AvailableListings.ToList();
+            var listingsCopy = GlobalData.AvailableListings.ToList();
             var selectedItem = dropdown.SelectedIndex;
 
             if (dropdown == dropdownSortByName)

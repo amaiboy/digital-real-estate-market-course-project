@@ -16,9 +16,5 @@ namespace code
         {
             get; set;
         }
-        public static List<Listing> AvailableListings
-        {
-            get; set;
-        }
     }
 }

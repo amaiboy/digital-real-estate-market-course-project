@@ -19,6 +19,11 @@ namespace code.Forms
 
         public static int LoginAttempts = 0;
 
+        public User ValidateLogin(string username, string password)
+        {
+            return GlobalData.Users.FirstOrDefault(user => user.Name == username && user.Password == password);
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var username = txtUsername.Text;
@@ -54,10 +59,22 @@ namespace code.Forms
                 return;
             }
 
+            var user = ValidateLogin(username, password);
+
+            if (user == null)
+            {
+                MessageBox.Show("Невірний логін або пароль.", "Помилка авторизації", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoginAttempts++;
+                if (LoginAttempts >= 3)
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
+
+                return;
+            }
+
             this.DialogResult = DialogResult.OK;
-            UserSession.CurrentUser.Name = username;
-            UserSession.CurrentUser.Password = password;
-            UserSession.CurrentUser.Email = "undefined@undefined.com";
+            UserSession.CurrentUser = user;
             UserSession.IsLoggedIn = true;
         }
 
@@ -71,9 +88,10 @@ namespace code.Forms
                 var password = signUpForm.Password;
                 var email = signUpForm.Email;
 
-                UserSession.CurrentUser.Name = username;
-                UserSession.CurrentUser.Password = password;
-                UserSession.CurrentUser.Email = email;
+                User user = new User(username, email, password);
+                GlobalData.Users.Add(user);
+
+                UserSession.CurrentUser = user;
                 UserSession.IsLoggedIn = true;
 
                 this.DialogResult = DialogResult.OK;

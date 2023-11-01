@@ -45,7 +45,7 @@ namespace code.Forms
                     Price = Convert.ToInt32(numericUpDownPrice.Value),
                     Seller = UserSession.CurrentUser.Name
                 };
-                UserSession.AvailableListings.Add(listing);
+                GlobalData.AvailableListings.Add(listing);
                 UserSession.CurrentUser.AddedListings.Add(listing);
 
                 Close();

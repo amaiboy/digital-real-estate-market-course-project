@@ -193,13 +193,61 @@ namespace code
             }
         };
 
+        List<User> users = new List<User>{
+            new User {
+                Name = "developer",
+                Email = "developer@real-estate-market.com",
+                Password = "developer",
+                BoughtListings = new List<Listing> {
+                    new Listing {
+                        Name = "Квартира в центрі",
+                        Description = "Квартира в центрі міста. Поруч театр, музей та кафе. Включає кондиціонер, Wi-Fi та пральну машину.",
+                        Address = "вул. Центральна, 234, Запоріжжя",
+                        Price = 57000,
+                        Seller = "Валерія Костенко",
+                    },
+                    new Listing {
+                        Name = "Офіс в бізнес-центрі",
+                        Description = "Офіс в бізнес-центрі. Ідеально підходить для IT-компанії або стартапу.",
+                        Address = "вул. Бізнес-центральна, 123, Запоріжжя",
+                        Price = 70000,
+                        Seller = "Максим Петров",
+                    }
+                },
+                AddedListings = new List<Listing> {
+                    new Listing {
+                        Name = "Будинок біля парку",
+                        Description = "Будинок біля парку з чотирма номерами. Включає ресторан, бар, лобі та конференц-зал.",
+                        Address = "вул. Паркова, 456, Запоріжжя",
+                        Price = 400000,
+                        Seller = "developer",
+                    },
+                    new Listing {
+                        Name = "Однокімнатна квартира в центрі",
+                        Description = "Однокімнатна квартира в центрі міста. Поруч театр, музей та кафе.",
+                        Address = "вул. Центральна, 234, Запоріжжя",
+                        Price = 60000,
+                        Seller = "developer",
+                    },
+                    new Listing {
+                        Name = "Дача на острові",
+                        Description = "Дача на острові з видом на море. Включає човен, каяки та риболовне спорядження.",
+                        Address = "вул. Острівна, 789, Запоріжжя",
+                        Price = 300000,
+                        Seller = "developer",
+                    }
+                }
+            }
+        };
+
         public FormMenu()
         {
             InitializeComponent();
             OpenChildForm(new Forms.FormWelcome(), null);
             UserSession.CurrentUser = new User();
             UserSession.IsLoggedIn = false;
-            UserSession.AvailableListings = this.predefinedListings;
+            GlobalData.AvailableListings = this.predefinedListings;
+            GlobalData.Users = this.users;
         }
 
         private void ActivateButton(object btnSender)

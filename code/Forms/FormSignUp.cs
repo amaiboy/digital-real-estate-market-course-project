@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,11 @@ namespace code.Forms
             login.ShowDialog();
         }
 
+        public bool DoesUsernameOrEmailExist(string username, string email)
+        {
+            return GlobalData.Users.Any(user => user.Name == username || user.Email == email);
+        }
+
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             var username = txtUsername.Text;
@@ -50,9 +56,13 @@ namespace code.Forms
                 errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
             }
 
+            if (DoesUsernameOrEmailExist(username, email))
+            {
+                errors.Add("Ім'я користувача або електронна пошта вже існує.");
+            }
+
             if (username.Length < 3 || username.Length > 16)
             {
-                // TODO: Check for username uniqueness
                 errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
             }
 
@@ -63,7 +73,6 @@ namespace code.Forms
 
             try
             {
-                // TODO: Check for email uniqueness
                 // TODO: Add email verification
                 var validEmail = new System.Net.Mail.MailAddress(email);
             }
