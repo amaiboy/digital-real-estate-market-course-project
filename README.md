@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/seesmof/">
-    <img src="./assets/images/logo.png" alt="Logo" height="80">
+    <img src="./assets/images/icon.png" alt="Logo" height="80">
   </a>
 
 <h1 align="center">Digital Real Estate Market - Course Project</h1>
