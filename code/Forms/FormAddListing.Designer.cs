@@ -172,7 +172,7 @@
             this.lblDescriptionCharactersCount.Text = "0";
             this.lblDescriptionCharactersCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FormNewListing
+            // FormAddListing
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 421);
@@ -191,7 +191,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(460, 460);
             this.MinimumSize = new System.Drawing.Size(460, 460);
-            this.Name = "FormNewListing";
+            this.Name = "FormAddListing";
             this.Text = "Додайте нове оголошення";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             this.ResumeLayout(false);
