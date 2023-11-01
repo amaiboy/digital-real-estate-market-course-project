@@ -76,7 +76,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Пошук";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnExecuteSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridViewListings
             // 
@@ -245,6 +245,7 @@
             this.txtSearch.TabIndex = 5;
             this.txtSearch.Text = "Пошук за назвою чи описом...";
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // FormMarket
             // 

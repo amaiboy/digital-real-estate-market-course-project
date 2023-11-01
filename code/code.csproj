@@ -52,6 +52,18 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAddedListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddedListing.Designer.cs">
+      <DependentUpon>FormAddedListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBoughtListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBoughtListing.Designer.cs">
+      <DependentUpon>FormBoughtListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +76,23 @@
     <Compile Include="Forms\FormHelp.Designer.cs">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormMarket.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormMarket.Designer.cs">
       <DependentUpon>FormMarket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddListing.Designer.cs">
+      <DependentUpon>FormAddListing.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormProfile.cs">
       <SubType>Form</SubType>
@@ -76,29 +100,53 @@
     <Compile Include="Forms\FormProfile.Designer.cs">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormProfileError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProfileError.Designer.cs">
+      <DependentUpon>FormProfileError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSignUp.Designer.cs">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormWelcome.Designer.cs">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListingForm.cs">
+    <Compile Include="Forms\FormBuyListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ListingForm.Designer.cs">
-      <DependentUpon>ListingForm.cs</DependentUpon>
+    <Compile Include="Forms\FormBuyListing.Designer.cs">
+      <DependentUpon>FormBuyListing.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTitle.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="Listing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StyledButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="StyledTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddedListing.resx">
+      <DependentUpon>FormAddedListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBoughtListing.resx">
+      <DependentUpon>FormBoughtListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDevelopers.resx">
       <DependentUpon>FormDevelopers.cs</DependentUpon>
@@ -106,17 +154,29 @@
     <EmbeddedResource Include="Forms\FormHelp.resx">
       <DependentUpon>FormHelp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMarket.resx">
       <DependentUpon>FormMarket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddListing.resx">
+      <DependentUpon>FormAddListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProfileError.resx">
+      <DependentUpon>FormProfileError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSignUp.resx">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListingForm.resx">
-      <DependentUpon>ListingForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormBuyListing.resx">
+      <DependentUpon>FormBuyListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

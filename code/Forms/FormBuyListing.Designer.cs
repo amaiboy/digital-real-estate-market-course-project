@@ -1,6 +1,6 @@
 ﻿namespace code.Forms
 {
-    partial class ListingForm
+    partial class FormBuyListing
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListingForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuyListing));
             this.btnBuy = new code.StyledButton();
             this.btnClose = new code.StyledButton();
             this.lblName = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "$ Price here...";
             // 
-            // ListingForm
+            // FormBuyListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,8 +133,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximumSize = new System.Drawing.Size(460, 310);
             this.MinimumSize = new System.Drawing.Size(460, 310);
-            this.Name = "ListingForm";
-            this.Text = "ListingForm";
+            this.Name = "FormBuyListing";
+            this.Text = "Назва нерухомості...";
             this.ResumeLayout(false);
             this.PerformLayout();
 
