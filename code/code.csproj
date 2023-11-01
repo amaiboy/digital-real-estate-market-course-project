@@ -82,11 +82,11 @@
     <Compile Include="Forms\FormMarket.Designer.cs">
       <DependentUpon>FormMarket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormNewListing.cs">
+    <Compile Include="Forms\FormAddListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormNewListing.Designer.cs">
-      <DependentUpon>FormNewListing.cs</DependentUpon>
+    <Compile Include="Forms\FormAddListing.Designer.cs">
+      <DependentUpon>FormAddListing.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormProfile.cs">
       <SubType>Form</SubType>
@@ -112,11 +112,11 @@
     <Compile Include="Forms\FormWelcome.Designer.cs">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormListing.cs">
+    <Compile Include="Forms\FormBuyListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormListing.Designer.cs">
-      <DependentUpon>FormListing.cs</DependentUpon>
+    <Compile Include="Forms\FormBuyListing.Designer.cs">
+      <DependentUpon>FormBuyListing.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTitle.cs">
       <SubType>Component</SubType>
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Forms\FormMarket.resx">
       <DependentUpon>FormMarket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormNewListing.resx">
-      <DependentUpon>FormNewListing.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAddListing.resx">
+      <DependentUpon>FormAddListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
@@ -162,8 +162,8 @@
     <EmbeddedResource Include="Forms\FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormListing.resx">
-      <DependentUpon>FormListing.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormBuyListing.resx">
+      <DependentUpon>FormBuyListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

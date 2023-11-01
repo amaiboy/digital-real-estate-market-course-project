@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace code.Forms
 {
-    public partial class FormListing : Form
+    public partial class FormBuyListing : Form
     {
         private readonly Listing listing;
         private readonly FormMarket formMarket;
 
-        public FormListing(Listing listing, FormMarket formMarket)
+        public FormBuyListing(Listing listing, FormMarket formMarket)
         {
             InitializeComponent();
             this.formMarket = formMarket;

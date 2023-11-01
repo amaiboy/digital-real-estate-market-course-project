@@ -159,8 +159,8 @@ namespace code.Forms
 
         private void btnAddListing_Click(object sender, EventArgs e)
         {
-            FormAddListing listingForm = new FormAddListing();
-            listingForm.ShowDialog();
+            FormAddListing formAddListing = new FormAddListing();
+            formAddListing.ShowDialog();
         }
     }
 }

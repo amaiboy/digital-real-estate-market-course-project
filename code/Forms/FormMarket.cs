@@ -67,7 +67,7 @@ namespace code.Forms
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
-            FormListing listingForm = new FormListing(listing, this);
+            FormBuyListing listingForm = new FormBuyListing(listing, this);
             listingForm.ShowDialog();
         }
 
