@@ -37,6 +37,11 @@ namespace code.Forms
         {
             if (UserSession.IsLoggedIn)
             {
+                if (UserSession.CurrentUser.Name == listing.Seller)
+                {
+                    MessageBox.Show("Ви не можете купувати свою нерухомість.", "Помилка придбання об'єкту", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserSession.CurrentUser.BoughtListings.Add(listing);
                 formMarket.RemoveListing(listing);
             }
