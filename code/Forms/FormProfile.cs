@@ -143,6 +143,8 @@ namespace code.Forms
             dataGridViewBoughtListings.DataSource = null;
             UserSession.CurrentUser.BoughtListings.Clear();
             dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+
+            lblEmptyBoughtListings.Visible = true;
         }
 
         private void dataGridViewBoughtListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
