@@ -35,3 +35,4 @@ D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.For
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBoughtListing.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormAddListing.resources
 D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBuyListing.resources
+D:\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormAddedListing.resources

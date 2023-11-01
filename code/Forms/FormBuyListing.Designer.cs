@@ -134,7 +134,7 @@
             this.MaximumSize = new System.Drawing.Size(460, 310);
             this.MinimumSize = new System.Drawing.Size(460, 310);
             this.Name = "FormBuyListing";
-            this.Text = "ListingForm";
+            this.Text = "Назва нерухомості...";
             this.ResumeLayout(false);
             this.PerformLayout();
 

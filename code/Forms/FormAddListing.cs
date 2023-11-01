@@ -12,12 +12,9 @@ namespace code.Forms
 {
     public partial class FormAddListing : Form
     {
-        private readonly FormProfile formProfile;
-
-        public FormAddListing(FormProfile formProfile)
+        public FormAddListing()
         {
             InitializeComponent();
-            this.formProfile = formProfile;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -50,9 +47,8 @@ namespace code.Forms
                 };
                 UserSession.AvailableListings.Add(listing);
                 UserSession.CurrentUser.AddedListings.Add(listing);
-                Close();
 
-                formProfile.refreshAddedListings();
+                Close();
             }
         }
 

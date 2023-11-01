@@ -152,26 +152,16 @@ namespace code.Forms
             listingForm.ShowDialog();
         }
 
-        public void refreshAddedListings()
-        {
-            dataGridViewAddedListings.DataSource = null;
-            dataGridViewAddedListings.DataSource = UserSession.CurrentUser.AddedListings;
-            dataGridViewAddedListings.Refresh();
-
-            if (dataGridViewAddedListings.Rows.Count != 0)
-            {
-                lblEmptyAddedListings.Visible = false;
-            }
-        }
-
         private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var selectedListing = (Listing)dataGridViewAddedListings.SelectedRows[0].DataBoundItem;
+            FormAddedListing listingForm = new FormAddedListing(selectedListing);
+            listingForm.ShowDialog();
         }
 
         private void btnAddListing_Click(object sender, EventArgs e)
         {
-            FormAddListing formAddListing = new FormAddListing(this);
+            FormAddListing formAddListing = new FormAddListing();
             formAddListing.ShowDialog();
         }
     }
