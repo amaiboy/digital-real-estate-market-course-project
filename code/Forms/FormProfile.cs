@@ -159,7 +159,7 @@ namespace code.Forms
 
         private void btnAddListing_Click(object sender, EventArgs e)
         {
-            FormNewListing listingForm = new FormNewListing();
+            FormAddListing listingForm = new FormAddListing();
             listingForm.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace code.Forms
 {
-    partial class FormNewListing
+    partial class FormAddListing
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNewListing));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddListing));
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnCancel = new code.StyledButton();
             this.btnAdd = new code.StyledButton();
