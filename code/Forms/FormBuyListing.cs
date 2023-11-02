@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace code.Forms
 {
@@ -24,8 +27,21 @@ namespace code.Forms
             this.lblName.Text = listing.Name;
             this.lblDescription.Text = listing.Description;
             this.lblAddress.Text = listing.Address;
-            this.lblPrice.Text = $"{listing.Price} ₴";
+            this.lblPrice.Text = $"{listing.Price} ₴ або {listing.Price * getDollarRate()} гривень";
             this.lblSeller.Text = listing.Seller;
+        }
+        private double getDollarRate()
+        {
+            string link = @"https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange";
+            WebClient wc = new WebClient();
+            string xmlString = wc.DownloadString(link);
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xmlString);
+            XmlNode usdNode = xmlDoc.SelectSingleNode("//currency[cc='USD']");
+            XmlNode rateNode = usdNode.SelectSingleNode("rate");
+            string usdRate = rateNode.InnerText;
+            double rate = Convert.ToDouble(usdRate, CultureInfo.InvariantCulture);
+            return rate;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
