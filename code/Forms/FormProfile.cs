@@ -24,11 +24,11 @@ namespace code.Forms
             this.activeForm = this;
 
             FormLogin login = new FormLogin();
-            if (!UserSession.IsLoggedIn)
+            if (!AuthenticationManager.IsLoggedIn)
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
-                    UserSession.IsLoggedIn = true;
+                    AuthenticationManager.IsLoggedIn = true;
                 }
                 else
                 {
@@ -36,16 +36,16 @@ namespace code.Forms
                 }
             }
 
-            txtUsername.Text = UserSession.CurrentUser.Name;
-            txtEmail.Text = UserSession.CurrentUser.Email;
-            txtPassword.Text = UserSession.CurrentUser.Password;
+            txtUsername.Text = AuthenticationManager.CurrentUser.Name;
+            txtEmail.Text = AuthenticationManager.CurrentUser.Email;
+            txtPassword.Text = AuthenticationManager.CurrentUser.Password;
             txtPassword.PasswordChar = '*';
-            formTitle.Text = $"Профіль користувача {UserSession.CurrentUser.Name}";
+            formTitle.Text = $"Профіль користувача {AuthenticationManager.CurrentUser.Name}";
 
             var headingFont = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             Padding cellPadding = new Padding(5, 5, 5, 5);
 
-            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+            dataGridViewBoughtListings.DataSource = AuthenticationManager.CurrentUser.BoughtListings;
             dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle.Font = headingFont;
             dataGridViewBoughtListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
             foreach (DataGridViewColumn column in dataGridViewBoughtListings.Columns)
@@ -53,7 +53,7 @@ namespace code.Forms
                 column.DefaultCellStyle.Padding = cellPadding;
             }
 
-            dataGridViewAddedListings.DataSource = UserSession.CurrentUser.AddedListings;
+            dataGridViewAddedListings.DataSource = AuthenticationManager.CurrentUser.AddedListings;
             dataGridViewAddedListings.ColumnHeadersDefaultCellStyle.Font = headingFont;
             dataGridViewAddedListings.ColumnHeadersDefaultCellStyle.Padding = cellPadding;
             foreach (DataGridViewColumn column in dataGridViewAddedListings.Columns)
@@ -104,9 +104,9 @@ namespace code.Forms
             var newUsername = txtUsername.Text;
             var newPassword = txtPassword.Text;
             var newEmail = txtEmail.Text;
-            var currentUsername = UserSession.CurrentUser.Name;
-            var currentPassword = UserSession.CurrentUser.Password;
-            var currentEmail = UserSession.CurrentUser.Email;
+            var currentUsername = AuthenticationManager.CurrentUser.Name;
+            var currentPassword = AuthenticationManager.CurrentUser.Password;
+            var currentEmail = AuthenticationManager.CurrentUser.Email;
 
             if (newUsername == currentUsername && newPassword == currentPassword && newEmail == currentEmail)
             {
@@ -118,9 +118,9 @@ namespace code.Forms
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    UserSession.CurrentUser.Name = newUsername;
-                    UserSession.CurrentUser.Password = newPassword;
-                    UserSession.CurrentUser.Email = newEmail;
+                    AuthenticationManager.CurrentUser.Name = newUsername;
+                    AuthenticationManager.CurrentUser.Password = newPassword;
+                    AuthenticationManager.CurrentUser.Email = newEmail;
 
                     MessageBox.Show("Ваші облікові дані були успішно оновлено.", "Оновлено успішно");
                 }
@@ -130,7 +130,7 @@ namespace code.Forms
         private void btnRefreshBoughtListings_Click(object sender, EventArgs e)
         {
             dataGridViewBoughtListings.DataSource = null;
-            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+            dataGridViewBoughtListings.DataSource = AuthenticationManager.CurrentUser.BoughtListings;
 
             if (dataGridViewBoughtListings.Rows.Count != 0)
             {
@@ -141,22 +141,22 @@ namespace code.Forms
         private void btnClearBoughtListings_Click(object sender, EventArgs e)
         {
             dataGridViewBoughtListings.DataSource = null;
-            UserSession.CurrentUser.BoughtListings.Clear();
-            dataGridViewBoughtListings.DataSource = UserSession.CurrentUser.BoughtListings;
+            AuthenticationManager.CurrentUser.BoughtListings.Clear();
+            dataGridViewBoughtListings.DataSource = AuthenticationManager.CurrentUser.BoughtListings;
 
             lblEmptyBoughtListings.Visible = true;
         }
 
         private void dataGridViewBoughtListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedListing = (Listing)dataGridViewBoughtListings.SelectedRows[0].DataBoundItem;
+            var selectedListing = (Advertisement)dataGridViewBoughtListings.SelectedRows[0].DataBoundItem;
             FormBoughtListing listingForm = new FormBoughtListing(selectedListing);
             listingForm.ShowDialog();
         }
 
         private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedListing = (Listing)dataGridViewAddedListings.SelectedRows[0].DataBoundItem;
+            var selectedListing = (Advertisement)dataGridViewAddedListings.SelectedRows[0].DataBoundItem;
             FormAddedListing listingForm = new FormAddedListing(selectedListing);
             listingForm.ShowDialog();
         }

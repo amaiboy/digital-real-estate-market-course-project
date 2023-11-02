@@ -32,7 +32,7 @@ namespace code.Forms
             dropdownSortByPrice.SelectedIndex = 0;
         }
 
-        public void AddListing(Listing listing)
+        public void AddListing(Advertisement listing)
         {
             var updatedListings = GlobalData.AvailableListings.ToList();
             updatedListings.Add(listing);
@@ -40,7 +40,7 @@ namespace code.Forms
             dataGridViewListings.DataSource = GlobalData.AvailableListings;
         }
 
-        public void RemoveListing(Listing listing)
+        public void RemoveListing(Advertisement listing)
         {
             var updatedListings = GlobalData.AvailableListings.ToList();
             updatedListings.Remove(listing);
@@ -67,7 +67,7 @@ namespace code.Forms
 
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
+            var listing = (Advertisement)dataGridViewListings.SelectedRows[0].DataBoundItem;
             FormBuyListing listingForm = new FormBuyListing(listing, this);
             listingForm.ShowDialog();
         }
@@ -185,12 +185,12 @@ namespace code.Forms
             }
         }
 
-        private void QuickSort(string type, List<Listing> list)
+        private void QuickSort(string type, List<Advertisement> list)
         {
             Sort(list, 0, list.Count - 1, type);
         }
 
-        private void Sort(List<Listing> list, int left, int right, string type)
+        private void Sort(List<Advertisement> list, int left, int right, string type)
         {
             if (left < right)
             {
@@ -200,13 +200,13 @@ namespace code.Forms
             }
         }
 
-        private int Partition(List<Listing> list, int left, int right, string type)
+        private int Partition(List<Advertisement> list, int left, int right, string type)
         {
             if (type == "Ціна")
             {
                 int pivot = list[right].Price;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if (list[j].Price < pivot)
@@ -226,7 +226,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Name;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Name, pivot) < 0))
@@ -246,7 +246,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Seller;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Seller, pivot) < 0))
@@ -265,12 +265,12 @@ namespace code.Forms
             return 0;
         }
 
-        private void QuickSortDescending(string type, List<Listing> list)
+        private void QuickSortDescending(string type, List<Advertisement> list)
         {
             SortDescending(list, 0, list.Count - 1, type);
         }
 
-        private void SortDescending(List<Listing> list, int left, int right, string type)
+        private void SortDescending(List<Advertisement> list, int left, int right, string type)
         {
             if (left < right)
             {
@@ -280,13 +280,13 @@ namespace code.Forms
             }
         }
 
-        private int PartitionDescending(List<Listing> list, int left, int right, string type)
+        private int PartitionDescending(List<Advertisement> list, int left, int right, string type)
         {
             if (type == "Ціна")
             {
                 int pivot = list[right].Price;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if (list[j].Price > pivot)
@@ -306,7 +306,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Name;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Name, pivot) > 0))
@@ -326,7 +326,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Seller;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Seller, pivot) > 0))

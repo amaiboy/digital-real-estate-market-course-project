@@ -176,11 +176,11 @@
             // 
             // listingBindingSource1
             // 
-            this.listingBindingSource1.DataSource = typeof(code.Listing);
+            this.listingBindingSource1.DataSource = typeof(code.Advertisement);
             // 
             // listingBindingSource
             // 
-            this.listingBindingSource.DataSource = typeof(code.Listing);
+            this.listingBindingSource.DataSource = typeof(code.Advertisement);
             // 
             // dropdownSortByName
             // 

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace code
 {
-    public static class UserSession
+    // клас, що відповідає за перевірку даних, входу до системи та
+    // кодування й декодування паролю
+    public static class AuthenticationManager
     {
         public static bool IsLoggedIn
         {

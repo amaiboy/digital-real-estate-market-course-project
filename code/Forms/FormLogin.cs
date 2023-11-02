@@ -74,9 +74,9 @@ namespace code.Forms
             }
 
             this.DialogResult = DialogResult.OK;
-            UserSession.CurrentUser = user;
+            AuthenticationManager.CurrentUser = user;
             GlobalData.AvailableListings.AddRange(user.AddedListings);
-            UserSession.IsLoggedIn = true;
+            AuthenticationManager.IsLoggedIn = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -92,8 +92,8 @@ namespace code.Forms
                 User user = new User(username, email, password);
                 GlobalData.Users.Add(user);
 
-                UserSession.CurrentUser = user;
-                UserSession.IsLoggedIn = true;
+                AuthenticationManager.CurrentUser = user;
+                AuthenticationManager.IsLoggedIn = true;
 
                 this.DialogResult = DialogResult.OK;
             }

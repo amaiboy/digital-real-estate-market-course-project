@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormAddedListing : Form
     {
-        public FormAddedListing(Listing listing)
+        public FormAddedListing(Advertisement listing)
         {
             InitializeComponent();
 

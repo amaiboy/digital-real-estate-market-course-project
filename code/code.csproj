@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ExceptionManager.cs" />
+    <Compile Include="Classes\FileHandler.cs" />
+    <Compile Include="Classes\Listing.cs" />
+    <Compile Include="Classes\Property.cs" />
+    <Compile Include="Classes\SearchManager.cs" />
+    <Compile Include="Classes\SortManager.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,8 +133,8 @@
     <Compile Include="FormTitle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GlobalData.cs" />
-    <Compile Include="Listing.cs" />
+    <Compile Include="Classes\GlobalData.cs" />
+    <Compile Include="Classes\Advertisement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StyledButton.cs">
@@ -137,8 +143,8 @@
     <Compile Include="StyledTable.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="UserSession.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\AuthenticationManager.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>

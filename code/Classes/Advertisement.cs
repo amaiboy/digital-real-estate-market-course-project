@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace code
 {
-    public class Listing
+    // клас оголошення
+    public class Advertisement
     {
         public string Name
         {

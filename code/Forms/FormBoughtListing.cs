@@ -12,7 +12,7 @@ namespace code.Forms
 {
     public partial class FormBoughtListing : Form
     {
-        public FormBoughtListing(Listing listing)
+        public FormBoughtListing(Advertisement listing)
         {
             InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace code.Forms
             lblDescription.Text = listing.Description;
             lblAddress.Text = listing.Address;
             lblPrice.Text = $"{listing.Price} ₴";
-            lblOwner.Text = $"Власник: {UserSession.CurrentUser.Name}";
+            lblOwner.Text = $"Власник: {AuthenticationManager.CurrentUser.Name}";
         }
     }
 }

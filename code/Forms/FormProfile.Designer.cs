@@ -307,7 +307,7 @@
             // 
             // listingBindingSource
             // 
-            this.listingBindingSource.DataSource = typeof(code.Listing);
+            this.listingBindingSource.DataSource = typeof(code.Advertisement);
             // 
             // dataGridViewBoughtListings
             // 

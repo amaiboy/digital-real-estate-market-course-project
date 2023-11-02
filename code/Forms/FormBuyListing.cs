@@ -15,10 +15,10 @@ namespace code.Forms
 {
     public partial class FormBuyListing : Form
     {
-        private readonly Listing listing;
+        private readonly Advertisement listing;
         private readonly FormMarket formMarket;
 
-        public FormBuyListing(Listing listing, FormMarket formMarket)
+        public FormBuyListing(Advertisement listing, FormMarket formMarket)
         {
             InitializeComponent();
             this.formMarket = formMarket;
@@ -51,14 +51,14 @@ namespace code.Forms
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            if (UserSession.IsLoggedIn)
+            if (AuthenticationManager.IsLoggedIn)
             {
-                if (UserSession.CurrentUser.Name == listing.Seller)
+                if (AuthenticationManager.CurrentUser.Name == listing.Seller)
                 {
                     MessageBox.Show("Ви не можете купувати свою нерухомість.", "Помилка придбання об'єкту", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserSession.CurrentUser.BoughtListings.Add(listing);
+                AuthenticationManager.CurrentUser.BoughtListings.Add(listing);
                 formMarket.RemoveListing(listing);
             }
             else

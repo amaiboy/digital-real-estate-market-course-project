@@ -37,16 +37,16 @@ namespace code.Forms
 
             if (confirmResult == DialogResult.Yes)
             {
-                Listing listing = new Listing
+                Advertisement listing = new Advertisement
                 {
                     Name = txtName.Text,
                     Description = txtDescription.Text,
                     Address = txtAddress.Text,
                     Price = Convert.ToInt32(numericUpDownPrice.Value),
-                    Seller = UserSession.CurrentUser.Name
+                    Seller = AuthenticationManager.CurrentUser.Name
                 };
                 GlobalData.AvailableListings.Add(listing);
-                UserSession.CurrentUser.AddedListings.Add(listing);
+                AuthenticationManager.CurrentUser.AddedListings.Add(listing);
 
                 Close();
             }
