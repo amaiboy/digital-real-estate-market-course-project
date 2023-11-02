@@ -51,6 +51,7 @@ namespace code.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
+            // TODO: Add a searching algorithm
             var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
             dataGridViewListings.DataSource = filteredList.ToList();
         }
@@ -141,7 +142,6 @@ namespace code.Forms
                 reshowHint(dropdownSortByPrice, "Сортування за ціною");
             }
         }
-
 
         private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
         {
