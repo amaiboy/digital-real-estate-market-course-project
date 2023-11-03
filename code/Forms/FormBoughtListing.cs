@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Classes;
 
 namespace code.Forms
 {
@@ -22,7 +23,7 @@ namespace code.Forms
             lblDescription.Text = listing.Description;
             lblAddress.Text = listing.Address;
             lblPrice.Text = $"{listing.Price} ₴";
-            lblOwner.Text = $"Власник: {AuthenticationManager.CurrentUser.Name}";
+            lblOwner.Text = $"Власник: {LoginManager.CurrentUser.Name}";
         }
     }
 }

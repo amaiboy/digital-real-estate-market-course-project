@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace code
+namespace code.Classes
 {
     // клас оголошення
     public class Advertisement

@@ -51,7 +51,7 @@
     <Compile Include="Classes\Listing.cs" />
     <Compile Include="Classes\Property.cs" />
     <Compile Include="Classes\SearchManager.cs" />
-    <Compile Include="Classes\SortManager.cs" />
+    <Compile Include="Classes\AlgorithmManager.cs" />
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,7 +144,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\User.cs" />
-    <Compile Include="Classes\AuthenticationManager.cs" />
+    <Compile Include="Classes\LoginManager.cs" />
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>

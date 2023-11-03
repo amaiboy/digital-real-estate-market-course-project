@@ -1,4 +1,5 @@
-﻿using System;
+﻿using code.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,9 +75,9 @@ namespace code.Forms
             }
 
             this.DialogResult = DialogResult.OK;
-            AuthenticationManager.CurrentUser = user;
+            LoginManager.CurrentUser = user;
             GlobalData.AvailableListings.AddRange(user.AddedListings);
-            AuthenticationManager.IsLoggedIn = true;
+            LoginManager.IsLoggedIn = true;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -92,8 +93,8 @@ namespace code.Forms
                 User user = new User(username, email, password);
                 GlobalData.Users.Add(user);
 
-                AuthenticationManager.CurrentUser = user;
-                AuthenticationManager.IsLoggedIn = true;
+                LoginManager.CurrentUser = user;
+                LoginManager.IsLoggedIn = true;
 
                 this.DialogResult = DialogResult.OK;
             }

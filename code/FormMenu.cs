@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using code.Forms;
+using code.Classes;
 
 namespace code
 {
@@ -244,8 +245,8 @@ namespace code
         {
             InitializeComponent();
             OpenChildForm(new Forms.FormWelcome(), null);
-            AuthenticationManager.CurrentUser = new User();
-            AuthenticationManager.IsLoggedIn = false;
+            LoginManager.CurrentUser = new User();
+            LoginManager.IsLoggedIn = false;
             GlobalData.AvailableListings = this.predefinedListings;
             GlobalData.Users = this.users;
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using code.Forms;
 
-namespace code
+namespace code.Classes
 {
     // клас користувача
     public class User

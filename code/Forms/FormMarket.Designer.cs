@@ -1,4 +1,5 @@
-﻿namespace code.Forms
+﻿using code.Classes;
+namespace code.Forms
 {
     partial class FormMarket
     {
@@ -176,11 +177,11 @@
             // 
             // listingBindingSource1
             // 
-            this.listingBindingSource1.DataSource = typeof(code.Advertisement);
+            this.listingBindingSource1.DataSource = typeof(code.Classes.Advertisement);
             // 
             // listingBindingSource
             // 
-            this.listingBindingSource.DataSource = typeof(code.Advertisement);
+            this.listingBindingSource.DataSource = typeof(code.Classes.Advertisement);
             // 
             // dropdownSortByName
             // 

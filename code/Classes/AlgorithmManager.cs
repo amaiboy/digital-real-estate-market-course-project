@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace code.Classes
 {
     // клас, що відповідає за керування функціями сортування
-    internal class SortManager
+    internal class AlgorithmManager
     {
     }
 }

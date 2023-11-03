@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using code.Classes;
 
 namespace code.Forms
 {
@@ -51,14 +52,14 @@ namespace code.Forms
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            if (AuthenticationManager.IsLoggedIn)
+            if (LoginManager.IsLoggedIn)
             {
-                if (AuthenticationManager.CurrentUser.Name == listing.Seller)
+                if (LoginManager.CurrentUser.Name == listing.Seller)
                 {
                     MessageBox.Show("Ви не можете купувати свою нерухомість.", "Помилка придбання об'єкту", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                AuthenticationManager.CurrentUser.BoughtListings.Add(listing);
+                LoginManager.CurrentUser.BoughtListings.Add(listing);
                 formMarket.RemoveListing(listing);
             }
             else

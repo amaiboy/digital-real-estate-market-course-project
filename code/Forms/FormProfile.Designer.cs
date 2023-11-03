@@ -1,4 +1,5 @@
-﻿namespace code.Forms
+﻿using code.Classes;
+namespace code.Forms
 {
     partial class FormProfile
     {
@@ -307,7 +308,7 @@
             // 
             // listingBindingSource
             // 
-            this.listingBindingSource.DataSource = typeof(code.Advertisement);
+            this.listingBindingSource.DataSource = typeof(code.Classes.Advertisement);
             // 
             // dataGridViewBoughtListings
             // 

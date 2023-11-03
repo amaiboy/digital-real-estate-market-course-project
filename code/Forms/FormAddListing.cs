@@ -1,4 +1,5 @@
-﻿using System;
+﻿using code.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,10 +44,10 @@ namespace code.Forms
                     Description = txtDescription.Text,
                     Address = txtAddress.Text,
                     Price = Convert.ToInt32(numericUpDownPrice.Value),
-                    Seller = AuthenticationManager.CurrentUser.Name
+                    Seller = LoginManager.CurrentUser.Name
                 };
                 GlobalData.AvailableListings.Add(listing);
-                AuthenticationManager.CurrentUser.AddedListings.Add(listing);
+                LoginManager.CurrentUser.AddedListings.Add(listing);
 
                 Close();
             }

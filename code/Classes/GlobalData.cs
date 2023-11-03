@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace code
+namespace code.Classes
 {
     // клас, що відповідає за збереження активних даних в момент виконання програми
     public static class GlobalData
