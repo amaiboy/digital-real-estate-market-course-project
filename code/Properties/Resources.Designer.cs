@@ -63,6 +63,16 @@ namespace code.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4b860467_ff83_4d33_91d8_887cf9cbe499 {
+            get {
+                object obj = ResourceManager.GetObject("_4b860467-ff83-4d33-91d8-887cf9cbe499", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);

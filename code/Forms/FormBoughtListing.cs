@@ -26,6 +26,7 @@ namespace code.Forms
                 lblAddress.Text = listing.Address;
                 lblPrice.Text = $"{listing.Price} ₴";
                 lblOwner.Text = $"Власник: {LoginManager.CurrentUser.Name}";
+                pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
             }
             catch (Exception ex)
             {
