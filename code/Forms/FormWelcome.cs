@@ -39,7 +39,6 @@ namespace code.Forms
         {
             try
             {
-
                 var randomTipIndex = rnd.Next(tips.Count);
                 var randomTip = tips[randomTipIndex];
 
