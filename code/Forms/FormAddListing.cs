@@ -25,50 +25,63 @@ namespace code.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtDescription.Text) ||
-                string.IsNullOrWhiteSpace(txtAddress.Text) ||
-                numericUpDownPrice.Value == 0)
+            try
             {
-                MessageBox.Show("Будь ласка, заповніть всі поля і переконайтеся, що ціна не дорівнює нулю", "Валідація полів");
-                return;
-            }
-
-            DialogResult confirmResult = MessageBox.Show("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання", MessageBoxButtons.YesNo);
-
-            if (confirmResult == DialogResult.Yes)
-            {
-                Advertisement listing = new Advertisement
+                if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                    string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                    string.IsNullOrWhiteSpace(txtAddress.Text) ||
+                    numericUpDownPrice.Value == 0)
                 {
-                    Name = txtName.Text,
-                    Description = txtDescription.Text,
-                    Address = txtAddress.Text,
-                    Price = Convert.ToInt32(numericUpDownPrice.Value),
-                    Seller = LoginManager.CurrentUser.Name
-                };
-                GlobalData.AvailableListings.Add(listing);
-                LoginManager.CurrentUser.AddedListings.Add(listing);
+                    ExceptionManager.HandleException(new Exception("Заповніть всі поля"), "Будь ласка, заповніть всі поля і переконайтеся, що ціна не дорівнює нулю", "Валідація полів");
+                    return;
+                }
 
-                Close();
+                bool isConfirmed = ExceptionManager.ShowConfirmation("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання");
+                if (isConfirmed)
+                {
+                    Advertisement listing = new Advertisement
+                    {
+                        Name = txtName.Text,
+                        Description = txtDescription.Text,
+                        Address = txtAddress.Text,
+                        Price = Convert.ToInt32(numericUpDownPrice.Value),
+                        Seller = LoginManager.CurrentUser.Name
+                    };
+                    GlobalData.AvailableListings.Add(listing);
+                    LoginManager.CurrentUser.AddedListings.Add(listing);
+
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося додати оголошення. Спробуйте пізніше", "Помилка додавання");
             }
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
-            var characterCount = txtDescription.Text.Length;
-            lblDescriptionCharactersCount.Text = characterCount.ToString();
+            try
+            {
+                var characterCount = txtDescription.Text.Length;
+                lblDescriptionCharactersCount.Text = characterCount.ToString();
 
-            if (characterCount == 250)
-            {
-                lblDescriptionCharactersCount.ForeColor = Color.FromArgb(97, 9, 9);
+                if (characterCount == 250)
+                {
+                    lblDescriptionCharactersCount.ForeColor = Color.FromArgb(97, 9, 9);
+                }
+                else if (characterCount > 230)
+                {
+                    lblDescriptionCharactersCount.ForeColor = Color.FromArgb(144, 14, 14);
+                }
+                else
+                {
+                    lblDescriptionCharactersCount.ForeColor = Color.Black;
+                }
             }
-            else if (characterCount > 230)
+            catch (Exception ex)
             {
-                lblDescriptionCharactersCount.ForeColor = Color.FromArgb(144, 14, 14);
-            }
-            else
-            {
-                lblDescriptionCharactersCount.ForeColor = Color.Black;
+                ExceptionManager.HandleException(ex, "Не вдалося оновити кількість символів. Спробуйте пізніше", "Помилка перевірки довжини опису");
             }
         }
     }
