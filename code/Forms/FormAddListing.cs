@@ -36,7 +36,7 @@ namespace code.Forms
                     return;
                 }
 
-                bool isConfirmed = ExceptionManager.ShowConfirmation("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання");
+                bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання");
                 if (isConfirmed)
                 {
                     Advertisement listing = new Advertisement
@@ -49,7 +49,7 @@ namespace code.Forms
                     };
                     GlobalData.AvailableListings.Add(listing);
                     LoginManager.CurrentUser.AddedListings.Add(listing);
-                    ExceptionManager.ShowSuccess("Оголошення успішно додано", "Успіх");
+                    ExceptionManager.ShowInfo("Оголошення успішно додано", "Успіх");
 
                     Close();
                 }
