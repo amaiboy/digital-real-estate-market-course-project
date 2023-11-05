@@ -315,5 +315,10 @@ namespace code
         {
             OpenChildForm(new Forms.FormProfile(), sender);
         }
+
+        private void buttonWelcome_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormWelcome(), sender);
+        }
     }
 }
