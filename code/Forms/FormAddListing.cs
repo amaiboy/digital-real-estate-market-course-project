@@ -102,7 +102,16 @@ namespace code.Forms
                 if (fileDialogImageUpload.ShowDialog() == DialogResult.OK)
                 {
                     selectedImagePath = fileDialogImageUpload.FileName;
-                    lblImageName.Text = Path.GetFileName(selectedImagePath);
+
+                    string fileName = Path.GetFileName(selectedImagePath);
+
+                    int maxLength = 26;
+                    if (fileName.Length > maxLength)
+                    {
+                        fileName = fileName.Substring(0, maxLength - 3) + "...";
+                    }
+
+                    lblImageName.Text = fileName;
                 }
                 else
                 {
