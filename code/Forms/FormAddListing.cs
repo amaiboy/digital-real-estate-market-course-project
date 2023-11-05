@@ -49,6 +49,7 @@ namespace code.Forms
                     };
                     GlobalData.AvailableListings.Add(listing);
                     LoginManager.CurrentUser.AddedListings.Add(listing);
+                    ExceptionManager.ShowSuccess("Оголошення успішно додано", "Успіх");
 
                     Close();
                 }
