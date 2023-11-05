@@ -24,17 +24,24 @@ namespace code.Forms
             this.ControlBox = false;
             this.activeForm = this;
 
-            FormLogin login = new FormLogin();
-            if (!LoginManager.IsLoggedIn)
+            try
             {
-                if (login.ShowDialog() == DialogResult.OK)
+                FormLogin login = new FormLogin();
+                if (!LoginManager.IsLoggedIn)
                 {
-                    LoginManager.IsLoggedIn = true;
+                    if (login.ShowDialog() == DialogResult.OK)
+                    {
+                        LoginManager.IsLoggedIn = true;
+                    }
+                    else
+                    {
+                        OpenChildForm(new FormProfileError());
+                    }
                 }
-                else
-                {
-                    OpenChildForm(new FormProfileError());
-                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося авторизуватися. Спробуйте ще раз пізніше", "Помилка авторизації");
             }
 
             txtUsername.Text = LoginManager.CurrentUser.Name;
@@ -74,18 +81,25 @@ namespace code.Forms
 
         private void OpenChildForm(Form newForm)
         {
-            if (activeForm != null)
+            try
             {
-                activeForm.Hide();
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+                activeForm = newForm;
+                newForm.TopLevel = false;
+                newForm.FormBorderStyle = FormBorderStyle.None;
+                newForm.Dock = DockStyle.Fill;
+                this.pnlMainContainer.Controls.Add(newForm);
+                this.pnlMainContainer.Tag = newForm;
+                newForm.BringToFront();
+                newForm.Show();
             }
-            activeForm = newForm;
-            newForm.TopLevel = false;
-            newForm.FormBorderStyle = FormBorderStyle.None;
-            newForm.Dock = DockStyle.Fill;
-            this.pnlMainContainer.Controls.Add(newForm);
-            this.pnlMainContainer.Tag = newForm;
-            newForm.BringToFront();
-            newForm.Show();
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
 
         private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
@@ -111,61 +125,96 @@ namespace code.Forms
 
             if (newUsername == currentUsername && newPassword == currentPassword && newEmail == currentEmail)
             {
-                MessageBox.Show("Ваші облікові дані не були оновлені, бо ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
+                ExceptionManager.ShowInfo("Ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
             }
             else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
             {
-                DialogResult confirmResult = MessageBox.Show("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни", MessageBoxButtons.YesNo);
+                bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни");
 
-                if (confirmResult == DialogResult.Yes)
+                if (isConfirmed)
                 {
                     LoginManager.CurrentUser.Name = newUsername;
                     LoginManager.CurrentUser.Password = newPassword;
                     LoginManager.CurrentUser.Email = newEmail;
 
-                    MessageBox.Show("Ваші облікові дані були успішно оновлено.", "Оновлено успішно");
+                    ExceptionManager.ShowInfo("Ви успішно змінили свої облікові дані!", "Зміни внесено успішно");
                 }
             }
         }
 
         private void btnRefreshBoughtListings_Click(object sender, EventArgs e)
         {
-            dataGridViewBoughtListings.DataSource = null;
-            dataGridViewBoughtListings.DataSource = LoginManager.CurrentUser.BoughtListings;
-
-            if (dataGridViewBoughtListings.Rows.Count != 0)
+            try
             {
-                lblEmptyBoughtListings.Visible = false;
+                dataGridViewBoughtListings.DataSource = null;
+                dataGridViewBoughtListings.DataSource = LoginManager.CurrentUser.BoughtListings;
+
+                if (dataGridViewBoughtListings.Rows.Count != 0)
+                {
+                    lblEmptyBoughtListings.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося оновити список куплених оголошень. Спробуйте ще раз пізніше", "Помилка оновлення списку оголошень");
             }
         }
 
         private void btnClearBoughtListings_Click(object sender, EventArgs e)
         {
-            dataGridViewBoughtListings.DataSource = null;
-            LoginManager.CurrentUser.BoughtListings.Clear();
-            dataGridViewBoughtListings.DataSource = LoginManager.CurrentUser.BoughtListings;
+            try
+            {
+                dataGridViewBoughtListings.DataSource = null;
+                LoginManager.CurrentUser.BoughtListings.Clear();
+                dataGridViewBoughtListings.DataSource = LoginManager.CurrentUser.BoughtListings;
 
-            lblEmptyBoughtListings.Visible = true;
+                lblEmptyBoughtListings.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося очистити список куплених оголошень. Спробуйте ще раз пізніше", "Помилка очищення списку оголошень");
+            }
         }
 
         private void dataGridViewBoughtListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedListing = (Advertisement)dataGridViewBoughtListings.SelectedRows[0].DataBoundItem;
-            FormBoughtListing listingForm = new FormBoughtListing(selectedListing);
-            listingForm.ShowDialog();
+            try
+            {
+                var selectedListing = (Advertisement)dataGridViewBoughtListings.SelectedRows[0].DataBoundItem;
+                FormBoughtListing listingForm = new FormBoughtListing(selectedListing);
+                listingForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
 
         private void dataGridViewAddedListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedListing = (Advertisement)dataGridViewAddedListings.SelectedRows[0].DataBoundItem;
-            FormAddedListing listingForm = new FormAddedListing(selectedListing);
-            listingForm.ShowDialog();
+            try
+            {
+                var selectedListing = (Advertisement)dataGridViewAddedListings.SelectedRows[0].DataBoundItem;
+                FormAddedListing listingForm = new FormAddedListing(selectedListing);
+                listingForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
 
         private void btnAddListing_Click(object sender, EventArgs e)
         {
-            FormAddListing formAddListing = new FormAddListing();
-            formAddListing.ShowDialog();
+            try
+            {
+                FormAddListing formAddListing = new FormAddListing();
+                formAddListing.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
     }
 }
