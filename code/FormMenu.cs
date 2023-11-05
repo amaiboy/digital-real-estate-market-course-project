@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace code
                 Address = "вул. В'язів, 789, кв. 2, Запоріжжя",
                 Price = 35000,
                 Seller = "Лерой Інгрем",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Заміський будинок для сім'ї з дітьми",
@@ -31,7 +32,7 @@ namespace code
                 Address = "провулок Дубовий, 101, Запоріжжя",
                 Price = 180000,
                 Seller = "Ліда Болдуін",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Будиночок на березі річки",
@@ -39,7 +40,7 @@ namespace code
                 Address = "вул. Набережна Дніпра, 222, Запоріжжя",
                 Price = 75000,
                 Seller = "Еліс Пратт",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Сучасний дуплекс біля технопарку",
@@ -47,7 +48,7 @@ namespace code
                 Address = "пр-т. Технологічний, 333, Запоріжжя",
                 Price = 210000,
                 Seller = "Шон Болл",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Історичний таунхаус в центрі",
@@ -55,7 +56,7 @@ namespace code
                 Address = "вул. Героїв Майдану, 567, Запоріжжя",
                 Price = 175000,
                 Seller = "Боббі Джеймс",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Пентхаус з панорамним видом",
@@ -63,7 +64,7 @@ namespace code
                 Address = "вул. Небесної Сотні, 999, Запоріжжя",
                 Price = 450000,
                 Seller = "Домінік Ніл",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Заміський будиночок із земельною ділянкою",
@@ -71,7 +72,7 @@ namespace code
                 Address = "провулок Парковий, 777, Запоріжжя",
                 Price = 320000,
                 Seller = "Ада Бауерс",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Простора квартира з видом на Дніпро",
@@ -79,7 +80,7 @@ namespace code
                 Address = "вул. Річкова, 456, Запоріжжя",
                 Price = 145000,
                 Seller = "Ліда Родрігес",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Компактний офіс в бізнес-центрі",
@@ -87,7 +88,7 @@ namespace code
                 Address = "пр-т. Бізнесовий, 123, офіс 7, Запоріжжя",
                 Price = 55000,
                 Seller = "Белль Х'юстон",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Сімейний будинок з басейном",
@@ -95,7 +96,7 @@ namespace code
                 Address = "вул. Сонячна, 777, Запоріжжя",
                 Price = 320000,
                 Seller = "Вірджинія Берд",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Особняк у старовинному стилі",
@@ -103,7 +104,7 @@ namespace code
                 Address = "провулок Старовинний, 987, Запоріжжя",
                 Price = 490000,
                 Seller = "Шейн Хейнс",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Модерні апартаменти у бізнес-центрі",
@@ -111,7 +112,7 @@ namespace code
                 Address = "пр-т. Модерністський, 555, офіс 12, Запоріжжя",
                 Price = 85000,
                 Seller = "Ада Осборн",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Лісовий котедж з власним ставком",
@@ -119,7 +120,7 @@ namespace code
                 Address = "вул. Лісова, 333, Запоріжжя",
                 Price = 280000,
                 Seller = "Джеффрі Вотсон",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Багатоквартирний комплекс біля метро",
@@ -127,7 +128,7 @@ namespace code
                 Address = "проспект Метро, 25, Запоріжжя",
                 Price = 255000,
                 Seller = "Майкл Дуглас",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Лофт в індустріальному стилі",
@@ -135,7 +136,7 @@ namespace code
                 Address = "вул. Фабрична, 112, Запоріжжя",
                 Price = 195000,
                 Seller = "Емма Стоун",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Студія в новобудові",
@@ -143,7 +144,7 @@ namespace code
                 Address = "вул. Студентська, 123, Запоріжжя",
                 Price = 40000,
                 Seller = "Олександр Сміт",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Котедж в горах",
@@ -151,7 +152,7 @@ namespace code
                 Address = "вул. Гірська, 456, Запоріжжя",
                 Price = 200000,
                 Seller = "Ірина Шевченко",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Офіс в бізнес-центрі",
@@ -159,7 +160,7 @@ namespace code
                 Address = "пр-т. IT, 789, офіс 13, Запоріжжя",
                 Price = 70000,
                 Seller = "Максим Петров",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Двокімнатна квартира в спальному районі",
@@ -167,7 +168,7 @@ namespace code
                 Address = "вул. Спальна, 321, Запоріжжя",
                 Price = 50000,
                 Seller = "Анна Коваленко",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Вілла на березі моря",
@@ -175,7 +176,7 @@ namespace code
                 Address = "вул. Морська, 654, Запоріжжя",
                 Price = 500000,
                 Seller = "Юрій Лисенко",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Пентхаус з терасою",
@@ -183,7 +184,7 @@ namespace code
                 Address = "вул. Річкова, 777, Запоріжжя",
                 Price = 350000,
                 Seller = "Лариса Іванова",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Садиба в селі",
@@ -191,7 +192,7 @@ namespace code
                 Address = "вул. Садова, 123, Запоріжжя",
                 Price = 150000,
                 Seller = "Олег Кравчук",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Міні-готель біля парку",
@@ -199,7 +200,7 @@ namespace code
                 Address = "вул. Паркова, 456, Запоріжжя",
                 Price = 400000,
                 Seller = "Євген Сидоренко",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Однокімнатна квартира в центрі",
@@ -207,7 +208,7 @@ namespace code
                 Address = "вул. Центральна, 234, Запоріжжя",
                 Price = 60000,
                 Seller = "Валерія Костенко",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             },
             new Advertisement {
                 Name = "Дача на острові",
@@ -215,7 +216,7 @@ namespace code
                 Address = "вул. Острівна, 789, Запоріжжя",
                 Price = 300000,
                 Seller = "Сергій Мельник",
-                ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                ImagePath = ""
             }
         };
 
@@ -231,7 +232,7 @@ namespace code
                         Address = "вул. Центральна, 234, Запоріжжя",
                         Price = 57000,
                         Seller = "Валерія Костенко",
-                        ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                        ImagePath = ""
                     },
                     new Advertisement {
                         Name = "Офіс в бізнес-центрі",
@@ -239,7 +240,7 @@ namespace code
                         Address = "вул. Бізнес-центральна, 123, Запоріжжя",
                         Price = 70000,
                         Seller = "Максим Петров",
-                        ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                        ImagePath = ""
                     }
                 },
                 AddedListings = new List<Advertisement> {
@@ -249,7 +250,7 @@ namespace code
                         Address = "вул. Паркова, 456, Запоріжжя",
                         Price = 400000,
                         Seller = "developer",
-                        ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                        ImagePath = ""
                     },
                     new Advertisement {
                         Name = "Однокімнатна квартира в центрі",
@@ -257,7 +258,7 @@ namespace code
                         Address = "вул. Центральна, 234, Запоріжжя",
                         Price = 60000,
                         Seller = "developer",
-                        ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                        ImagePath = ""
                     },
                     new Advertisement {
                         Name = "Дача на острові",
@@ -265,7 +266,7 @@ namespace code
                         Address = "вул. Острівна, 789, Запоріжжя",
                         Price = 300000,
                         Seller = "developer",
-                        ImagePath = "D:/repos/digital-real-estate-market-course-project/assets/images/real-estate-pictures/1.jpg"
+                        ImagePath = ""
                     }
                 }
             }
@@ -282,6 +283,27 @@ namespace code
                 LoginManager.IsLoggedIn = false;
                 GlobalData.AvailableListings = this.predefinedListings;
                 GlobalData.Users = this.users;
+
+                var imageFiles = Directory.GetFiles(@"../../../assets/images/real-estate-pictures/", "*.jpg");
+                var random = new Random();
+                foreach (var ad in predefinedListings)
+                {
+                    var randomImageFile = imageFiles[random.Next(imageFiles.Length)];
+                    ad.ImagePath = randomImageFile;
+                }
+                foreach (var user in users)
+                {
+                    foreach (var ad in user.BoughtListings)
+                    {
+                        var randomImageFile = imageFiles[random.Next(imageFiles.Length)];
+                        ad.ImagePath = randomImageFile;
+                    }
+                    foreach (var ad in user.AddedListings)
+                    {
+                        var randomImageFile = imageFiles[random.Next(imageFiles.Length)];
+                        ad.ImagePath = randomImageFile;
+                    }
+                }
             }
             catch (Exception ex)
             {
