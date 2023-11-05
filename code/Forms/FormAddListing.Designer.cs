@@ -41,6 +41,10 @@
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.formTitle = new code.FormTitle();
             this.lblDescriptionCharactersCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fileDialogImageUpload = new System.Windows.Forms.OpenFileDialog();
+            this.btnAddImage = new code.StyledButton();
+            this.lblImageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +62,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(157, 372);
+            this.btnCancel.Location = new System.Drawing.Point(158, 432);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(130, 37);
             this.btnCancel.TabIndex = 17;
@@ -73,11 +77,11 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(17, 372);
+            this.btnAdd.Location = new System.Drawing.Point(18, 432);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(134, 37);
             this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "Додати";
+            this.btnAdd.Text = "Викласти";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -172,10 +176,50 @@
             this.lblDescriptionCharactersCount.Text = "0";
             this.lblDescriptionCharactersCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 361);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Зображення нерухомості";
+            // 
+            // fileDialogImageUpload
+            // 
+            this.fileDialogImageUpload.FileName = "imageUpload";
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnAddImage.FlatAppearance.BorderSize = 0;
+            this.btnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddImage.Location = new System.Drawing.Point(251, 376);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(169, 27);
+            this.btnAddImage.TabIndex = 18;
+            this.btnAddImage.Text = "Обрати зображення";
+            this.btnAddImage.UseVisualStyleBackColor = false;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // lblImageName
+            // 
+            this.lblImageName.AutoSize = true;
+            this.lblImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImageName.Location = new System.Drawing.Point(14, 383);
+            this.lblImageName.Name = "lblImageName";
+            this.lblImageName.Size = new System.Drawing.Size(126, 20);
+            this.lblImageName.TabIndex = 25;
+            this.lblImageName.Text = "File name here...";
+            // 
             // FormAddListing
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(444, 421);
+            this.ClientSize = new System.Drawing.Size(444, 481);
+            this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblDescriptionCharactersCount);
             this.Controls.Add(this.formTitle);
             this.Controls.Add(this.numericUpDownPrice);
@@ -183,14 +227,16 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(460, 460);
-            this.MinimumSize = new System.Drawing.Size(460, 460);
+            this.MaximumSize = new System.Drawing.Size(460, 520);
+            this.MinimumSize = new System.Drawing.Size(460, 520);
             this.Name = "FormAddListing";
             this.Text = "Додайте нове оголошення";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
@@ -212,5 +258,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
         private FormTitle formTitle;
         private System.Windows.Forms.Label lblDescriptionCharactersCount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog fileDialogImageUpload;
+        private StyledButton btnAddImage;
+        private System.Windows.Forms.Label lblImageName;
     }
 }

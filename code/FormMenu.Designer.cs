@@ -35,12 +35,14 @@
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonMarket = new System.Windows.Forms.Button();
             this.panelFormContainer = new System.Windows.Forms.Panel();
+            this.buttonWelcome = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.buttonWelcome);
             this.panelMenu.Controls.Add(this.buttonProfile);
             this.panelMenu.Controls.Add(this.buttonDevelopers);
             this.panelMenu.Controls.Add(this.buttonHelp);
@@ -123,6 +125,22 @@
             this.panelFormContainer.Size = new System.Drawing.Size(784, 561);
             this.panelFormContainer.TabIndex = 1;
             // 
+            // buttonWelcome
+            // 
+            this.buttonWelcome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonWelcome.FlatAppearance.BorderSize = 0;
+            this.buttonWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWelcome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonWelcome.Location = new System.Drawing.Point(0, 180);
+            this.buttonWelcome.Name = "buttonWelcome";
+            this.buttonWelcome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonWelcome.Size = new System.Drawing.Size(200, 60);
+            this.buttonWelcome.TabIndex = 6;
+            this.buttonWelcome.Text = "Головний екран";
+            this.buttonWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonWelcome.UseVisualStyleBackColor = true;
+            this.buttonWelcome.Click += new System.EventHandler(this.buttonWelcome_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -149,6 +167,7 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button buttonDevelopers;
         private System.Windows.Forms.Panel panelFormContainer;
+        private System.Windows.Forms.Button buttonWelcome;
     }
 }
 

@@ -7,22 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Classes;
 
 namespace code.Forms
 {
     public partial class FormAddedListing : Form
     {
-        public FormAddedListing(Listing listing)
+        public FormAddedListing(Advertisement listing)
         {
             InitializeComponent();
 
-            this.Text = listing.Name;
-            lblName.Text = listing.Name;
-            lblSeller.Text = $"Це ваше оголошення";
-            lblDescription.Text = listing.Description;
-            lblAddress.Text = listing.Address;
-            lblPrice.Text = $"{listing.Price} ₴";
-            lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
+            try
+            {
+                this.Text = listing.Name;
+                lblName.Text = listing.Name;
+                lblSeller.Text = $"Це ваше оголошення";
+                lblDescription.Text = listing.Description;
+                lblAddress.Text = listing.Address;
+                lblPrice.Text = $"{listing.Price} ₴";
+                lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
+                pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося завантажити деталі оголошення. Спробуйде закрити розділ і повторити спробу", "Помилка завантаження даних");
+            }
         }
     }
 }

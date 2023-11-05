@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Classes;
 
 namespace code.Forms
 {
@@ -32,27 +33,49 @@ namespace code.Forms
             dropdownSortByPrice.SelectedIndex = 0;
         }
 
-        public void AddListing(Listing listing)
+        public void AddListing(Advertisement listing)
         {
-            var updatedListings = GlobalData.AvailableListings.ToList();
-            updatedListings.Add(listing);
-            GlobalData.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            try
+            {
+                var updatedListings = GlobalData.AvailableListings.ToList();
+                updatedListings.Add(listing);
+                GlobalData.AvailableListings = updatedListings;
+                dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося додати об'єкт. Спробуйте ще раз пізніше", "Помилка додавання об'єкту");
+            }
         }
 
-        public void RemoveListing(Listing listing)
+        public void RemoveListing(Advertisement listing)
         {
-            var updatedListings = GlobalData.AvailableListings.ToList();
-            updatedListings.Remove(listing);
-            GlobalData.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            try
+            {
+                var updatedListings = GlobalData.AvailableListings.ToList();
+                updatedListings.Remove(listing);
+                GlobalData.AvailableListings = updatedListings;
+                dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося видалити об'єкт. Спробуйте ще раз пізніше", "Помилка видалення об'єкту");
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
-            var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
-            dataGridViewListings.DataSource = filteredList.ToList();
+            // TODO: Add a searching algorithm
+            try
+            {
+                var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
+                dataGridViewListings.DataSource = filteredList.ToList();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Помилка при пошуку оголошення. Спробуйте ще раз пізніше", "Помилка пошуку об'єкту");
+            }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -66,9 +89,16 @@ namespace code.Forms
 
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var listing = (Listing)dataGridViewListings.SelectedRows[0].DataBoundItem;
-            FormBuyListing listingForm = new FormBuyListing(listing, this);
-            listingForm.ShowDialog();
+            try
+            {
+                var listing = (Advertisement)dataGridViewListings.SelectedRows[0].DataBoundItem;
+                FormBuyListing listingForm = new FormBuyListing(listing, this);
+                listingForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -86,20 +116,34 @@ namespace code.Forms
 
         private void reshowHint(ComboBox dropdown, string hint)
         {
-            if (!dropdown.Items.Contains(hint))
+            try
             {
-                dropdown.Items.Insert(0, hint);
-                dropdown.ForeColor = System.Drawing.Color.Gray;
-                dropdown.SelectedIndex = 0;
+                if (!dropdown.Items.Contains(hint))
+                {
+                    dropdown.Items.Insert(0, hint);
+                    dropdown.ForeColor = System.Drawing.Color.Gray;
+                    dropdown.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося показати підказку.", "Помилка показу підказки");
             }
         }
 
         private void hideHint(ComboBox dropdown, string hint)
         {
-            if (dropdown.Items.Contains(hint))
+            try
             {
-                dropdown.Items.Remove(hint);
-                dropdown.ForeColor = System.Drawing.Color.Black;
+                if (dropdown.Items.Contains(hint))
+                {
+                    dropdown.Items.Remove(hint);
+                    dropdown.ForeColor = System.Drawing.Color.Black;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося приховати підказку.", "Помилка приховання підказки");
             }
         }
 
@@ -142,55 +186,75 @@ namespace code.Forms
             }
         }
 
-
         private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
+            try
             {
-                SortListings(dropdownSortByName);
+                if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
+                {
+                    SortListings(dropdownSortByName);
 
-                reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                dropdownSortByPrice.SelectedIndex = 0;
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByPrice.SelectedIndex = 0;
 
-                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                dropdownSortBySeller.SelectedIndex = 0;
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
         private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
+            try
             {
-                SortListings(dropdownSortByPrice);
+                if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
+                {
+                    SortListings(dropdownSortByPrice);
 
-                reshowHint(dropdownSortByName, "Сортування за назвою");
-                dropdownSortByName.SelectedIndex = 0;
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    dropdownSortByName.SelectedIndex = 0;
 
-                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                dropdownSortBySeller.SelectedIndex = 0;
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
         private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
+            try
             {
-                SortListings(dropdownSortBySeller);
+                if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
+                {
+                    SortListings(dropdownSortBySeller);
 
-                reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                dropdownSortByPrice.SelectedIndex = 0;
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByPrice.SelectedIndex = 0;
 
-                reshowHint(dropdownSortByName, "Сортування за назвою");
-                dropdownSortByName.SelectedIndex = 0;
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    dropdownSortByName.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
-        private void QuickSort(string type, List<Listing> list)
+        private void QuickSort(string type, List<Advertisement> list)
         {
             Sort(list, 0, list.Count - 1, type);
         }
 
-        private void Sort(List<Listing> list, int left, int right, string type)
+        private void Sort(List<Advertisement> list, int left, int right, string type)
         {
             if (left < right)
             {
@@ -200,13 +264,13 @@ namespace code.Forms
             }
         }
 
-        private int Partition(List<Listing> list, int left, int right, string type)
+        private int Partition(List<Advertisement> list, int left, int right, string type)
         {
             if (type == "Ціна")
             {
                 int pivot = list[right].Price;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if (list[j].Price < pivot)
@@ -226,7 +290,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Name;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Name, pivot) < 0))
@@ -246,7 +310,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Seller;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Seller, pivot) < 0))
@@ -265,12 +329,12 @@ namespace code.Forms
             return 0;
         }
 
-        private void QuickSortDescending(string type, List<Listing> list)
+        private void QuickSortDescending(string type, List<Advertisement> list)
         {
             SortDescending(list, 0, list.Count - 1, type);
         }
 
-        private void SortDescending(List<Listing> list, int left, int right, string type)
+        private void SortDescending(List<Advertisement> list, int left, int right, string type)
         {
             if (left < right)
             {
@@ -280,13 +344,13 @@ namespace code.Forms
             }
         }
 
-        private int PartitionDescending(List<Listing> list, int left, int right, string type)
+        private int PartitionDescending(List<Advertisement> list, int left, int right, string type)
         {
             if (type == "Ціна")
             {
                 int pivot = list[right].Price;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if (list[j].Price > pivot)
@@ -306,7 +370,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Name;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Name, pivot) > 0))
@@ -326,7 +390,7 @@ namespace code.Forms
             {
                 string pivot = list[right].Seller;
                 int i = left - 1;
-                Listing temp;
+                Advertisement temp;
                 for (int j = left; j < right; j++)
                 {
                     if ((string.Compare(list[j].Seller, pivot) > 0))

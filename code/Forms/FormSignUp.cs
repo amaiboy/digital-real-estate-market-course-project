@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Classes;
 
 namespace code.Forms
 {
@@ -29,6 +30,8 @@ namespace code.Forms
         public FormSignUp()
         {
             InitializeComponent();
+
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,24 +63,18 @@ namespace code.Forms
             {
                 errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
             }
-
             if (DoesUsernameExist(username))
             {
                 errors.Add("Ім'я користувача вже існує.");
             }
-
             if (DoesEmailExist(email))
             {
                 errors.Add("Електронна пошта вже існує.");
-                // TODO: Add account recovery ability by email
             }
-
-
             if (username.Length < 3 || username.Length > 16)
             {
                 errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
             }
-
             if (password.Length < 8)
             {
                 errors.Add("Пароль повинен мати довжину не менше 8 символів.");
@@ -85,7 +82,7 @@ namespace code.Forms
 
             try
             {
-                // TODO: Add email verification
+                // TODO: Possibly add email verification
                 var validEmail = new System.Net.Mail.MailAddress(email);
             }
             catch (FormatException)
@@ -95,7 +92,7 @@ namespace code.Forms
 
             if (errors.Count > 0)
             {
-                MessageBox.Show(string.Join("\n", errors), "Помилка реєстрації", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionManager.HandleException(new Exception(string.Join("\n", errors)), string.Join("\n", errors), "Помилка реєстрації");
                 return;
             }
 
@@ -103,6 +100,27 @@ namespace code.Forms
             this.Password = password;
             this.Email = email;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPassword.PasswordChar == '*')
+                {
+                    txtPassword.PasswordChar = '\0';
+                    btnTogglePasswordVisibility.Text = "0_0";
+                }
+                else
+                {
+                    txtPassword.PasswordChar = '*';
+                    btnTogglePasswordVisibility.Text = ">_<";
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості пароля", "Помилка видимості пароля");
+            }
         }
     }
 }

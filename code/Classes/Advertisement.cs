@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace code
+namespace code.Classes
 {
-    public class Listing
+    // клас оголошення
+    public class Advertisement
     {
         public string Name
         {
@@ -25,6 +26,10 @@ namespace code
             get; set;
         }
         public string Seller
+        {
+            get; set;
+        }
+        public string ImagePath
         {
             get; set;
         }

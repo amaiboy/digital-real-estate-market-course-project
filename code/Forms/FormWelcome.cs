@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using code.Classes;
 
 namespace code.Forms
 {
@@ -36,11 +37,17 @@ namespace code.Forms
 
         private void DisplayRandomTip()
         {
-            // TODO: add exception handling
-            var randomTipIndex = rnd.Next(tips.Count);
-            var randomTip = tips[randomTipIndex];
+            try
+            {
+                var randomTipIndex = rnd.Next(tips.Count);
+                var randomTip = tips[randomTipIndex];
 
-            labelRandomTip.Text = randomTip;
+                labelRandomTip.Text = randomTip;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка під час відображення випадкової підказки. Спробуйте змінити розділ і повторити спробу", "Не вдалося відобразити випадкову підказку.");
+            }
         }
     }
 }

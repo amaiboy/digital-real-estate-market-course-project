@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using code.Forms;
 
-namespace code
+namespace code.Classes
 {
+    // клас користувача
     public class User
     {
         public string Name
@@ -22,19 +23,19 @@ namespace code
         {
             get; set;
         }
-        public List<Listing> BoughtListings
+        public List<Advertisement> BoughtListings
         {
             get; set;
         }
-        public List<Listing> AddedListings
+        public List<Advertisement> AddedListings
         {
             get; set;
         }
 
         public User()
         {
-            BoughtListings = new List<Listing>();
-            AddedListings = new List<Listing>();
+            BoughtListings = new List<Advertisement>();
+            AddedListings = new List<Advertisement>();
         }
 
         public User(string name, string email, string password)
@@ -42,8 +43,8 @@ namespace code
             Name = name;
             Email = email;
             Password = password;
-            BoughtListings = new List<Listing>();
-            AddedListings = new List<Listing>();
+            BoughtListings = new List<Advertisement>();
+            AddedListings = new List<Advertisement>();
         }
     }
 }
