@@ -35,26 +35,47 @@ namespace code.Forms
 
         public void AddListing(Advertisement listing)
         {
-            var updatedListings = GlobalData.AvailableListings.ToList();
-            updatedListings.Add(listing);
-            GlobalData.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            try
+            {
+                var updatedListings = GlobalData.AvailableListings.ToList();
+                updatedListings.Add(listing);
+                GlobalData.AvailableListings = updatedListings;
+                dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося додати об'єкт. Спробуйте ще раз пізніше", "Помилка додавання об'єкту");
+            }
         }
 
         public void RemoveListing(Advertisement listing)
         {
-            var updatedListings = GlobalData.AvailableListings.ToList();
-            updatedListings.Remove(listing);
-            GlobalData.AvailableListings = updatedListings;
-            dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            try
+            {
+                var updatedListings = GlobalData.AvailableListings.ToList();
+                updatedListings.Remove(listing);
+                GlobalData.AvailableListings = updatedListings;
+                dataGridViewListings.DataSource = GlobalData.AvailableListings;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося видалити об'єкт. Спробуйте ще раз пізніше", "Помилка видалення об'єкту");
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
             // TODO: Add a searching algorithm
-            var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
-            dataGridViewListings.DataSource = filteredList.ToList();
+            try
+            {
+                var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));
+                dataGridViewListings.DataSource = filteredList.ToList();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Помилка при пошуку оголошення. Спробуйте ще раз пізніше", "Помилка пошуку об'єкту");
+            }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -68,9 +89,16 @@ namespace code.Forms
 
         private void dataGridViewListings_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var listing = (Advertisement)dataGridViewListings.SelectedRows[0].DataBoundItem;
-            FormBuyListing listingForm = new FormBuyListing(listing, this);
-            listingForm.ShowDialog();
+            try
+            {
+                var listing = (Advertisement)dataGridViewListings.SelectedRows[0].DataBoundItem;
+                FormBuyListing listingForm = new FormBuyListing(listing, this);
+                listingForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -88,20 +116,34 @@ namespace code.Forms
 
         private void reshowHint(ComboBox dropdown, string hint)
         {
-            if (!dropdown.Items.Contains(hint))
+            try
             {
-                dropdown.Items.Insert(0, hint);
-                dropdown.ForeColor = System.Drawing.Color.Gray;
-                dropdown.SelectedIndex = 0;
+                if (!dropdown.Items.Contains(hint))
+                {
+                    dropdown.Items.Insert(0, hint);
+                    dropdown.ForeColor = System.Drawing.Color.Gray;
+                    dropdown.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося показати підказку.", "Помилка показу підказки");
             }
         }
 
         private void hideHint(ComboBox dropdown, string hint)
         {
-            if (dropdown.Items.Contains(hint))
+            try
             {
-                dropdown.Items.Remove(hint);
-                dropdown.ForeColor = System.Drawing.Color.Black;
+                if (dropdown.Items.Contains(hint))
+                {
+                    dropdown.Items.Remove(hint);
+                    dropdown.ForeColor = System.Drawing.Color.Black;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося приховати підказку.", "Помилка приховання підказки");
             }
         }
 
@@ -146,43 +188,64 @@ namespace code.Forms
 
         private void dropdownSortByName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
+            try
             {
-                SortListings(dropdownSortByName);
+                if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
+                {
+                    SortListings(dropdownSortByName);
 
-                reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                dropdownSortByPrice.SelectedIndex = 0;
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByPrice.SelectedIndex = 0;
 
-                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                dropdownSortBySeller.SelectedIndex = 0;
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
         private void dropdownSortByPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
+            try
             {
-                SortListings(dropdownSortByPrice);
+                if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
+                {
+                    SortListings(dropdownSortByPrice);
 
-                reshowHint(dropdownSortByName, "Сортування за назвою");
-                dropdownSortByName.SelectedIndex = 0;
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    dropdownSortByName.SelectedIndex = 0;
 
-                reshowHint(dropdownSortBySeller, "Сортування за продавцем");
-                dropdownSortBySeller.SelectedIndex = 0;
+                    reshowHint(dropdownSortBySeller, "Сортування за продавцем");
+                    dropdownSortBySeller.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
         private void dropdownSortBySeller_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
+            try
             {
-                SortListings(dropdownSortBySeller);
+                if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
+                {
+                    SortListings(dropdownSortBySeller);
 
-                reshowHint(dropdownSortByPrice, "Сортування за ціною");
-                dropdownSortByPrice.SelectedIndex = 0;
+                    reshowHint(dropdownSortByPrice, "Сортування за ціною");
+                    dropdownSortByPrice.SelectedIndex = 0;
 
-                reshowHint(dropdownSortByName, "Сортування за назвою");
-                dropdownSortByName.SelectedIndex = 0;
+                    reshowHint(dropdownSortByName, "Сортування за назвою");
+                    dropdownSortByName.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відсортування оголошення", "Помилка сортування");
             }
         }
 
