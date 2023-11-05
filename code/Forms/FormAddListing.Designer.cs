@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fileDialogImageUpload = new System.Windows.Forms.OpenFileDialog();
             this.btnAddImage = new code.StyledButton();
+            this.lblImageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,18 +197,29 @@
             this.btnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddImage.Location = new System.Drawing.Point(17, 380);
+            this.btnAddImage.Location = new System.Drawing.Point(251, 376);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(169, 27);
             this.btnAddImage.TabIndex = 18;
-            this.btnAddImage.Text = "Додати зображення";
+            this.btnAddImage.Text = "Обрати зображення";
             this.btnAddImage.UseVisualStyleBackColor = false;
             this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // lblImageName
+            // 
+            this.lblImageName.AutoSize = true;
+            this.lblImageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImageName.Location = new System.Drawing.Point(14, 383);
+            this.lblImageName.Name = "lblImageName";
+            this.lblImageName.Size = new System.Drawing.Size(126, 20);
+            this.lblImageName.TabIndex = 25;
+            this.lblImageName.Text = "File name here...";
             // 
             // FormAddListing
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 481);
+            this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblDescriptionCharactersCount);
             this.Controls.Add(this.formTitle);
             this.Controls.Add(this.numericUpDownPrice);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog fileDialogImageUpload;
         private StyledButton btnAddImage;
+        private System.Windows.Forms.Label lblImageName;
     }
 }

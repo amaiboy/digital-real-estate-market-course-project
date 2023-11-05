@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,13 @@ namespace code.Forms
 {
     public partial class FormAddListing : Form
     {
+        private string selectedImagePath = string.Empty;
+
         public FormAddListing()
         {
             InitializeComponent();
+
+            lblImageName.Text = "Виберіть зображення";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -30,7 +35,8 @@ namespace code.Forms
                 if (string.IsNullOrWhiteSpace(txtName.Text) ||
                     string.IsNullOrWhiteSpace(txtDescription.Text) ||
                     string.IsNullOrWhiteSpace(txtAddress.Text) ||
-                    numericUpDownPrice.Value == 0)
+                    numericUpDownPrice.Value == 0 ||
+                    fileDialogImageUpload.FileName == string.Empty)
                 {
                     ExceptionManager.HandleException(new Exception("Заповніть всі поля"), "Будь ласка, заповніть всі поля і переконайтеся, що ціна не дорівнює нулю", "Валідація полів");
                     return;
@@ -46,7 +52,7 @@ namespace code.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToInt32(numericUpDownPrice.Value),
                         Seller = LoginManager.CurrentUser.Name,
-                        ImagePath = fileDialogImageUpload.FileName
+                        ImagePath = selectedImagePath
                     };
                     GlobalData.AvailableListings.Add(listing);
                     LoginManager.CurrentUser.AddedListings.Add(listing);
@@ -93,7 +99,16 @@ namespace code.Forms
             {
                 OpenFileDialog fileDialogImageUpload = new OpenFileDialog();
                 fileDialogImageUpload.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-                fileDialogImageUpload.ShowDialog();
+                if (fileDialogImageUpload.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = fileDialogImageUpload.FileName;
+                    lblImageName.Text = Path.GetFileName(selectedImagePath);
+                }
+                else
+                {
+                    selectedImagePath = string.Empty;
+                    lblImageName.Text = "Виберіть зображення";
+                }
             }
             catch (Exception ex)
             {

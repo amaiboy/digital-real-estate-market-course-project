@@ -90,7 +90,7 @@
             // lblOwner
             // 
             this.lblOwner.AutoSize = true;
-            this.lblOwner.Location = new System.Drawing.Point(361, 560);
+            this.lblOwner.Location = new System.Drawing.Point(13, 560);
             this.lblOwner.Name = "lblOwner";
             this.lblOwner.Size = new System.Drawing.Size(71, 13);
             this.lblOwner.TabIndex = 11;
