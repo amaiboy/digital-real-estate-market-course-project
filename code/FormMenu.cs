@@ -245,55 +245,84 @@ namespace code
         {
             InitializeComponent();
             OpenChildForm(new Forms.FormWelcome(), null);
-            LoginManager.CurrentUser = new User();
-            LoginManager.IsLoggedIn = false;
-            GlobalData.AvailableListings = this.predefinedListings;
-            GlobalData.Users = this.users;
+
+            try
+            {
+                LoginManager.CurrentUser = new User();
+                LoginManager.IsLoggedIn = false;
+                GlobalData.AvailableListings = this.predefinedListings;
+                GlobalData.Users = this.users;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося завантажити дані. Спробуйте пізніше", "Помилка завантаження даних");
+            }
         }
 
         private void ActivateButton(object btnSender)
         {
-            if (btnSender != null)
+            try
             {
-                if (currentButton != (Button)btnSender)
+                if (btnSender != null)
                 {
-                    DisableButton();
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = Color.FromArgb(64, 64, 100);
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular);
+                    if (currentButton != (Button)btnSender)
+                    {
+                        DisableButton();
+                        currentButton = (Button)btnSender;
+                        currentButton.BackColor = Color.FromArgb(64, 64, 100);
+                        currentButton.ForeColor = Color.White;
+                        currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося активувати кнопку. Спробуйте пізніше", "Помилка активації");
             }
         }
 
         private void DisableButton()
         {
-            foreach (Control previousBtn in panelMenu.Controls)
+            try
             {
-                if (previousBtn.GetType() == typeof(Button))
+                foreach (Control previousBtn in panelMenu.Controls)
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular);
+                    if (previousBtn.GetType() == typeof(Button))
+                    {
+                        previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                        previousBtn.ForeColor = Color.Gainsboro;
+                        previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося деактивувати кнопку. Спробуйте пізніше", "Помилка деактивації");
             }
         }
 
         private void OpenChildForm(Form newForm, object buttonSender)
         {
-            if (activeForm != null)
+            try
             {
-                activeForm.Close();
+                if (activeForm != null)
+                {
+                    activeForm.Close();
+                }
+                ActivateButton(buttonSender);
+                activeForm = newForm;
+                newForm.TopLevel = false;
+                newForm.FormBorderStyle = FormBorderStyle.None;
+                newForm.Dock = DockStyle.Fill;
+                this.panelFormContainer.Controls.Add(newForm);
+                this.panelFormContainer.Tag = newForm;
+                newForm.BringToFront();
+                newForm.Show();
             }
-            ActivateButton(buttonSender);
-            activeForm = newForm;
-            newForm.TopLevel = false;
-            newForm.FormBorderStyle = FormBorderStyle.None;
-            newForm.Dock = DockStyle.Fill;
-            this.panelFormContainer.Controls.Add(newForm);
-            this.panelFormContainer.Tag = newForm;
-            newForm.BringToFront();
-            newForm.Show();
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте пізніше", "Помилка відкриття");
+            }
         }
 
         private void buttonMarket_Click(object sender, EventArgs e)
