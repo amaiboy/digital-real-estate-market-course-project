@@ -35,6 +35,7 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnTogglePasswordVisibility = new code.StyledButton();
             this.SuspendLayout();
             // 
             // btnSignUp
@@ -98,13 +99,29 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(23, 107);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(397, 20);
+            this.txtPassword.Size = new System.Drawing.Size(357, 20);
             this.txtPassword.TabIndex = 14;
+            // 
+            // btnTogglePasswordVisibility
+            // 
+            this.btnTogglePasswordVisibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnTogglePasswordVisibility.FlatAppearance.BorderSize = 0;
+            this.btnTogglePasswordVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTogglePasswordVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTogglePasswordVisibility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTogglePasswordVisibility.Location = new System.Drawing.Point(386, 107);
+            this.btnTogglePasswordVisibility.Name = "btnTogglePasswordVisibility";
+            this.btnTogglePasswordVisibility.Size = new System.Drawing.Size(34, 20);
+            this.btnTogglePasswordVisibility.TabIndex = 15;
+            this.btnTogglePasswordVisibility.Text = ">_<";
+            this.btnTogglePasswordVisibility.UseVisualStyleBackColor = false;
+            this.btnTogglePasswordVisibility.Click += new System.EventHandler(this.btnTogglePasswordVisibility_Click);
             // 
             // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 201);
+            this.Controls.Add(this.btnTogglePasswordVisibility);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnSignUp);
@@ -129,5 +146,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private StyledButton btnTogglePasswordVisibility;
     }
 }

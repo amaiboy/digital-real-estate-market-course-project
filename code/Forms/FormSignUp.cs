@@ -30,6 +30,8 @@ namespace code.Forms
         public FormSignUp()
         {
             InitializeComponent();
+
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -104,6 +106,20 @@ namespace code.Forms
             this.Password = password;
             this.Email = email;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+                btnTogglePasswordVisibility.Text = "0_0";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                btnTogglePasswordVisibility.Text = ">_<";
+            }
         }
     }
 }

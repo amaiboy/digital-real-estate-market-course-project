@@ -16,6 +16,8 @@ namespace code.Forms
         public FormLogin()
         {
             InitializeComponent();
+
+            txtPassword.PasswordChar = '*';
         }
 
         public static int LoginAttempts = 0;
@@ -101,6 +103,20 @@ namespace code.Forms
             else
             {
                 this.DialogResult = DialogResult.Cancel;
+            }
+        }
+
+        private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+                btnTogglePasswordVisibility.Text = "0_0";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                btnTogglePasswordVisibility.Text = ">_<";
             }
         }
     }
