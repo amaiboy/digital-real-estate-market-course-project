@@ -17,13 +17,20 @@ namespace code.Forms
         {
             InitializeComponent();
 
-            this.Text = listing.Name;
-            lblName.Text = listing.Name;
-            lblSeller.Text = $"Це ваше оголошення";
-            lblDescription.Text = listing.Description;
-            lblAddress.Text = listing.Address;
-            lblPrice.Text = $"{listing.Price} ₴";
-            lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
+            try
+            {
+                this.Text = listing.Name;
+                lblName.Text = listing.Name;
+                lblSeller.Text = $"Це ваше оголошення";
+                lblDescription.Text = listing.Description;
+                lblAddress.Text = listing.Address;
+                lblPrice.Text = $"{listing.Price} ₴";
+                lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося завантажити деталі оголошення. Спробуйде закрити розділ і повторити спробу", "Помилка завантаження даних");
+            }
         }
     }
 }
