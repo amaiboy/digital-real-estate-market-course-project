@@ -45,7 +45,8 @@ namespace code.Forms
                         Description = txtDescription.Text,
                         Address = txtAddress.Text,
                         Price = Convert.ToInt32(numericUpDownPrice.Value),
-                        Seller = LoginManager.CurrentUser.Name
+                        Seller = LoginManager.CurrentUser.Name,
+                        ImagePath = fileDialogImageUpload.FileName
                     };
                     GlobalData.AvailableListings.Add(listing);
                     LoginManager.CurrentUser.AddedListings.Add(listing);
@@ -83,6 +84,20 @@ namespace code.Forms
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, "Не вдалося оновити кількість символів. Спробуйте пізніше", "Помилка перевірки довжини опису");
+            }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog fileDialogImageUpload = new OpenFileDialog();
+                fileDialogImageUpload.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+                fileDialogImageUpload.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося завантажити фото. Спробуйте пізніше", "Помилка завантаження фото");
             }
         }
     }

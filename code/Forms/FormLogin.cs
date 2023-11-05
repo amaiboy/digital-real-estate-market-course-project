@@ -88,8 +88,6 @@ namespace code.Forms
                 LoginManager.CurrentUser = user;
                 GlobalData.AvailableListings.AddRange(user.AddedListings);
                 LoginManager.IsLoggedIn = true;
-
-                ExceptionManager.ShowInfo($"Ви успішно увійшли! З поверненням, {user.Name}", "Успішний вхід");
             }
             catch (Exception ex)
             {
@@ -117,7 +115,6 @@ namespace code.Forms
                     LoginManager.IsLoggedIn = true;
 
                     this.DialogResult = DialogResult.OK;
-                    ExceptionManager.ShowInfo($"Ви успішно зареєструвалися! Ласкаво просимо, {user.Name}", "Успішна реєстрація");
                 }
                 else
                 {

@@ -26,6 +26,7 @@ namespace code.Forms
                 lblAddress.Text = listing.Address;
                 lblPrice.Text = $"{listing.Price} ₴";
                 lblDateLastViewed.Text = $"Останній раз переглянуто {DateTime.Now:dd.MM.yyyy}";
+                pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
             }
             catch (Exception ex)
             {

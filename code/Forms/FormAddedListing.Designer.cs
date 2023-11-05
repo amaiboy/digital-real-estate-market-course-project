@@ -35,13 +35,15 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDateLastViewed = new System.Windows.Forms.Label();
+            this.pictureBoxListingImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(14, 188);
+            this.lblPrice.Location = new System.Drawing.Point(11, 294);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(120, 20);
             this.lblPrice.TabIndex = 18;
@@ -50,7 +52,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(15, 163);
+            this.lblAddress.Location = new System.Drawing.Point(12, 269);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(78, 13);
             this.lblAddress.TabIndex = 17;
@@ -60,7 +62,7 @@
             // 
             this.lblSeller.AutoSize = true;
             this.lblSeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeller.Location = new System.Drawing.Point(15, 45);
+            this.lblSeller.Location = new System.Drawing.Point(12, 151);
             this.lblSeller.Name = "lblSeller";
             this.lblSeller.Size = new System.Drawing.Size(95, 13);
             this.lblSeller.TabIndex = 15;
@@ -69,7 +71,7 @@
             // lblDescription
             // 
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(15, 76);
+            this.lblDescription.Location = new System.Drawing.Point(12, 182);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(416, 72);
             this.lblDescription.TabIndex = 14;
@@ -79,7 +81,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(14, 21);
+            this.lblName.Location = new System.Drawing.Point(11, 127);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(132, 24);
             this.lblName.TabIndex = 13;
@@ -88,17 +90,27 @@
             // lblDateLastViewed
             // 
             this.lblDateLastViewed.AutoSize = true;
-            this.lblDateLastViewed.Location = new System.Drawing.Point(15, 223);
+            this.lblDateLastViewed.Location = new System.Drawing.Point(12, 329);
             this.lblDateLastViewed.Name = "lblDateLastViewed";
             this.lblDateLastViewed.Size = new System.Drawing.Size(119, 13);
             this.lblDateLastViewed.TabIndex = 17;
             this.lblDateLastViewed.Text = "Date last viewed here...";
             // 
+            // pictureBoxListingImage
+            // 
+            this.pictureBoxListingImage.Location = new System.Drawing.Point(15, 12);
+            this.pictureBoxListingImage.Name = "pictureBoxListingImage";
+            this.pictureBoxListingImage.Size = new System.Drawing.Size(417, 102);
+            this.pictureBoxListingImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxListingImage.TabIndex = 19;
+            this.pictureBoxListingImage.TabStop = false;
+            // 
             // FormAddedListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 261);
+            this.ClientSize = new System.Drawing.Size(444, 361);
+            this.Controls.Add(this.pictureBoxListingImage);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblDateLastViewed);
             this.Controls.Add(this.lblAddress);
@@ -106,10 +118,11 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(460, 300);
-            this.MinimumSize = new System.Drawing.Size(460, 300);
+            this.MaximumSize = new System.Drawing.Size(460, 400);
+            this.MinimumSize = new System.Drawing.Size(460, 400);
             this.Name = "FormAddedListing";
             this.Text = "Назва доданої нерухомості...";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDateLastViewed;
+        private System.Windows.Forms.PictureBox pictureBoxListingImage;
     }
 }

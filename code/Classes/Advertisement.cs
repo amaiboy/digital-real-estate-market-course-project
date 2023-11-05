@@ -29,5 +29,9 @@ namespace code.Classes
         {
             get; set;
         }
+        public string ImagePath
+        {
+            get; set;
+        }
     }
 }
