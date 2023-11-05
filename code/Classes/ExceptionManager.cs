@@ -17,13 +17,13 @@ namespace code.Classes
             MessageBox.Show($"{body}.\nДодаткова інформація: {ex.Message}", heading, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public static bool ShowConfirmation(string body, string heading)
+        public static bool Confirm(string body, string heading)
         {
             DialogResult result = MessageBox.Show(body, heading, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return result == DialogResult.Yes;
         }
 
-        public static void ShowSuccess(string body, string heading)
+        public static void ShowInfo(string body, string heading)
         {
             MessageBox.Show(body, heading, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
