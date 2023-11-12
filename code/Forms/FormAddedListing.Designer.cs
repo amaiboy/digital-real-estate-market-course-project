@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddedListing));
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
@@ -35,7 +36,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblDateLastViewed = new System.Windows.Forms.Label();
             this.pictureBoxListingImage = new System.Windows.Forms.PictureBox();
-            this.lblDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.toolTipDescription = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(11, 489);
+            this.lblPrice.Location = new System.Drawing.Point(11, 477);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(120, 20);
             this.lblPrice.TabIndex = 18;
@@ -52,7 +54,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(12, 464);
+            this.lblAddress.Location = new System.Drawing.Point(12, 452);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(78, 13);
             this.lblAddress.TabIndex = 17;
@@ -81,7 +83,7 @@
             // lblDateLastViewed
             // 
             this.lblDateLastViewed.AutoSize = true;
-            this.lblDateLastViewed.Location = new System.Drawing.Point(12, 524);
+            this.lblDateLastViewed.Location = new System.Drawing.Point(12, 512);
             this.lblDateLastViewed.Name = "lblDateLastViewed";
             this.lblDateLastViewed.Size = new System.Drawing.Size(119, 13);
             this.lblDateLastViewed.TabIndex = 17;
@@ -99,16 +101,11 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(15, 417);
-            this.lblDescription.MaximumSize = new System.Drawing.Size(414, 35);
-            this.lblDescription.Multiline = true;
+            this.lblDescription.Location = new System.Drawing.Point(12, 419);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.ReadOnly = true;
-            this.lblDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.lblDescription.Size = new System.Drawing.Size(414, 35);
+            this.lblDescription.Size = new System.Drawing.Size(114, 16);
             this.lblDescription.TabIndex = 24;
             this.lblDescription.Text = "Description here...";
             // 
@@ -116,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 551);
+            this.ClientSize = new System.Drawing.Size(444, 541);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.pictureBoxListingImage);
             this.Controls.Add(this.lblPrice);
@@ -125,8 +122,8 @@
             this.Controls.Add(this.lblSeller);
             this.Controls.Add(this.lblName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(460, 590);
-            this.MinimumSize = new System.Drawing.Size(460, 590);
+            this.MaximumSize = new System.Drawing.Size(460, 580);
+            this.MinimumSize = new System.Drawing.Size(460, 580);
             this.Name = "FormAddedListing";
             this.Text = "Назва доданої нерухомості...";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).EndInit();
@@ -143,6 +140,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDateLastViewed;
         private System.Windows.Forms.PictureBox pictureBoxListingImage;
-        private System.Windows.Forms.TextBox lblDescription;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.ToolTip toolTipDescription;
     }
 }

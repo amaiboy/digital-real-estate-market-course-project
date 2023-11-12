@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuyListing));
             this.btnBuy = new code.StyledButton();
             this.btnClose = new code.StyledButton();
@@ -36,7 +37,8 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.pictureBoxListingImage = new System.Windows.Forms.PictureBox();
-            this.lblDescription = new System.Windows.Forms.TextBox();
+            this.toolTipDescription = new System.Windows.Forms.ToolTip(this.components);
+            this.lblDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuy.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuy.Location = new System.Drawing.Point(12, 533);
+            this.btnBuy.Location = new System.Drawing.Point(12, 519);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(120, 30);
             this.btnBuy.TabIndex = 0;
@@ -62,7 +64,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(138, 533);
+            this.btnClose.Location = new System.Drawing.Point(138, 519);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 30);
             this.btnClose.TabIndex = 0;
@@ -93,7 +95,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(12, 471);
+            this.lblAddress.Location = new System.Drawing.Point(12, 457);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(88, 15);
             this.lblAddress.TabIndex = 4;
@@ -103,7 +105,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(11, 496);
+            this.lblPrice.Location = new System.Drawing.Point(11, 482);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(120, 20);
             this.lblPrice.TabIndex = 5;
@@ -121,25 +123,19 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(15, 424);
-            this.lblDescription.MaximumSize = new System.Drawing.Size(414, 35);
-            this.lblDescription.Multiline = true;
+            this.lblDescription.Location = new System.Drawing.Point(12, 428);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.ReadOnly = true;
-            this.lblDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.lblDescription.Size = new System.Drawing.Size(414, 35);
+            this.lblDescription.Size = new System.Drawing.Size(114, 16);
             this.lblDescription.TabIndex = 22;
-            this.lblDescription.Text = "love include laid movie pair day class explanation brother five bell manufacturin" +
-    "g eaten throw desert loss giving buy answer fence better";
+            this.lblDescription.Text = "Description here...";
             // 
             // FormBuyListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 581);
+            this.ClientSize = new System.Drawing.Size(444, 561);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.pictureBoxListingImage);
             this.Controls.Add(this.lblPrice);
@@ -151,8 +147,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximumSize = new System.Drawing.Size(460, 620);
-            this.MinimumSize = new System.Drawing.Size(460, 620);
+            this.MaximumSize = new System.Drawing.Size(460, 600);
+            this.MinimumSize = new System.Drawing.Size(460, 600);
             this.Name = "FormBuyListing";
             this.Text = "Назва нерухомості...";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxListingImage)).EndInit();
@@ -170,6 +166,7 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.PictureBox pictureBoxListingImage;
-        private System.Windows.Forms.TextBox lblDescription;
+        private System.Windows.Forms.ToolTip toolTipDescription;
+        private System.Windows.Forms.Label lblDescription;
     }
 }
