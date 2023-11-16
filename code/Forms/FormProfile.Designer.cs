@@ -38,7 +38,7 @@ namespace code.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.formTitle = new code.FormTitle();
+            this.formTitle = new code.MainTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
             this.lblAddedListings = new System.Windows.Forms.Label();
             this.lblBoughtListings = new System.Windows.Forms.Label();
@@ -499,7 +499,7 @@ namespace code.Forms
         }
 
         #endregion
-        private FormTitle formTitle;
+        private MainTitle formTitle;
         private System.Windows.Forms.Panel pnlMainContainer;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtPassword;

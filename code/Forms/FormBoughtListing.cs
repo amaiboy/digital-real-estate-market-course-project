@@ -22,7 +22,9 @@ namespace code.Forms
                 this.Text = listing.Name;
                 lblName.Text = listing.Name;
                 lblSeller.Text = $"Куплено від: {listing.Seller}";
-                lblDescription.Text = listing.Description;
+                string truncatedDescription = listing.Description.Length > 60 ? listing.Description.Substring(0, 57) + "..." : listing.Description;
+                this.lblDescription.Text = truncatedDescription;
+                this.toolTipDescription.SetToolTip(this.lblDescription, listing.Description);
                 lblAddress.Text = listing.Address;
                 lblPrice.Text = $"{listing.Price} ₴";
                 lblOwner.Text = $"Власник: {LoginManager.CurrentUser.Name}";

@@ -130,17 +130,17 @@
     <Compile Include="Forms\FormBuyListing.Designer.cs">
       <DependentUpon>FormBuyListing.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTitle.cs">
+    <Compile Include="CustomControls\MainTitle.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\GlobalData.cs" />
     <Compile Include="Classes\Advertisement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StyledButton.cs">
+    <Compile Include="CustomControls\StyledButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="StyledTable.cs">
+    <Compile Include="CustomControls\StyledTable.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\User.cs" />

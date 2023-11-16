@@ -38,7 +38,7 @@
             this.labelOutro = new System.Windows.Forms.Label();
             this.styledButtonLicense = new code.StyledButton();
             this.styledButtonGithubLink = new code.StyledButton();
-            this.formTitle1 = new code.FormTitle();
+            this.formTitle1 = new code.MainTitle();
             this.SuspendLayout();
             // 
             // labelIntro
@@ -172,7 +172,7 @@
 
         #endregion
 
-        private FormTitle formTitle1;
+        private MainTitle formTitle1;
         private System.Windows.Forms.Label labelIntro;
         private System.Windows.Forms.Label labelTeamLead;
         private System.Windows.Forms.Label labelAlgorithms;

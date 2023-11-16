@@ -29,7 +29,9 @@ namespace code.Forms
                 this.listing = listing;
                 this.Text = listing.Name;
                 this.lblName.Text = listing.Name;
-                this.lblDescription.Text = listing.Description;
+                string truncatedDescription = listing.Description.Length > 60 ? listing.Description.Substring(0, 57) + "..." : listing.Description;
+                this.lblDescription.Text = truncatedDescription;
+                this.toolTipDescription.SetToolTip(this.lblDescription, listing.Description);
                 this.lblAddress.Text = listing.Address;
                 this.lblPrice.Text = $"${listing.Price} або {listing.Price * getDollarRate()} ₴";
                 this.lblSeller.Text = listing.Seller;

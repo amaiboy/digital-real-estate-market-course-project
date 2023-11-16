@@ -39,7 +39,7 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
-            this.formTitle = new code.FormTitle();
+            this.formTitle = new code.MainTitle();
             this.lblDescriptionCharactersCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fileDialogImageUpload = new System.Windows.Forms.OpenFileDialog();
@@ -256,7 +256,7 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
-        private FormTitle formTitle;
+        private MainTitle formTitle;
         private System.Windows.Forms.Label lblDescriptionCharactersCount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog fileDialogImageUpload;

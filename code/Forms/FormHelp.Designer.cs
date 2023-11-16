@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHelp));
-            this.formTitle1 = new code.FormTitle();
+            this.formTitle1 = new code.MainTitle();
             this.labelIntroParagraph = new System.Windows.Forms.Label();
             this.labelMarketHeading = new System.Windows.Forms.Label();
             this.labelMarketParagraph = new System.Windows.Forms.Label();
@@ -176,7 +176,7 @@
 
         #endregion
 
-        private FormTitle formTitle1;
+        private MainTitle formTitle1;
         private System.Windows.Forms.Label labelIntroParagraph;
         private System.Windows.Forms.Label labelMarketHeading;
         private System.Windows.Forms.Label labelMarketParagraph;

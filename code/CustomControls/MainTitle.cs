@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace code
 {
-    public class FormTitle : Label
+    public class MainTitle : Label
     {
-        public FormTitle()
+        public MainTitle()
         {
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
