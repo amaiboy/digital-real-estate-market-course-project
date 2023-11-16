@@ -34,7 +34,7 @@ namespace code.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.formTitle = new code.FormTitle();
+            this.formTitle = new code.MainTitle();
             this.btnSearch = new code.StyledButton();
             this.dataGridViewListings = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -275,7 +275,7 @@ namespace code.Forms
 
         #endregion
 
-        private FormTitle formTitle;
+        private MainTitle formTitle;
         private StyledButton btnSearch;
         private System.Windows.Forms.DataGridView dataGridViewListings;
         private System.Windows.Forms.BindingSource listingBindingSource;
