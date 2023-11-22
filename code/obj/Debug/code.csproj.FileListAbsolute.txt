@@ -111,3 +111,6 @@ C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.dll
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.xml
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CopyComplete
+C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CopyComplete
