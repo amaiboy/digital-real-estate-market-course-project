@@ -61,9 +61,9 @@ namespace code.Forms
 
             List<string> errors = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(passwordConfirm))
             {
-                errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
+                errors.Add("Ім'я користувача, пароль, підтвердження паролю або електронна пошта не можуть бути порожніми.");
             }
             if (DoesUsernameExist(username))
             {
@@ -89,7 +89,14 @@ namespace code.Forms
             try
             {
                 // TODO: Possibly add email verification
-                var validEmail = new System.Net.Mail.MailAddress(email);
+                if (!string.IsNullOrWhiteSpace(email))
+                {
+                    var validEmail = new System.Net.Mail.MailAddress(email);
+                }
+                else
+                {
+                    throw new FormatException();
+                }
             }
             catch (FormatException)
             {
