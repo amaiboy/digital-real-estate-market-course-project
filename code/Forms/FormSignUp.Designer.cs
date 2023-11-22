@@ -31,18 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnSignUp = new code.StyledButton();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnLogin = new code.StyledButton();
             this.btnTogglePasswordVisibility = new code.StyledButton();
+            this.btnSignUp = new code.StyledButton();
+            this.btnLogin = new code.StyledButton();
+            this.btnTogglePasswordConfirmVisibility = new code.StyledButton();
+            this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
+            this.lblPasswordConfirm = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(25, 104);
+            this.txtPassword.Location = new System.Drawing.Point(25, 101);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(357, 20);
             this.txtPassword.TabIndex = 19;
@@ -54,26 +57,11 @@
             this.txtUsername.Size = new System.Drawing.Size(397, 20);
             this.txtUsername.TabIndex = 20;
             // 
-            // btnSignUp
-            // 
-            this.btnSignUp.BackColor = System.Drawing.Color.Teal;
-            this.btnSignUp.FlatAppearance.BorderSize = 0;
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSignUp.Location = new System.Drawing.Point(25, 202);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(167, 30);
-            this.btnSignUp.TabIndex = 17;
-            this.btnSignUp.Text = "Зарєструватись";
-            this.btnSignUp.UseVisualStyleBackColor = false;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(22, 81);
+            this.lblPassword.Location = new System.Drawing.Point(22, 78);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 16);
             this.lblPassword.TabIndex = 15;
@@ -93,7 +81,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(22, 138);
+            this.lblEmail.Location = new System.Drawing.Point(22, 198);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(131, 16);
             this.lblEmail.TabIndex = 15;
@@ -101,26 +89,11 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(25, 161);
+            this.txtEmail.Location = new System.Drawing.Point(25, 221);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(397, 20);
             this.txtEmail.TabIndex = 19;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(198, 202);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(114, 30);
-            this.btnLogin.TabIndex = 18;
-            this.btnLogin.Text = "Увійти";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnTogglePasswordVisibility
             // 
@@ -129,7 +102,7 @@
             this.btnTogglePasswordVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTogglePasswordVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTogglePasswordVisibility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTogglePasswordVisibility.Location = new System.Drawing.Point(388, 104);
+            this.btnTogglePasswordVisibility.Location = new System.Drawing.Point(388, 102);
             this.btnTogglePasswordVisibility.Name = "btnTogglePasswordVisibility";
             this.btnTogglePasswordVisibility.Size = new System.Drawing.Size(34, 20);
             this.btnTogglePasswordVisibility.TabIndex = 21;
@@ -137,10 +110,75 @@
             this.btnTogglePasswordVisibility.UseVisualStyleBackColor = false;
             this.btnTogglePasswordVisibility.Click += new System.EventHandler(this.btnTogglePasswordVisibility_Click);
             // 
+            // btnSignUp
+            // 
+            this.btnSignUp.BackColor = System.Drawing.Color.Teal;
+            this.btnSignUp.FlatAppearance.BorderSize = 0;
+            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSignUp.Location = new System.Drawing.Point(25, 267);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(167, 30);
+            this.btnSignUp.TabIndex = 17;
+            this.btnSignUp.Text = "Зарєструватись";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogin.Location = new System.Drawing.Point(198, 267);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(114, 30);
+            this.btnLogin.TabIndex = 18;
+            this.btnLogin.Text = "Увійти";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnTogglePasswordConfirmVisibility
+            // 
+            this.btnTogglePasswordConfirmVisibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnTogglePasswordConfirmVisibility.FlatAppearance.BorderSize = 0;
+            this.btnTogglePasswordConfirmVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTogglePasswordConfirmVisibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTogglePasswordConfirmVisibility.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTogglePasswordConfirmVisibility.Location = new System.Drawing.Point(388, 164);
+            this.btnTogglePasswordConfirmVisibility.Name = "btnTogglePasswordConfirmVisibility";
+            this.btnTogglePasswordConfirmVisibility.Size = new System.Drawing.Size(34, 20);
+            this.btnTogglePasswordConfirmVisibility.TabIndex = 24;
+            this.btnTogglePasswordConfirmVisibility.Text = ">_<";
+            this.btnTogglePasswordConfirmVisibility.UseVisualStyleBackColor = false;
+            this.btnTogglePasswordConfirmVisibility.Click += new System.EventHandler(this.btnTogglePasswordConfirmVisibility_Click);
+            // 
+            // txtPasswordConfirm
+            // 
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(25, 163);
+            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(357, 20);
+            this.txtPasswordConfirm.TabIndex = 23;
+            // 
+            // lblPasswordConfirm
+            // 
+            this.lblPasswordConfirm.AutoSize = true;
+            this.lblPasswordConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordConfirm.Location = new System.Drawing.Point(22, 140);
+            this.lblPasswordConfirm.Name = "lblPasswordConfirm";
+            this.lblPasswordConfirm.Size = new System.Drawing.Size(134, 16);
+            this.lblPasswordConfirm.TabIndex = 22;
+            this.lblPasswordConfirm.Text = "Підтвердіть пароль";
+            // 
             // FormSignUp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(444, 251);
+            this.ClientSize = new System.Drawing.Size(444, 311);
+            this.Controls.Add(this.btnTogglePasswordConfirmVisibility);
+            this.Controls.Add(this.txtPasswordConfirm);
+            this.Controls.Add(this.lblPasswordConfirm);
             this.Controls.Add(this.btnTogglePasswordVisibility);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
@@ -151,8 +189,8 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(460, 290);
-            this.MinimumSize = new System.Drawing.Size(460, 290);
+            this.MaximumSize = new System.Drawing.Size(460, 350);
+            this.MinimumSize = new System.Drawing.Size(460, 350);
             this.Name = "FormSignUp";
             this.Text = "Створіть свій профіль";
             this.ResumeLayout(false);
@@ -171,5 +209,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private StyledButton btnLogin;
         private StyledButton btnTogglePasswordVisibility;
+        private StyledButton btnTogglePasswordConfirmVisibility;
+        private System.Windows.Forms.TextBox txtPasswordConfirm;
+        private System.Windows.Forms.Label lblPasswordConfirm;
     }
 }

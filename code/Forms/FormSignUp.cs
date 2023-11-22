@@ -32,6 +32,7 @@ namespace code.Forms
             InitializeComponent();
 
             txtPassword.PasswordChar = '*';
+            txtPasswordConfirm.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace code.Forms
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
+            var passwordConfirm = txtPasswordConfirm.Text;
             var email = txtEmail.Text;
 
             List<string> errors = new List<string>();
@@ -78,6 +80,10 @@ namespace code.Forms
             if (password.Length < 8)
             {
                 errors.Add("Пароль повинен мати довжину не менше 8 символів.");
+            }
+            if (password!=passwordConfirm)
+            {
+                errors.Add("Пароль не співпадає з підтвердженням паролю.");
             }
 
             try
@@ -126,6 +132,27 @@ namespace code.Forms
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTogglePasswordConfirmVisibility_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPasswordConfirm.PasswordChar == '*')
+                {
+                    txtPasswordConfirm.PasswordChar = '\0';
+                    btnTogglePasswordConfirmVisibility.Text = "0_0";
+                }
+                else
+                {
+                    txtPasswordConfirm.PasswordChar = '*';
+                    btnTogglePasswordConfirmVisibility.Text = ">_<";
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості підтвердження пароля", "Помилка видимості підтвердження пароля");
+            }
         }
     }
 }
