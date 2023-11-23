@@ -1,12 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace code.Classes
 {
+    public static class СurrencyСonverter
+    {
+        public static double GetDollarRate()
+        {
+            try
+            {
+                string link = @"https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD";
+                WebClient wc = new WebClient();
+                string xmlString = wc.DownloadString(link);
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xmlString);
+                XmlNode rateNode = xmlDoc.SelectSingleNode("/exchange/currency/rate");
+                string usdRate = rateNode.InnerText;
+                double rate = Convert.ToDouble(usdRate, CultureInfo.InvariantCulture);
+                return rate;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося отримати курс долара. Спробуйте пізніше", "Помилка отримання курсу");
+                return 0;
+            }
+        }
+    }
     // клас, що відповідає за керування функціями сортування
     public static class AlgorithmManager
     {
