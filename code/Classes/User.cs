@@ -23,7 +23,6 @@ namespace code.Classes
         {
             get; set;
         }
-        // TODO: Add password hashing
         public string Password
         {
             get; set;

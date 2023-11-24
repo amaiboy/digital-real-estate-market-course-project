@@ -108,7 +108,8 @@ namespace code.Classes
             string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
             string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
             string filePath = Path.Combine(databaseDirectory, "users.json");
-
+            string fileToSave = Path.Combine(databaseDirectory, "advertisment.csv");
+            DeleteFilesExcept(databaseDirectory, fileToSave);
             try
             {
                 List<UserObj> writeList = new List<UserObj>();
@@ -169,6 +170,25 @@ namespace code.Classes
             {
                 ExceptionManager.HandleException(ex, "Не вдалося зчитати дані з файлу.", "Помилка зчитування даних");
                 return null;
+            }
+        }
+
+        // метод для видалення зайвих даних перед записом
+        public static void DeleteFilesExcept(string directoryPath, string fileToKeep)
+        {
+            try
+            {
+                var files = Directory.GetFiles(directoryPath);
+                var filesToDelete = files.Where(file => file != fileToKeep);
+
+                foreach (var fileToDelete in filesToDelete)
+                {
+                    File.Delete(fileToDelete);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося видалити дані.", "Помилка видалення даних");
             }
         }
     }

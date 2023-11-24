@@ -19,62 +19,13 @@ namespace code
         private Form activeForm;
         BindingList<Advertisement> predefinedListings = new BindingList<Advertisement>();
         List <User> users = new List<User>();
-        //List<User> users = new List<User>{
-        //    new User {
-        //        Name = "developer",
-        //        Email = "developer@real-estate-market.com",
-        //        Password = "developer",
-        //        BoughtListings = new BindingList<Advertisement> {
-        //            new Advertisement {
-        //                Name = "Квартира в центрі",
-        //                Description = "Квартира в центрі міста. Поруч театр, музей та кафе. Включає кондиціонер, Wi-Fi та пральну машину.",
-        //                Address = "вул. Центральна, 234, Запоріжжя",
-        //                Price = 57000,
-        //                Seller = "Валерія Костенко",
-        //                ImagePath = ""
-        //            },
-        //            new Advertisement {
-        //                Name = "Офіс в бізнес-центрі",
-        //                Description = "Офіс в бізнес-центрі. Ідеально підходить для IT-компанії або стартапу.",
-        //                Address = "вул. Бізнес-центральна, 123, Запоріжжя",
-        //                Price = 70000,
-        //                Seller = "Максим Петров",
-        //                ImagePath = ""
-        //            }
-        //        },
-        //        AddedListings = new BindingList<Advertisement> {
-        //            new Advertisement {
-        //                Name = "Будинок біля парку",
-        //                Description = "Будинок біля парку з чотирма номерами. Включає ресторан, бар, лобі та конференц-зал.",
-        //                Address = "вул. Паркова, 456, Запоріжжя",
-        //                Price = 400000,
-        //                Seller = "developer",
-        //                ImagePath = ""
-        //            },
-        //            new Advertisement {
-        //                Name = "Однокімнатна квартира в центрі",
-        //                Description = "Однокімнатна квартира в центрі міста. Поруч театр, музей та кафе.",
-        //                Address = "вул. Центральна, 234, Запоріжжя",
-        //                Price = 60000,
-        //                Seller = "developer",
-        //                ImagePath = ""
-        //            },
-        //            new Advertisement {
-        //                Name = "Дача на острові",
-        //                Description = "Дача на острові з видом на море. Включає човен, каяки та риболовне спорядження.",
-        //                Address = "вул. Острівна, 789, Запоріжжя",
-        //                Price = 300000,
-        //                Seller = "developer",
-        //                ImagePath = ""
-        //            }
-        //        }
-        //    }
-        //};
 
         public FormMenu()
         {
             predefinedListings = FileHandler.readAdFromCSV();
             users = FileHandler.UserFileReader();
+            GlobalData.AvailableListings = predefinedListings;
+            GlobalData.Users = users;
             // Initialize the form components
             InitializeComponent();
 
