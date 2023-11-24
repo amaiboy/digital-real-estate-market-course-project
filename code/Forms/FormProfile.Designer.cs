@@ -40,6 +40,8 @@ namespace code.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.MainTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
+            this.lblEmptyAddedListings = new System.Windows.Forms.Label();
+            this.lblEmptyBoughtListings = new System.Windows.Forms.Label();
             this.lblAddedListings = new System.Windows.Forms.Label();
             this.lblBoughtListings = new System.Windows.Forms.Label();
             this.btnTogglePasswordVisibility = new code.StyledButton();
@@ -66,8 +68,7 @@ namespace code.Forms
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblEmptyBoughtListings = new System.Windows.Forms.Label();
-            this.lblEmptyAddedListings = new System.Windows.Forms.Label();
+            this.deleteAdvertismentButton = new code.StyledButton();
             this.pnlMainContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
@@ -87,6 +88,7 @@ namespace code.Forms
             // 
             // pnlMainContainer
             // 
+            this.pnlMainContainer.Controls.Add(this.deleteAdvertismentButton);
             this.pnlMainContainer.Controls.Add(this.lblEmptyAddedListings);
             this.pnlMainContainer.Controls.Add(this.lblEmptyBoughtListings);
             this.pnlMainContainer.Controls.Add(this.lblAddedListings);
@@ -111,6 +113,28 @@ namespace code.Forms
             this.pnlMainContainer.Name = "pnlMainContainer";
             this.pnlMainContainer.Size = new System.Drawing.Size(768, 561);
             this.pnlMainContainer.TabIndex = 3;
+            // 
+            // lblEmptyAddedListings
+            // 
+            this.lblEmptyAddedListings.AutoSize = true;
+            this.lblEmptyAddedListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmptyAddedListings.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEmptyAddedListings.Location = new System.Drawing.Point(428, 417);
+            this.lblEmptyAddedListings.Name = "lblEmptyAddedListings";
+            this.lblEmptyAddedListings.Size = new System.Drawing.Size(301, 16);
+            this.lblEmptyAddedListings.TabIndex = 9;
+            this.lblEmptyAddedListings.Text = "Список доданої нерухомості порожній...";
+            // 
+            // lblEmptyBoughtListings
+            // 
+            this.lblEmptyBoughtListings.AutoSize = true;
+            this.lblEmptyBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmptyBoughtListings.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEmptyBoughtListings.Location = new System.Drawing.Point(43, 417);
+            this.lblEmptyBoughtListings.Name = "lblEmptyBoughtListings";
+            this.lblEmptyBoughtListings.Size = new System.Drawing.Size(309, 16);
+            this.lblEmptyBoughtListings.TabIndex = 9;
+            this.lblEmptyBoughtListings.Text = "Список купленої нерухомості порожній...";
             // 
             // lblAddedListings
             // 
@@ -184,9 +208,9 @@ namespace code.Forms
             this.btnAddListing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddListing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddListing.Location = new System.Drawing.Point(396, 523);
+            this.btnAddListing.Location = new System.Drawing.Point(408, 523);
             this.btnAddListing.Name = "btnAddListing";
-            this.btnAddListing.Size = new System.Drawing.Size(360, 26);
+            this.btnAddListing.Size = new System.Drawing.Size(165, 26);
             this.btnAddListing.TabIndex = 6;
             this.btnAddListing.Text = "Додати оголошення";
             this.btnAddListing.UseVisualStyleBackColor = false;
@@ -457,27 +481,20 @@ namespace code.Forms
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Ім\'я користувача";
             // 
-            // lblEmptyBoughtListings
+            // deleteAdvertismentButton
             // 
-            this.lblEmptyBoughtListings.AutoSize = true;
-            this.lblEmptyBoughtListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmptyBoughtListings.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEmptyBoughtListings.Location = new System.Drawing.Point(43, 417);
-            this.lblEmptyBoughtListings.Name = "lblEmptyBoughtListings";
-            this.lblEmptyBoughtListings.Size = new System.Drawing.Size(309, 16);
-            this.lblEmptyBoughtListings.TabIndex = 9;
-            this.lblEmptyBoughtListings.Text = "Список купленої нерухомості порожній...";
-            // 
-            // lblEmptyAddedListings
-            // 
-            this.lblEmptyAddedListings.AutoSize = true;
-            this.lblEmptyAddedListings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmptyAddedListings.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEmptyAddedListings.Location = new System.Drawing.Point(428, 417);
-            this.lblEmptyAddedListings.Name = "lblEmptyAddedListings";
-            this.lblEmptyAddedListings.Size = new System.Drawing.Size(301, 16);
-            this.lblEmptyAddedListings.TabIndex = 9;
-            this.lblEmptyAddedListings.Text = "Список доданої нерухомості порожній...";
+            this.deleteAdvertismentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.deleteAdvertismentButton.FlatAppearance.BorderSize = 0;
+            this.deleteAdvertismentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteAdvertismentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteAdvertismentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteAdvertismentButton.Location = new System.Drawing.Point(582, 523);
+            this.deleteAdvertismentButton.Name = "deleteAdvertismentButton";
+            this.deleteAdvertismentButton.Size = new System.Drawing.Size(165, 26);
+            this.deleteAdvertismentButton.TabIndex = 10;
+            this.deleteAdvertismentButton.Text = "Видалити оголошення";
+            this.deleteAdvertismentButton.UseVisualStyleBackColor = false;
+            this.deleteAdvertismentButton.Click += new System.EventHandler(this.deleteAdvertismentButton_Click);
             // 
             // FormProfile
             // 
@@ -529,5 +546,6 @@ namespace code.Forms
         private System.Windows.Forms.Label lblBoughtListings;
         private System.Windows.Forms.Label lblEmptyBoughtListings;
         private System.Windows.Forms.Label lblEmptyAddedListings;
+        private StyledButton deleteAdvertismentButton;
     }
 }

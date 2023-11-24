@@ -5,9 +5,11 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using System.Xml.Schema;
 using code.Classes;
 
@@ -214,6 +216,30 @@ namespace code.Forms
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
+        }
+
+        private void deleteAdvertismentButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете видалити це оголошення?", "Підтвердження видалення");
+                if (dataGridViewAddedListings.SelectedRows.Count > 0)
+                {
+                    var selectedListing = dataGridViewAddedListings.SelectedRows[0];
+                    var selectedListingAdvertisment = (Advertisement)selectedListing.DataBoundItem; // Исправлено здесь
+                    dataGridViewAddedListings.Rows.Remove(selectedListing);
+
+                    // Удаление из глобальной коллекции
+                    GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
+
+                    // Удаление из коллекции текущего пользователя
+                    LoginManager.CurrentUser.AddedListings.Remove(selectedListingAdvertisment);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося видалити оголошення. Спробуйте пізніше", "Помилка видалення");
             }
         }
     }

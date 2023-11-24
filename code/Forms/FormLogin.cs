@@ -1,5 +1,6 @@
 ﻿using code.Classes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,7 +87,10 @@ namespace code.Forms
 
                 this.DialogResult = DialogResult.OK;
                 LoginManager.CurrentUser = user;
-                GlobalData.AvailableListings.AddRange(user.AddedListings);
+                foreach (var item in user.AddedListings)
+                {
+                    GlobalData.AvailableListings.Add(item);
+                }
                 LoginManager.IsLoggedIn = true;
             }
             catch (Exception ex)

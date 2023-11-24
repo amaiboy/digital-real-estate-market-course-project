@@ -37,7 +37,7 @@ namespace code.Forms
         {
             try
             {
-                var updatedListings = GlobalData.AvailableListings.ToList();
+                var updatedListings = GlobalData.AvailableListings;
                 updatedListings.Add(listing);
                 GlobalData.AvailableListings = updatedListings;
                 dataGridViewListings.DataSource = GlobalData.AvailableListings;
@@ -52,7 +52,7 @@ namespace code.Forms
         {
             try
             {
-                var updatedListings = GlobalData.AvailableListings.ToList();
+                var updatedListings = GlobalData.AvailableListings;
                 updatedListings.Remove(listing);
                 GlobalData.AvailableListings = updatedListings;
                 dataGridViewListings.DataSource = GlobalData.AvailableListings;

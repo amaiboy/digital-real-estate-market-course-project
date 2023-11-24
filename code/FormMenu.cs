@@ -17,7 +17,7 @@ namespace code
     {
         private Button currentButton;
         private Form activeForm;
-        List<Advertisement> predefinedListings = new List<Advertisement> {
+        BindingList<Advertisement> predefinedListings = new BindingList<Advertisement> {
             new Advertisement {
                 Name = "Однокімнатна квартира в центрі міста",
                 Description = "Компактна однокімнатна квартира в самому центрі міста. Ідеально підходить для однієї людини або пари. Поруч кафе, театри та зупинки громадського транспорту.",
@@ -224,7 +224,7 @@ namespace code
                 Name = "developer",
                 Email = "developer@real-estate-market.com",
                 Password = "developer",
-                BoughtListings = new List<Advertisement> {
+                BoughtListings = new BindingList<Advertisement> {
                     new Advertisement {
                         Name = "Квартира в центрі",
                         Description = "Квартира в центрі міста. Поруч театр, музей та кафе. Включає кондиціонер, Wi-Fi та пральну машину.",
@@ -242,7 +242,7 @@ namespace code
                         ImagePath = ""
                     }
                 },
-                AddedListings = new List<Advertisement> {
+                AddedListings = new BindingList<Advertisement> {
                     new Advertisement {
                         Name = "Будинок біля парку",
                         Description = "Будинок біля парку з чотирма номерами. Включає ресторан, бар, лобі та конференц-зал.",
@@ -330,7 +330,7 @@ namespace code
             return randomImageFile;
         }
 
-        private void SetRandomImagesForListings(List<Advertisement> listings, string[] imageFiles, Random random)
+        private void SetRandomImagesForListings(BindingList<Advertisement> listings, string[] imageFiles, Random random)
         {
             // Iterate through each advertisement in the list
             foreach (var ad in listings)
