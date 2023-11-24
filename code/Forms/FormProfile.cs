@@ -224,7 +224,7 @@ namespace code.Forms
             try
             {
                 bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете видалити це оголошення?", "Підтвердження видалення");
-                if (dataGridViewAddedListings.SelectedRows.Count > 0)
+                if (dataGridViewAddedListings.SelectedRows.Count > 0 && isConfirmed)
                 {
                     var selectedListing = dataGridViewAddedListings.SelectedRows[0];
                     var selectedListingAdvertisment = (Advertisement)selectedListing.DataBoundItem; // Исправлено здесь
