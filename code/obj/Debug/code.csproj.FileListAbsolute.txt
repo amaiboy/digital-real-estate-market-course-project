@@ -117,3 +117,6 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\user\Desktop\projects\code\bin\Debug\Newtonsoft.Json.dll
 C:\Users\user\Desktop\projects\code\bin\Debug\Newtonsoft.Json.xml
 C:\Users\user\Desktop\projects\code\obj\Debug\code.csproj.CopyComplete
+D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.dll
+D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.xml
+D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CopyComplete
