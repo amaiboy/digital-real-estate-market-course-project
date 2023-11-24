@@ -110,7 +110,7 @@ namespace code.Forms
             }
 
             this.Username = username;
-            this.Password = password;
+            this.Password = LoginManager.hashPassword(password);
             this.Email = email;
             this.DialogResult = DialogResult.OK;
         }

@@ -28,7 +28,7 @@ namespace code.Forms
         {
             try
             {
-                return GlobalData.Users.FirstOrDefault(user => user.Name == username && user.Password == password);
+                return GlobalData.Users.FirstOrDefault(user => user.Name == username && LoginManager.verifyPassword(password, user.Password));
             }
             catch (Exception ex)
             {

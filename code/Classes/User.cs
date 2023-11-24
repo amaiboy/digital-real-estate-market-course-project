@@ -11,6 +11,10 @@ namespace code.Classes
     // клас користувача
     public class User
     {
+        public string UserId
+        {
+            get; set;
+        }
         public string Name
         {
             get; set;
@@ -19,7 +23,6 @@ namespace code.Classes
         {
             get; set;
         }
-        // TODO: Add password hashing
         public string Password
         {
             get; set;
@@ -35,12 +38,14 @@ namespace code.Classes
 
         public User()
         {
+            UserId = Guid.NewGuid().ToString();
             BoughtListings = new BindingList<Advertisement>();
             AddedListings = new BindingList<Advertisement>();
         }
 
         public User(string name, string email, string password)
         {
+            UserId = Guid.NewGuid().ToString();
             Name = name;
             Email = email;
             Password = password;
