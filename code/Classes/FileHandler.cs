@@ -5,109 +5,171 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Net;
+using System.Xml.Linq;
+using System.Reflection;
+using static System.Windows.Forms.LinkLabel;
+using System.Configuration;
 
 namespace code.Classes
 {
     // клас, що відповідає за считування/зберігання даних з файлів
     public static class FileHandler
     {
-        //Метод для запису даних нового користувача в кінець CSV файлу.
-        public static void userFileWriter(string login, string password, string email)
+        // метод для запису даних до CSV файлу з 
+        // BindingList<Advertisement>
+        public static void saveAdToCSV(BindingList<Advertisement> writeFromList, string filepath = null)
         {
-            string csvFilePath = "users.csv";
-
-            using (StreamWriter writer = new StreamWriter(csvFilePath, true))
+            if (filepath == null)
             {
-                writer.WriteLine(login + "," + password + "," + email);
+                string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+                string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
+                string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
+                string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
+                filepath = Path.Combine(databaseDirectory, "advertisment.csv");
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filepath))
+                {
+                    foreach (var item in writeFromList)
+                    {
+                        string CSV_line = $"{item.Name}|{item.Description}|{item.Price}|{item.Address}|" +
+                            $"{item.Seller}|{item.ImagePath}";
+                        writer.WriteLine(CSV_line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося записати дані в файл.", "Помилка запису даних");
             }
         }
 
-        //Метод для пошуку даних конкретного користувача в CSV файлі за логіном.
-        public static string[] searchInUserFile(string login)
+        // метод для зчитування даних до BindingList<Advertisement>
+        // з CSV файлу
+        public static BindingList<Advertisement> readAdFromCSV(string filepath = null)
         {
-            string csvFilePath = "users.csv";
-
-            using (StreamReader reader = new StreamReader(csvFilePath))
+            if (filepath == null)
             {
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-                    string[] values = line.Split(',');
-                    if (values[0] == login)
-                    {
-                        return values;
-                    }
+                string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+                string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
+                string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
+                string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
+                filepath = Path.Combine(databaseDirectory, "advertisment.csv");
+            }
 
+            BindingList<Advertisement> readToList = new BindingList<Advertisement>();
+            try
+            {
+                string[] CSV_lines = File.ReadAllLines(filepath);
+                for (int i = 0; i < CSV_lines.Length; i++)
+                {
+                    string[] CSV_data = CSV_lines[i].Split('|');
+
+                    Advertisement advertisement = new Advertisement();
+                    advertisement.Name = CSV_data[0];
+                    advertisement.Description = CSV_data[1];
+                    advertisement.Price = int.Parse(CSV_data[2]);
+                    advertisement.Address = CSV_data[3];
+                    advertisement.Seller = CSV_data[4];
+                    advertisement.ImagePath = CSV_data[5];
+
+                    readToList.Add(advertisement);
                 }
+                return readToList;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося зчитати дані з файлу.", "Помилка зчитування даних");
                 return null;
             }
         }
 
-        //Класи для роботи с JSON.
-        public class PropertyData
+        // клас для роботи з JSON
+        public class UserObj
         {
-            public PropertyObj[] PropertyObj { get; set; }
-        }
-        public class PropertyObj
-        {
+            public string UserId { get; set; }
             public string Name { get; set; }
-            public string Description { get; set; }
-            public string Address { get; set; }
-            public int Price { get; set; }
-            public string Seller { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
+            public string BoughtListingsFilePath { get; set; }
+            public string AddedListingsFilePath { get; set; }
         }
 
-
-        //Метод для пошуку даних конкретної нерухомості в JSON файлі за назвою.
-        public static PropertyObj searchInPropertyFile(string propertyName)
+        // метод для запису даних User
+        public static void UserFileWriter(List<User> writeFromList)
         {
-            string jsonFilePath = "property.json";
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
+            string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
+            string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
+            string filePath = Path.Combine(databaseDirectory, "users.json");
 
-            string jsonText = File.ReadAllText(jsonFilePath);
-
-            PropertyData propertyArr = JsonConvert.DeserializeObject<PropertyData>(jsonText);
-
-            for (int i = 0; i < propertyArr.PropertyObj.Length; i++)
+            try
             {
-                PropertyObj property1 = propertyArr.PropertyObj[i];
-                if (property1.Name == propertyName)
+                List<UserObj> writeList = new List<UserObj>();
+                foreach (var item in writeFromList)
                 {
-                    PropertyObj property2 = property1;
-                    return property2;
+                    UserObj user = new UserObj();
+                    user.UserId = item.UserId;
+                    user.Name = item.Name;
+                    user.Email = item.Email;
+                    user.Password = item.Password;
+                    user.BoughtListingsFilePath = Path.Combine(databaseDirectory, $"user_{user.UserId}_BoughtListings.csv");
+                    saveAdToCSV(item.BoughtListings, user.BoughtListingsFilePath);
+                    user.AddedListingsFilePath = Path.Combine(databaseDirectory, $"user_{user.UserId}_AddedListings.csv");
+                    saveAdToCSV(item.AddedListings, user.AddedListingsFilePath);
+                    writeList.Add(user);
                 }
+
+                string json = JsonConvert.SerializeObject(writeList, Formatting.Indented);
+                File.WriteAllText(filePath, json);
             }
-
-            return null;
-        }
-
-        //Метод для запису даних нової нерухомості в кінець JSON файлу.
-        public static void propertyFileWriter(string Name, string Description, string Address, int Price, string Seller)
-        {
-            string jsonFilePath = "property.json";
-
-            PropertyData newPropertyArr = new PropertyData
+            catch (Exception ex)
             {
-                PropertyObj = new PropertyObj[]
-                {
-                    new PropertyObj
-                    {
-                        Name = Name,
-                        Description = Description,
-                        Address = Address,
-                        Price = Price,
-                        Seller = Seller
-                    },
-                }
-            };
-
-            string jsonText = File.ReadAllText(jsonFilePath);
-
-            string newJsonString = jsonText.Substring(0, jsonText.Length - 8);
-
-            string newJsonString2 = newJsonString + ",\r\n    {\r\n      \"Name\": \"" + Name + "\",\r\n      \"Description\": \"" + Description + "\",\r\n      \"Address\": \"" + Address + "\",\r\n      \"Price\": " + Price + ",\r\n      \"Seller\": \"" + Seller + "\"\r\n    }\r\n  ]\r\n}";
-
-            File.WriteAllText(jsonFilePath, newJsonString2);
+                ExceptionManager.HandleException(ex, "Не вдалося записати дані в файл.", "Помилка запису даних");
+            }
         }
 
+        // метод для зчитування даних User
+        public static List<User> UserFileReader()
+        {
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
+            string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
+            string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
+            string filePath = Path.Combine(databaseDirectory, "users.json");
+
+            try
+            {
+                List<UserObj> readList = new List<UserObj>();
+                string json = File.ReadAllText(filePath);
+                readList = JsonConvert.DeserializeObject<List<UserObj>>(json);
+
+                List<User> users = new List<User>();
+                foreach (var item in readList)
+                {
+                    User user = new User();
+                    user.UserId = item.UserId;
+                    user.Name = item.Name;
+                    user.Email = item.Email;
+                    user.Password = item.Password;
+                    user.BoughtListings = readAdFromCSV(Path.Combine(databaseDirectory, $"user_{user.UserId}_BoughtListings.csv"));
+                    user.AddedListings = readAdFromCSV(Path.Combine(databaseDirectory, $"user_{user.UserId}_AddedListings.csv"));
+                    users.Add(user);
+                }
+
+                return users;
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося зчитати дані з файлу.", "Помилка зчитування даних");
+                return null;
+            }
+        }
     }
 }

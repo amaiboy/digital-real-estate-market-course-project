@@ -1,0 +1,10 @@
+[
+  {
+    "UserId": "129bad87-a0ef-4e01-beae-491ad71c7a1b",
+    "Name": "developer",
+    "Email": "developer@real-estate-market.com",
+    "Password": "developer",
+    "BoughtListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_129bad87-a0ef-4e01-beae-491ad71c7a1b_BoughtListings.csv",
+    "AddedListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_129bad87-a0ef-4e01-beae-491ad71c7a1b_AddedListings.csv"
+  }
+]
