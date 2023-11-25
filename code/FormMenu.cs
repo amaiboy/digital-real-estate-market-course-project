@@ -41,20 +41,14 @@ namespace code
 
                 // Get the image files from the specified directory
                 var imageFiles = Directory.GetFiles(@"../../../assets/images/real-estate-pictures/", "*.jpg");
-                // Create a new random object
-                var random = new Random();
 
-                // Set random image paths for each predefined listing
-                foreach (var ad in predefinedListings)
-                {
-                    ad.ImagePath = GetRandomImagePath(imageFiles, random);
-                }
 
-                // Set random images for each user's bought and added listings
+                SetImagesForListings(predefinedListings, imageFiles);
+
                 foreach (var user in users)
                 {
-                    SetRandomImagesForListings(user.BoughtListings, imageFiles, random);
-                    SetRandomImagesForListings(user.AddedListings, imageFiles, random);
+                    SetImagesForListings(user.BoughtListings, imageFiles);
+                    SetImagesForListings(user.AddedListings, imageFiles);
                 }
             }
             catch (Exception ex)
@@ -63,26 +57,21 @@ namespace code
                 ExceptionManager.HandleException(ex, "Не вдалося завантажити дані. Спробуйте пізніше", "Помилка завантаження даних");
             }
         }
-
-        private string GetRandomImagePath(string[] imageFiles, Random random)
+        
+        //Метод для синхронізації шляхів до фото
+        private void SetImagesForListings(BindingList<Advertisement> listings, string[] imageFiles)
         {
-            // Get a random index between 0 and the length of the array
-            int randomIndex = random.Next(imageFiles.Length);
-
-            // Get the element at the random index
-            string randomImageFile = imageFiles[randomIndex];
-
-            // Return the random image file path
-            return randomImageFile;
-        }
-
-        private void SetRandomImagesForListings(BindingList<Advertisement> listings, string[] imageFiles, Random random)
-        {
-            // Iterate through each advertisement in the list
-            foreach (var ad in listings)
+            for (int i = 0; i < listings.Count; i++)
             {
-                // Set a random image path for the advertisement
-                ad.ImagePath = GetRandomImagePath(imageFiles, random);
+                for (int j = 0; j < imageFiles.Length; j++)
+                {
+                    if (@"../../../assets/images/real-estate-pictures/" + listings[i].Name + ".jpg" == imageFiles[j])
+                    {
+                        var ad = listings[i];
+                        ad.ImagePath = imageFiles[j];
+                    }
+                }
+                
             }
         }
 

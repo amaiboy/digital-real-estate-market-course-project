@@ -337,8 +337,8 @@ namespace code.Forms
                     //GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
                     RemoveElement(GlobalData.AvailableListings, selectedListingAdvertisment);
 
+                    //Видалення фото с каталогу
                     File.Delete(selectedListingAdvertisment.ImagePath);
-
 
                     // видалення з колекції поточного користувача
                     LoginManager.CurrentUser.AddedListings.Remove(selectedListingAdvertisment);

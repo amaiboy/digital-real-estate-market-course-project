@@ -9,6 +9,8 @@ namespace code.Forms
     public partial class FormAddListing : Form
     {
         private string selectedImagePath = string.Empty;
+        private string destinationPath;
+        private string destinationDirectory = @"../../../assets/images/real-estate-pictures";
 
         public FormAddListing()
         {
@@ -39,6 +41,8 @@ namespace code.Forms
                 bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете додати це оголошення?", "Підтвердження додавання");
                 if (isConfirmed)
                 {
+                    destinationPath = destinationDirectory + "/" + txtName.Text + ".jpg";
+
                     Advertisement listing = new Advertisement
                     {
                         Name = txtName.Text,
@@ -46,7 +50,7 @@ namespace code.Forms
                         Address = txtAddress.Text,
                         Price = Convert.ToInt32(numericUpDownPrice.Value),
                         Seller = LoginManager.CurrentUser.Name,
-                        ImagePath = selectedImagePath
+                        ImagePath = destinationPath
                     };
                     GlobalData.AvailableListings.Add(listing);
                     LoginManager.CurrentUser.AddedListings.Add(listing);
@@ -106,6 +110,14 @@ namespace code.Forms
                     }
 
                     lblImageName.Text = fileName;
+
+
+                    string destinationDirectory = @"../../../assets/images/real-estate-pictures";
+
+                    string newFileName = txtName.Text + ".jpg";
+
+                    string destinationPath = Path.Combine(destinationDirectory, newFileName);
+                    File.Copy(selectedImagePath, destinationPath, true);
                 }
                 else
                 {
