@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Security.RightsManagement;
 using MailKit.Net.Smtp;
 using MimeKit;
 

@@ -117,21 +117,10 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\user\Desktop\projects\code\bin\Debug\Newtonsoft.Json.dll
 C:\Users\user\Desktop\projects\code\bin\Debug\Newtonsoft.Json.xml
 C:\Users\user\Desktop\projects\code\obj\Debug\code.csproj.CopyComplete
-<<<<<<< HEAD
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.dll
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.xml
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CopyComplete
 =======
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\ControlzEx.dll
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MahApps.Metro.dll
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\Microsoft.Xaml.Behaviors.dll
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\ControlzEx.pdb
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\ControlzEx.xml
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MahApps.Metro.pdb
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MahApps.Metro.xml
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\Microsoft.Xaml.Behaviors.pdb
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.InputBox.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MailKit.dll
@@ -157,4 +146,3 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\D
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.ValueTuple.xml
->>>>>>> 74d5844 (added email verification, changed profile, regist)
