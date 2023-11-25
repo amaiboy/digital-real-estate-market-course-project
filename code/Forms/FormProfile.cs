@@ -159,20 +159,24 @@ namespace code.Forms
                     {
                         errors.Add("Пароль повинен мати довжину не менше 8 символів.");
                     }
-                    try
+
+                    if(newEmail != LoginManager.CurrentUser.Email)
                     {
-                        if (!string.IsNullOrWhiteSpace(newEmail) && newEmail != LoginManager.CurrentUser.Email)
+                        try
                         {
-                            var validEmail = new System.Net.Mail.MailAddress(newEmail);
+                            if (!string.IsNullOrWhiteSpace(newEmail) && newEmail != LoginManager.CurrentUser.Email)
+                            {
+                                var validEmail = new System.Net.Mail.MailAddress(newEmail);
+                            }
+                            else
+                            {
+                                throw new FormatException();
+                            }
                         }
-                        else
+                        catch (FormatException)
                         {
-                            throw new FormatException();
+                            errors.Add("Електронна пошта не дійсна або не змінена.");
                         }
-                    }
-                    catch (FormatException)
-                    {
-                        errors.Add("Електронна пошта не дійсна або не змінена.");
                     }
 
                     if (errors.Count == 0)
