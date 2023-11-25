@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Markup.Localizer;
 using code.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace code.Forms
 {
@@ -114,20 +117,91 @@ namespace code.Forms
             var currentPassword = LoginManager.CurrentUser.Password;
             var currentEmail = LoginManager.CurrentUser.Email;
 
-            if (newUsername == currentUsername && newPassword == currentPassword && newEmail == currentEmail)
+            if (newUsername == currentUsername && newEmail == currentEmail && newPassword.Length==0)
             {
                 ExceptionManager.ShowInfo("Ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
             }
             else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
             {
                 bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни");
-
+                List<string> errors = new List<string>();
                 if (isConfirmed)
                 {
-                    LoginManager.CurrentUser.Name = newUsername;
-                    LoginManager.CurrentUser.Password = newPassword;
-                    LoginManager.CurrentUser.Email = newEmail;
+                    if(newUsername != LoginManager.CurrentUser.Name)
+                    {
+                        foreach (var user in GlobalData.Users)
+                        {
+                            if (user.Name == newUsername)
+                            {
+                                errors.Add("Таке ім'я користувача вже існує.");
+                                break;
+                            }
+                        }
+                    }
 
+                    if (LoginManager.hashPassword(newPassword) == LoginManager.CurrentUser.Password)
+                    {
+                        errors.Add("Пароль має бути різним.");
+                    }
+
+                    try
+                    {
+                        if (!string.IsNullOrWhiteSpace(newEmail) && newEmail != LoginManager.CurrentUser.Email)
+                        {
+                            var validEmail = new System.Net.Mail.MailAddress(newEmail);
+                        }
+                        else
+                        {
+                            throw new FormatException();
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        errors.Add("Електронна пошта не дійсна або не змінена.");
+                    }
+
+                    if (errors.Count == 0)
+                    {
+                        try
+                        {
+                            string verificationCode = LoginManager.generateVerificationCode();
+                            _ = LoginManager.sendVerificationCodeToEmail(newEmail, verificationCode);
+
+                            InputBox InputForm = new InputBox();
+                            DialogResult result = InputForm.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                string userEnteredVerificationCode = InputForm.getVerifyCode();
+                                if (userEnteredVerificationCode == verificationCode)
+                                {
+
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            errors.Add("Електронна пошта не веріфікована.");
+                        }
+                    }
+
+                    if (errors.Count > 0)
+                    {
+                        ExceptionManager.HandleException(new Exception(string.Join("\n", errors)), string.Join("\n", errors), "Помилка реєстрації");
+                        return;
+                    }
+
+                    LoginManager.CurrentUser.Name = newUsername;
+                    LoginManager.CurrentUser.Password = LoginManager.hashPassword(newPassword);
+                    LoginManager.CurrentUser.Email = newEmail;
+                    txtPassword.Text = "";
                     ExceptionManager.ShowInfo("Ви успішно змінили свої облікові дані!", "Зміни внесено успішно");
                 }
             }

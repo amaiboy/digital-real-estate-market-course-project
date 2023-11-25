@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MimeKit;
 
-
 namespace code.Classes
 {
     // клас, що відповідає за перевірку даних, входу до системи та
