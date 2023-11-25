@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Markup.Localizer;
 using code.Classes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace code.Forms
 {
@@ -138,12 +136,29 @@ namespace code.Forms
                             }
                         }
                     }
-
+                    if (newEmail != LoginManager.CurrentUser.Email)
+                    {
+                        foreach (var user in GlobalData.Users)
+                        {
+                            if (user.Email == newEmail)
+                            {
+                                errors.Add("Така пошта вже використовується.");
+                                break;
+                            }
+                        }
+                    }
                     if (LoginManager.hashPassword(newPassword) == LoginManager.CurrentUser.Password)
                     {
                         errors.Add("Пароль має бути різним.");
                     }
-
+                    if (newUsername.Length < 3 || newUsername.Length > 16)
+                    {
+                        errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
+                    }
+                    if (newPassword.Length < 8)
+                    {
+                        errors.Add("Пароль повинен мати довжину не менше 8 символів.");
+                    }
                     try
                     {
                         if (!string.IsNullOrWhiteSpace(newEmail) && newEmail != LoginManager.CurrentUser.Email)
