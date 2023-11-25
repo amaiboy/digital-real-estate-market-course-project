@@ -95,7 +95,7 @@
             this.MaximumSize = new System.Drawing.Size(450, 250);
             this.MinimumSize = new System.Drawing.Size(450, 250);
             this.Name = "InputBox";
-            this.Text = "InputBox";
+            this.Text = "Підтвердження пошти";
             this.ResumeLayout(false);
             this.PerformLayout();
 

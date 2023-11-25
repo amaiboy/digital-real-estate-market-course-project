@@ -82,5 +82,45 @@ namespace code.Classes
                 await client.DisconnectAsync(true);
             }
         }
+
+        // функція, що генерує випадковий пароль
+        public static string generateNewPassword()
+        {
+            int length = 12;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_+=<>?";
+            StringBuilder newPassword = new StringBuilder();
+
+            Random random = new Random();
+            for (int i = 0; i < length; i++)
+            {
+                int index = random.Next(chars.Length);
+                newPassword.Append(chars[index]);
+            }
+
+            return newPassword.ToString();
+        }
+
+        public static async Task sendNewPasswordToEmail(string toEmail, string newPassword)
+        {
+            string mailFrom = "realestateapp@ukr.net";
+            string password = "XI56uR64bNjtfvsg";
+
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Real Estate App Bot", mailFrom));
+            message.To.Add(new MailboxAddress("Recipient", toEmail));
+            message.Subject = "Новий пароль від вашого аккаунту";
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = $"Ваш новий пароль: {newPassword}\nЗа потреби можете його змінити у особистому кабінеті.";
+            message.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
+            {
+                await client.ConnectAsync("smtp.ukr.net", 465, true);
+                await client.AuthenticateAsync(mailFrom, password);
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
+            }
+        }
     }
 }

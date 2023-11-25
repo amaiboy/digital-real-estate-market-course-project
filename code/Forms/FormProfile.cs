@@ -308,10 +308,10 @@ namespace code.Forms
                     var selectedListingAdvertisment = (Advertisement)selectedListing.DataBoundItem; // Исправлено здесь
                     dataGridViewAddedListings.Rows.Remove(selectedListing);
 
-                    // Удаление из глобальной коллекции
+                    // видалення з глобальної колекції
                     GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
 
-                    // Удаление из коллекции текущего пользователя
+                    // видалення з колекції поточного користувача
                     LoginManager.CurrentUser.AddedListings.Remove(selectedListingAdvertisment);
                 }
             }

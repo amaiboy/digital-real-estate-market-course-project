@@ -36,6 +36,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnTogglePasswordVisibility = new code.StyledButton();
+            this.btnRestore = new code.StyledButton();
             this.SuspendLayout();
             // 
             // btnSignUp
@@ -117,10 +118,26 @@
             this.btnTogglePasswordVisibility.UseVisualStyleBackColor = false;
             this.btnTogglePasswordVisibility.Click += new System.EventHandler(this.btnTogglePasswordVisibility_Click);
             // 
+            // btnRestore
+            // 
+            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnRestore.FlatAppearance.BorderSize = 0;
+            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRestore.Location = new System.Drawing.Point(339, 147);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(93, 44);
+            this.btnRestore.TabIndex = 16;
+            this.btnRestore.Text = "Відновити пароль";
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 201);
+            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnTogglePasswordVisibility);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -147,5 +164,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private StyledButton btnTogglePasswordVisibility;
+        private StyledButton btnRestore;
     }
 }

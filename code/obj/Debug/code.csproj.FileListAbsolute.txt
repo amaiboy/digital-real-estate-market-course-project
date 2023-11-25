@@ -146,3 +146,4 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\D
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.ValueTuple.xml
+C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormRestore.resources

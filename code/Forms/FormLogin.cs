@@ -144,5 +144,26 @@ namespace code.Forms
                 ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості пароля", "Помилка видимості пароля");
             }
         }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormRestore restoreForm = new FormRestore();
+                this.Hide();
+                if (restoreForm.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка під час зміни паролю", "Помилка зміни паролю");
+            }
+        }
     }
 }
