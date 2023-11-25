@@ -80,10 +80,6 @@ namespace code.Forms
 
                 this.DialogResult = DialogResult.OK;
                 LoginManager.CurrentUser = user;
-                foreach (var item in user.AddedListings)
-                {
-                    GlobalData.AvailableListings.Add(item);
-                }
                 LoginManager.IsLoggedIn = true;
             }
             catch (Exception ex)
