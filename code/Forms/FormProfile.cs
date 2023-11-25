@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using code.Classes;
+using System.IO;
 
 namespace code.Forms
 {
@@ -297,6 +299,25 @@ namespace code.Forms
             }
         }
 
+        static void RemoveElement(BindingList<Advertisement> list, Advertisement elementToRemove)
+        {
+            int index = -1;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Name == elementToRemove.Name && list[i].Description == elementToRemove.Description && list[i].Price == elementToRemove.Price && list[i].Address == elementToRemove.Address && list[i].Seller == elementToRemove.Seller && list[i].ImagePath == elementToRemove.ImagePath)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            // If the element is found, remove it
+            if (index != -1)
+            {
+                list.RemoveAt(index);
+            }
+        }
+
         private void deleteAdvertismentButton_Click(object sender, EventArgs e)
         {
             try
@@ -309,7 +330,11 @@ namespace code.Forms
                     dataGridViewAddedListings.Rows.Remove(selectedListing);
 
                     // видалення з глобальної колекції
-                    GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
+                    //GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
+                    RemoveElement(GlobalData.AvailableListings, selectedListingAdvertisment);
+
+                    File.Delete(selectedListingAdvertisment.ImagePath);
+
 
                     // видалення з колекції поточного користувача
                     LoginManager.CurrentUser.AddedListings.Remove(selectedListingAdvertisment);
