@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using code.Forms;
 using code.Classes;
+using System.Configuration;
 
 namespace code
 {
@@ -24,8 +25,6 @@ namespace code
         {
             predefinedListings = FileHandler.readAdFromCSV();
             users = FileHandler.UserFileReader();
-            GlobalData.AvailableListings = predefinedListings;
-            GlobalData.Users = users;
             // Initialize the form components
             InitializeComponent();
 

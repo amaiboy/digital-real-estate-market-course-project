@@ -48,7 +48,6 @@ namespace code.Forms
 
             txtUsername.Text = LoginManager.CurrentUser.Name;
             txtEmail.Text = LoginManager.CurrentUser.Email;
-            txtPassword.Text = LoginManager.CurrentUser.Password;
             txtPassword.PasswordChar = '*';
             formTitle.Text = $"Профіль користувача {LoginManager.CurrentUser.Name}";
 

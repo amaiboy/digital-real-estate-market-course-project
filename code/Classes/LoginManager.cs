@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
-using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Security.RightsManagement;
+using MailKit.Net.Smtp;
+using MimeKit;
+
 
 namespace code.Classes
 {
@@ -62,21 +65,26 @@ namespace code.Classes
         }
 
         // метод для відправлення сгенерованого коду верифікації на пошту
-        static void sendVerificationCodeToEmail(string toEmail, string verificationCode)
+        public static async Task sendVerificationCodeToEmail(string toEmail, string verificationCode)
         {
-            string fromWhichEmail = "digital-real-estate-market-email@gmail.com";
-            string letterSubject = "Your email verification";
-            string textBody = $"Your verification code is: {verificationCode}";
+            string mailFrom = "realestateapp@ukr.net";
+            string password = "XI56uR64bNjtfvsg";
 
-            using (MailMessage mail = new MailMessage(fromWhichEmail, toEmail, letterSubject, textBody))
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Real Estate App Bot", mailFrom));
+            message.To.Add(new MailboxAddress("Recipient", toEmail));
+            message.Subject = "Верифікація вашої поштової скриньки";
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = $"Ваш код верифікації: {verificationCode}";
+            message.Body = bodyBuilder.ToMessageBody();
+
+            using (var client = new SmtpClient())
             {
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com"))
-                {
-                    smtp.Port = 587;
-                    smtp.Credentials = new NetworkCredential(fromWhichEmail, "your-password");
-                    smtp.EnableSsl = true;
-                    smtp.Send(mail);
-                }
+                await client.ConnectAsync("smtp.ukr.net", 465, true);
+                await client.AuthenticateAsync(mailFrom, password);
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
             }
         }
     }

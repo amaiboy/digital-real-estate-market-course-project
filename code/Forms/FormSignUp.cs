@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using code.Classes;
+using ControlzEx.Standard;
 
 namespace code.Forms
 {
@@ -88,7 +89,6 @@ namespace code.Forms
 
             try
             {
-                // TODO: Possibly add email verification
                 if (!string.IsNullOrWhiteSpace(email))
                 {
                     var validEmail = new System.Net.Mail.MailAddress(email);
@@ -101,6 +101,38 @@ namespace code.Forms
             catch (FormatException)
             {
                 errors.Add("Електронна пошта не дійсна.");
+            }
+
+            if (errors.Count == 0)
+            {
+                try
+                {
+                    string verificationCode = LoginManager.generateVerificationCode();
+                    _ = LoginManager.sendVerificationCodeToEmail(email, verificationCode);
+
+                    InputBox InputForm = new InputBox();
+                    DialogResult result = InputForm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string userEnteredVerificationCode = InputForm.getVerifyCode();
+                        if (userEnteredVerificationCode == verificationCode)
+                        {
+
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch (Exception)
+                {
+                    errors.Add("Електронна пошта не веріфікована.");
+                }
             }
 
             if (errors.Count > 0)

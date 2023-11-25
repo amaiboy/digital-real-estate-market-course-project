@@ -40,6 +40,7 @@ namespace code.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.MainTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
+            this.deleteAdvertismentButton = new code.StyledButton();
             this.lblEmptyAddedListings = new System.Windows.Forms.Label();
             this.lblEmptyBoughtListings = new System.Windows.Forms.Label();
             this.lblAddedListings = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@ namespace code.Forms
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.deleteAdvertismentButton = new code.StyledButton();
             this.pnlMainContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
@@ -113,6 +113,21 @@ namespace code.Forms
             this.pnlMainContainer.Name = "pnlMainContainer";
             this.pnlMainContainer.Size = new System.Drawing.Size(768, 561);
             this.pnlMainContainer.TabIndex = 3;
+            // 
+            // deleteAdvertismentButton
+            // 
+            this.deleteAdvertismentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.deleteAdvertismentButton.FlatAppearance.BorderSize = 0;
+            this.deleteAdvertismentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteAdvertismentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteAdvertismentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteAdvertismentButton.Location = new System.Drawing.Point(582, 523);
+            this.deleteAdvertismentButton.Name = "deleteAdvertismentButton";
+            this.deleteAdvertismentButton.Size = new System.Drawing.Size(165, 26);
+            this.deleteAdvertismentButton.TabIndex = 10;
+            this.deleteAdvertismentButton.Text = "Видалити оголошення";
+            this.deleteAdvertismentButton.UseVisualStyleBackColor = false;
+            this.deleteAdvertismentButton.Click += new System.EventHandler(this.deleteAdvertismentButton_Click);
             // 
             // lblEmptyAddedListings
             // 
@@ -459,9 +474,9 @@ namespace code.Forms
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(14, 176);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 16);
+            this.lblPassword.Size = new System.Drawing.Size(109, 16);
             this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Пароль";
+            this.lblPassword.Text = "Змінити пароль";
             // 
             // lblEmail
             // 
@@ -480,21 +495,6 @@ namespace code.Forms
             this.lblUsername.Size = new System.Drawing.Size(117, 16);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Ім\'я користувача";
-            // 
-            // deleteAdvertismentButton
-            // 
-            this.deleteAdvertismentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.deleteAdvertismentButton.FlatAppearance.BorderSize = 0;
-            this.deleteAdvertismentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteAdvertismentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteAdvertismentButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deleteAdvertismentButton.Location = new System.Drawing.Point(582, 523);
-            this.deleteAdvertismentButton.Name = "deleteAdvertismentButton";
-            this.deleteAdvertismentButton.Size = new System.Drawing.Size(165, 26);
-            this.deleteAdvertismentButton.TabIndex = 10;
-            this.deleteAdvertismentButton.Text = "Видалити оголошення";
-            this.deleteAdvertismentButton.UseVisualStyleBackColor = false;
-            this.deleteAdvertismentButton.Click += new System.EventHandler(this.deleteAdvertismentButton_Click);
             // 
             // FormProfile
             // 
