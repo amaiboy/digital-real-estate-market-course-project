@@ -121,7 +121,7 @@ namespace code.Forms
             {
                 ExceptionManager.ShowInfo("Ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
             }
-            else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
+            else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newEmail))
             {
                 bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни");
                 List<string> errors = new List<string>();
@@ -149,7 +149,7 @@ namespace code.Forms
                             }
                         }
                     }
-                    if (LoginManager.hashPassword(newPassword) == LoginManager.CurrentUser.Password)
+                    if (newPassword.Length != 0 && LoginManager.hashPassword(newPassword) == LoginManager.CurrentUser.Password)
                     {
                         errors.Add("Пароль має бути різним.");
                     }
@@ -157,7 +157,7 @@ namespace code.Forms
                     {
                         errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
                     }
-                    if (newPassword.Length < 8)
+                    if (newPassword.Length != 0 && newPassword.Length < 8)
                     {
                         errors.Add("Пароль повинен мати довжину не менше 8 символів.");
                     }
@@ -177,7 +177,7 @@ namespace code.Forms
                         }
                         catch (FormatException)
                         {
-                            errors.Add("Електронна пошта не дійсна або не змінена.");
+                            errors.Add("Електронна пошта не дійсна.");
                         }
                     }
 
@@ -219,8 +219,27 @@ namespace code.Forms
                         return;
                     }
 
-                    LoginManager.CurrentUser.Name = newUsername;
-                    LoginManager.CurrentUser.Password = LoginManager.hashPassword(newPassword);
+                    if(LoginManager.CurrentUser.Name != newUsername)
+                    {
+                        for(int i = 0; i < LoginManager.CurrentUser.AddedListings.Count; i++)
+                        {
+                            LoginManager.CurrentUser.AddedListings[i].Seller = newUsername;
+                        }
+
+                        foreach(var ad in GlobalData.AvailableListings)
+                        {
+                            if(ad.Seller == LoginManager.CurrentUser.Name)
+                            {
+                                ad.Seller = newUsername;
+                            }
+                        }
+
+                        LoginManager.CurrentUser.Name = newUsername;
+                    }
+                    if(newPassword.Length != 0)
+                    {
+                        LoginManager.CurrentUser.Password = LoginManager.hashPassword(newPassword);
+                    }
                     LoginManager.CurrentUser.Email = newEmail;
                     txtPassword.Text = "";
                     ExceptionManager.ShowInfo("Ви успішно змінили свої облікові дані!", "Зміни внесено успішно");
