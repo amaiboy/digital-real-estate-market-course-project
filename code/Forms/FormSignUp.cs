@@ -75,7 +75,7 @@ namespace code.Forms
             {
                 errors.Add("Пароль повинен мати довжину не менше 8 символів.");
             }
-            if (password!=passwordConfirm)
+            if (password != passwordConfirm)
             {
                 errors.Add("Пароль не співпадає з підтвердженням паролю.");
             }

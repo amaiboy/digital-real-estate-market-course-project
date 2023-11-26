@@ -13,7 +13,7 @@ namespace code
         private Button currentButton;
         private Form activeForm;
         BindingList<Advertisement> predefinedListings = new BindingList<Advertisement>();
-        List <User> users = new List<User>();
+        List<User> users = new List<User>();
 
         public FormMenu()
         {
@@ -57,7 +57,7 @@ namespace code
                 ExceptionManager.HandleException(ex, "Не вдалося завантажити дані. Спробуйте пізніше", "Помилка завантаження даних");
             }
         }
-        
+
         //Метод для синхронізації шляхів до фото
         private void SetImagesForListings(BindingList<Advertisement> listings, string[] imageFiles)
         {
@@ -71,7 +71,7 @@ namespace code
                         ad.ImagePath = imageFiles[j];
                     }
                 }
-                
+
             }
         }
 

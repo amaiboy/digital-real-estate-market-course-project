@@ -117,7 +117,7 @@ namespace code.Forms
             var currentPassword = LoginManager.CurrentUser.Password;
             var currentEmail = LoginManager.CurrentUser.Email;
 
-            if (newUsername == currentUsername && newEmail == currentEmail && newPassword.Length==0)
+            if (newUsername == currentUsername && newEmail == currentEmail && newPassword.Length == 0)
             {
                 ExceptionManager.ShowInfo("Ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
             }
@@ -127,7 +127,7 @@ namespace code.Forms
                 List<string> errors = new List<string>();
                 if (isConfirmed)
                 {
-                    if(newUsername != LoginManager.CurrentUser.Name)
+                    if (newUsername != LoginManager.CurrentUser.Name)
                     {
                         foreach (var user in GlobalData.Users)
                         {
@@ -162,7 +162,7 @@ namespace code.Forms
                         errors.Add("Пароль повинен мати довжину не менше 8 символів.");
                     }
 
-                    if(newEmail != LoginManager.CurrentUser.Email)
+                    if (newEmail != LoginManager.CurrentUser.Email)
                     {
                         try
                         {

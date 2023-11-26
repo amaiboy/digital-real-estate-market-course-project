@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelWelcomeMessage = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelRandomTip = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelWelcomeMessage
+            // lblError
             // 
-            this.labelWelcomeMessage.AutoSize = true;
-            this.labelWelcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcomeMessage.Location = new System.Drawing.Point(89, 281);
-            this.labelWelcomeMessage.Name = "labelWelcomeMessage";
-            this.labelWelcomeMessage.Size = new System.Drawing.Size(607, 37);
-            this.labelWelcomeMessage.TabIndex = 4;
-            this.labelWelcomeMessage.Text = "Йой... Здається Вам не вдалося увійти";
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(89, 281);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(607, 37);
+            this.lblError.TabIndex = 4;
+            this.lblError.Text = "Йой... Здається Вам не вдалося увійти";
             // 
             // logoPictureBox
             // 
@@ -69,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(768, 561);
             this.Controls.Add(this.labelRandomTip);
-            this.Controls.Add(this.labelWelcomeMessage);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.logoPictureBox);
             this.MaximumSize = new System.Drawing.Size(784, 600);
             this.MinimumSize = new System.Drawing.Size(784, 600);
@@ -83,7 +83,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelWelcomeMessage;
+        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label labelRandomTip;
     }

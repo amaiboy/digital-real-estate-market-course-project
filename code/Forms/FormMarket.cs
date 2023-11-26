@@ -62,7 +62,6 @@ namespace code.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var searchQuery = txtSearch.Text;
-            // TODO: Add a searching algorithm
             try
             {
                 var filteredList = GlobalData.AvailableListings.Where(l => l.Name.Contains(searchQuery) || l.Description.Contains(searchQuery));

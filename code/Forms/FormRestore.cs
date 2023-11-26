@@ -30,26 +30,26 @@ namespace code.Forms
                     {
                         isFinded = true;
 
-                            try
-                            {
-                                string verificationCode = LoginManager.generateVerificationCode();
-                                _ = LoginManager.sendVerificationCodeToEmail(email, verificationCode);
+                        try
+                        {
+                            string verificationCode = LoginManager.generateVerificationCode();
+                            _ = LoginManager.sendVerificationCodeToEmail(email, verificationCode);
 
-                                InputBox InputForm = new InputBox();
-                                DialogResult result = InputForm.ShowDialog();
-                                if (result == DialogResult.OK)
+                            InputBox InputForm = new InputBox();
+                            DialogResult result = InputForm.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                string userEnteredVerificationCode = InputForm.getVerifyCode();
+                                if (userEnteredVerificationCode == verificationCode)
                                 {
-                                    string userEnteredVerificationCode = InputForm.getVerifyCode();
-                                    if (userEnteredVerificationCode == verificationCode)
-                                    {
                                     System.Windows.MessageBox.Show("Тимчасовий пароль було вислано на вашу електронну пошту!", "Увага", MessageBoxButton.OK, MessageBoxImage.Information);
                                     string newPassword = LoginManager.generateNewPassword();
                                     user.Password = LoginManager.hashPassword(newPassword);
                                     _ = LoginManager.sendNewPasswordToEmail(email, newPassword);
-                                    
+
                                     FormLogin login = new FormLogin();
                                     this.Hide();
-                                    if (login.ShowDialog()== DialogResult.OK)
+                                    if (login.ShowDialog() == DialogResult.OK)
                                     {
                                         this.DialogResult = DialogResult.OK;
                                     }
@@ -58,21 +58,21 @@ namespace code.Forms
                                         this.DialogResult = DialogResult.Cancel;
                                     }
 
-                                    }
-                                    else
-                                    {
-                                        throw new Exception();
-                                    }
                                 }
                                 else
                                 {
                                     throw new Exception();
                                 }
                             }
-                            catch (Exception)
+                            else
                             {
-                                errors.Add("Щоб змінити пароль, підтвердіть електронну пошту.");
+                                throw new Exception();
                             }
+                        }
+                        catch (Exception)
+                        {
+                            errors.Add("Щоб змінити пароль, підтвердіть електронну пошту.");
+                        }
                         break;
                     }
                 }
