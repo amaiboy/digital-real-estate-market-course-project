@@ -69,6 +69,7 @@ namespace code.Forms
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.btnExit = new code.StyledButton();
             this.pnlMainContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
@@ -88,6 +89,7 @@ namespace code.Forms
             // 
             // pnlMainContainer
             // 
+            this.pnlMainContainer.Controls.Add(this.btnExit);
             this.pnlMainContainer.Controls.Add(this.deleteAdvertismentButton);
             this.pnlMainContainer.Controls.Add(this.lblEmptyAddedListings);
             this.pnlMainContainer.Controls.Add(this.lblEmptyBoughtListings);
@@ -496,6 +498,22 @@ namespace code.Forms
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Ім\'я користувача";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.DarkRed;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExit.Location = new System.Drawing.Point(608, 20);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 37);
+            this.btnExit.TabIndex = 25;
+            this.btnExit.Text = "Вийти";
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -547,5 +565,6 @@ namespace code.Forms
         private System.Windows.Forms.Label lblEmptyBoughtListings;
         private System.Windows.Forms.Label lblEmptyAddedListings;
         private StyledButton deleteAdvertismentButton;
+        private StyledButton btnExit;
     }
 }

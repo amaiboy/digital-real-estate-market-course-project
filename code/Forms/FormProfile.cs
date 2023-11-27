@@ -368,5 +368,23 @@ namespace code.Forms
                 ExceptionManager.HandleException(ex, "Не вдалося видалити оголошення. Спробуйте пізніше", "Помилка видалення");
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете вийти?", "Підтвердження виходу");
+            FormProfileError error = new FormProfileError();
+            try
+            {
+                if (isConfirmed)
+                {
+                    LoginManager.IsLoggedIn = false;
+                    OpenChildForm(error);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося вийти.", "Помилка виходу");
+            }
+        }
     }
 }
