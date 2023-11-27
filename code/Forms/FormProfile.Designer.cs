@@ -40,6 +40,7 @@ namespace code.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formTitle = new code.MainTitle();
             this.pnlMainContainer = new System.Windows.Forms.Panel();
+            this.btnExit = new code.StyledButton();
             this.deleteAdvertismentButton = new code.StyledButton();
             this.lblEmptyAddedListings = new System.Windows.Forms.Label();
             this.lblEmptyBoughtListings = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace code.Forms
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.btnExit = new code.StyledButton();
             this.pnlMainContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAddedListings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listingBindingSource)).BeginInit();
@@ -115,6 +115,22 @@ namespace code.Forms
             this.pnlMainContainer.Name = "pnlMainContainer";
             this.pnlMainContainer.Size = new System.Drawing.Size(768, 561);
             this.pnlMainContainer.TabIndex = 3;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.DarkRed;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExit.Location = new System.Drawing.Point(659, 228);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(97, 35);
+            this.btnExit.TabIndex = 25;
+            this.btnExit.Text = "Вийти";
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // deleteAdvertismentButton
             // 
@@ -497,22 +513,6 @@ namespace code.Forms
             this.lblUsername.Size = new System.Drawing.Size(117, 16);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Ім\'я користувача";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.DarkRed;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(608, 20);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(130, 37);
-            this.btnExit.TabIndex = 25;
-            this.btnExit.Text = "Вийти";
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormProfile
             // 

@@ -46,9 +46,9 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSignUp.Location = new System.Drawing.Point(144, 154);
+            this.btnSignUp.Location = new System.Drawing.Point(131, 154);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(167, 30);
+            this.btnSignUp.Size = new System.Drawing.Size(144, 30);
             this.btnSignUp.TabIndex = 12;
             this.btnSignUp.Text = "Зарєструватись";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogin.Location = new System.Drawing.Point(24, 154);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(114, 30);
+            this.btnLogin.Size = new System.Drawing.Size(101, 30);
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Увійти";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -123,13 +123,13 @@
             this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnRestore.FlatAppearance.BorderSize = 0;
             this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRestore.Location = new System.Drawing.Point(339, 147);
+            this.btnRestore.Location = new System.Drawing.Point(312, 154);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(93, 44);
+            this.btnRestore.Size = new System.Drawing.Size(108, 30);
             this.btnRestore.TabIndex = 16;
-            this.btnRestore.Text = "Відновити пароль";
+            this.btnRestore.Text = "Забули пароль?";
             this.btnRestore.UseVisualStyleBackColor = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 

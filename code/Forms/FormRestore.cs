@@ -42,7 +42,7 @@ namespace code.Forms
                                 string userEnteredVerificationCode = InputForm.getVerifyCode();
                                 if (userEnteredVerificationCode == verificationCode)
                                 {
-                                    System.Windows.MessageBox.Show("Тимчасовий пароль було вислано на вашу електронну пошту!", "Увага", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    ExceptionManager.ShowInfo("Тимчасовий пароль було надіслано на вашу електронну пошту!", "Увага");
                                     string newPassword = LoginManager.generateNewPassword();
                                     user.Password = LoginManager.hashPassword(newPassword);
                                     _ = LoginManager.sendNewPasswordToEmail(email, newPassword);
