@@ -372,13 +372,12 @@ namespace code.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете вийти?", "Підтвердження виходу");
-            FormProfileError error = new FormProfileError();
             try
             {
                 if (isConfirmed)
                 {
                     LoginManager.IsLoggedIn = false;
-                    OpenChildForm(error);
+                    Application.Restart();
                 }
             }
             catch (Exception ex)
