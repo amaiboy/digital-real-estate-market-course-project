@@ -17,11 +17,8 @@ namespace code.Classes
         {
             if (filepath == null)
             {
-                string assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
-                string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
-                string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
-                filepath = Path.Combine(databaseDirectory, "advertisment.csv");
+                string currentDirectory = Directory.GetCurrentDirectory();
+                filepath = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase\\advertisment.csv";
             }
 
             try
@@ -30,8 +27,7 @@ namespace code.Classes
                 {
                     foreach (var item in writeFromList)
                     {
-                        string CSV_line = $"{item.Name}|{item.Description}|{item.Price}|{item.Address}|" +
-                            $"{item.Seller}|{item.ImagePath}";
+                        string CSV_line = $"{item.Name}|{item.Description}|{item.Price}|{item.Address}|{item.Seller}|{item.ImagePath}";
                         writer.WriteLine(CSV_line);
                     }
                 }
@@ -48,11 +44,8 @@ namespace code.Classes
         {
             if (filepath == null)
             {
-                string assemblyLocation = Assembly.GetExecutingAssembly().Location;
-                string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
-                string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
-                string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
-                filepath = Path.Combine(databaseDirectory, "advertisment.csv");
+                string currentDirectory = Directory.GetCurrentDirectory();
+                filepath = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase\\advertisment.csv";
             }
 
             BindingList<Advertisement> readToList = new BindingList<Advertisement>();
@@ -96,12 +89,11 @@ namespace code.Classes
         // метод для запису даних User
         public static void UserFileWriter(List<User> writeFromList)
         {
-            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
-            string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
-            string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
-            string filePath = Path.Combine(databaseDirectory, "users.json");
-            string fileToSave = Path.Combine(databaseDirectory, "advertisment.csv");
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string databaseDirectory = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase";
+            string filePath = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase\\users.json";
+            string fileToSave = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase\\advertisment.csv";
+            
             DeleteFilesExcept(databaseDirectory, fileToSave);
             try
             {
@@ -132,11 +124,9 @@ namespace code.Classes
         // метод для зчитування даних User
         public static List<User> UserFileReader()
         {
-            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            string previousDirectory = Path.GetDirectoryName(Path.GetDirectoryName(assemblyLocation));
-            string previousDirectory_final = Path.GetDirectoryName(Path.GetDirectoryName(previousDirectory));
-            string databaseDirectory = Path.Combine(previousDirectory_final, "code", "DataBase");
-            string filePath = Path.Combine(databaseDirectory, "users.json");
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string databaseDirectory = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase";
+            string filePath = currentDirectory.Substring(0, currentDirectory.Length - 9) + "DataBase\\users.json";
 
             try
             {
