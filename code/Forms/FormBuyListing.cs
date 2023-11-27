@@ -23,7 +23,7 @@ namespace code.Forms
                 string truncatedDescription = listing.Description.Length > 60 ? listing.Description.Substring(0, 57) + "..." : listing.Description;
                 this.lblDescription.Text = truncatedDescription;
                 this.toolTipDescription.SetToolTip(this.lblDescription, listing.Description);
-                this.lblAddress.Text = listing.Address;
+                this.lblAddress.Text = $"{listing.Address} (натисніть щоб перейти на мапу)";
                 this.lblPrice.Text = $"${listing.Price} або {listing.Price * Classes.СurrencyСonverter.GetDollarRate()} ₴";
                 this.lblSeller.Text = listing.Seller;
                 this.pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
@@ -63,6 +63,11 @@ namespace code.Forms
             {
                 ExceptionManager.HandleException(ex, "Не вдалося купити нерухомість. Спробуйте пізніше", "Помилка купівлі");
             }
+        }
+
+        private void lblAddress_Click(object sender, EventArgs e)
+        {
+            Classes.ShowMap.GoToMap(listing.Address);
         }
     }
 }

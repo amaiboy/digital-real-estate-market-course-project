@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -30,6 +31,22 @@ namespace code.Classes
                 return 0;
             }
         }
+    }
+    public static class ShowMap
+    {
+        public static void GoToMap(string adress)
+        {
+            try
+            {
+                string url = $"https://www.google.com/maps/place/{adress}";
+                System.Diagnostics.Process.Start(url);
+            }
+            catch(Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося перейти на мапу. Спробуйте пізніше", "Помилка переходу на мапу");
+            }
+        }
+
     }
     // клас, що відповідає за керування функціями сортування
     public static class AlgorithmManager
