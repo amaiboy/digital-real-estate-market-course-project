@@ -101,9 +101,10 @@ namespace code.Forms
                 try
                 {
                     string verificationCode = LoginManager.generateVerificationCode();
+                    Console.WriteLine(verificationCode);
                     _ = LoginManager.sendVerificationCodeToEmail(email, verificationCode);
 
-                    InputBox InputForm = new InputBox();
+                    FormCodeConfirmation InputForm = new FormCodeConfirmation();
                     DialogResult result = InputForm.ShowDialog();
                     if (result == DialogResult.OK)
                     {

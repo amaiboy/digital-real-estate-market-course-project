@@ -64,8 +64,6 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\code.pdb
-D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
-D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.pdb
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.AssemblyReference.cache
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.FormMenu.resources
@@ -77,14 +75,12 @@ D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.Form
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormMarket.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormAddListing.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
-D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfileError.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBuyListing.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Properties.Resources.resources
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.GenerateResource.cache
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CoreCompileInputs.cache
-D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.pdb
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\bin\Debug\code.exe
@@ -198,7 +194,6 @@ D:\code\digital-real-estate-market-course-project\code\bin\Debug\System.Runtime.
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\System.ValueTuple.xml
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormRestore.resources
-D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.InputBox.resources
 C:\Users\user\Desktop\projects\code\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\user\Desktop\projects\code\bin\Debug\MailKit.dll
 C:\Users\user\Desktop\projects\code\bin\Debug\MimeKit.dll
@@ -225,3 +220,7 @@ C:\Users\user\Desktop\projects\code\bin\Debug\System.Threading.Tasks.Extensions.
 C:\Users\user\Desktop\projects\code\bin\Debug\System.ValueTuple.xml
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormRestore.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.InputBox.resources
+D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
+D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe
+D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.exe
+D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources

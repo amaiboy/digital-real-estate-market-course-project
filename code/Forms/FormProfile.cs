@@ -19,28 +19,9 @@ namespace code.Forms
             this.ControlBox = false;
             this.activeForm = this;
 
-            try
-            {
-                FormLogin login = new FormLogin();
-                if (!LoginManager.IsLoggedIn)
-                {
-                    if (login.ShowDialog() == DialogResult.OK)
-                    {
-                        LoginManager.IsLoggedIn = true;
-                    }
-                    else
-                    {
-                        OpenChildForm(new FormProfileError());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ExceptionManager.HandleException(ex, "Не вдалося авторизуватися. Спробуйте ще раз пізніше", "Помилка авторизації");
-            }
-
             txtUsername.Text = LoginManager.CurrentUser.Name;
             txtEmail.Text = LoginManager.CurrentUser.Email;
+            txtPassword.Text = LoginManager.CurrentUser.Password;
             txtPassword.PasswordChar = '*';
             formTitle.Text = $"Профіль користувача {LoginManager.CurrentUser.Name}";
 
@@ -186,9 +167,10 @@ namespace code.Forms
                         try
                         {
                             string verificationCode = LoginManager.generateVerificationCode();
+                            Console.WriteLine(verificationCode);
                             _ = LoginManager.sendVerificationCodeToEmail(newEmail, verificationCode);
 
-                            InputBox InputForm = new InputBox();
+                            FormCodeConfirmation InputForm = new FormCodeConfirmation();
                             DialogResult result = InputForm.ShowDialog();
                             if (result == DialogResult.OK)
                             {
@@ -219,16 +201,16 @@ namespace code.Forms
                         return;
                     }
 
-                    if(LoginManager.CurrentUser.Name != newUsername)
+                    if (LoginManager.CurrentUser.Name != newUsername)
                     {
-                        for(int i = 0; i < LoginManager.CurrentUser.AddedListings.Count; i++)
+                        for (int i = 0; i < LoginManager.CurrentUser.AddedListings.Count; i++)
                         {
                             LoginManager.CurrentUser.AddedListings[i].Seller = newUsername;
                         }
 
-                        foreach(var ad in GlobalData.AvailableListings)
+                        foreach (var ad in GlobalData.AvailableListings)
                         {
-                            if(ad.Seller == LoginManager.CurrentUser.Name)
+                            if (ad.Seller == LoginManager.CurrentUser.Name)
                             {
                                 ad.Seller = newUsername;
                             }
@@ -236,7 +218,7 @@ namespace code.Forms
 
                         LoginManager.CurrentUser.Name = newUsername;
                     }
-                    if(newPassword.Length != 0)
+                    if (newPassword.Length != 0)
                     {
                         LoginManager.CurrentUser.Password = LoginManager.hashPassword(newPassword);
                     }

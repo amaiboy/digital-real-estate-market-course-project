@@ -8,7 +8,7 @@ namespace code.Forms
         {
             InitializeComponent();
             this.Text = string.Empty;
-            this.ControlBox = this.ControlBox = false;
+            this.ControlBox = false;
         }
     }
 }

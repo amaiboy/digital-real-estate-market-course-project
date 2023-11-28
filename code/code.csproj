@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{37649655-3EB8-425F-8AF4-9A9AE7D60965}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>code</RootNamespace>
     <AssemblyName>code</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -46,6 +46,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -197,11 +203,11 @@
     </Compile>
     <Compile Include="Classes\GlobalData.cs" />
     <Compile Include="Classes\Advertisement.cs" />
-    <Compile Include="Forms\InputBox.cs">
+    <Compile Include="Forms\FormCodeConfirmation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InputBox.Designer.cs">
-      <DependentUpon>InputBox.cs</DependentUpon>
+    <Compile Include="Forms\FormCodeConfirmation.Designer.cs">
+      <DependentUpon>FormCodeConfirmation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,9 +246,6 @@
     <EmbeddedResource Include="Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormProfileError.resx">
-      <DependentUpon>FormProfileError.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRestore.resx">
       <DependentUpon>FormRestore.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,8 +258,8 @@
     <EmbeddedResource Include="Forms\FormBuyListing.resx">
       <DependentUpon>FormBuyListing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputBox.resx">
-      <DependentUpon>InputBox.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCodeConfirmation.resx">
+      <DependentUpon>FormCodeConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -161,5 +161,10 @@ namespace code.Forms
                 ExceptionManager.HandleException(ex, "Виникла помилка під час зміни паролю", "Помилка зміни паролю");
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

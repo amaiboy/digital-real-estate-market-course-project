@@ -37,6 +37,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnTogglePasswordVisibility = new code.StyledButton();
             this.btnRestore = new code.StyledButton();
+            this.btnClose = new code.StyledButton();
             this.SuspendLayout();
             // 
             // btnSignUp
@@ -133,10 +134,26 @@
             this.btnRestore.UseVisualStyleBackColor = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClose.Location = new System.Drawing.Point(393, 19);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(27, 20);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 201);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnTogglePasswordVisibility);
             this.Controls.Add(this.txtPassword);
@@ -165,5 +182,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private StyledButton btnTogglePasswordVisibility;
         private StyledButton btnRestore;
+        private StyledButton btnClose;
     }
 }

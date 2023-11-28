@@ -196,8 +196,33 @@ namespace code
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            // Open the new Profile form in the panel container
-            OpenChildForm(new Forms.FormProfile(), sender);
+            try
+            {
+                Forms.FormLogin login = new Forms.FormLogin();
+                if (!LoginManager.IsLoggedIn)
+                {
+                    if (login.ShowDialog() == DialogResult.OK)
+                    {
+                        LoginManager.IsLoggedIn = true;
+                        // Open the new Profile form in the panel container
+                        OpenChildForm(new Forms.FormProfile(), sender);
+                    }
+                    else
+                    {
+                        OpenChildForm(new Forms.FormWelcome(), sender);
+                        return;
+                    }
+                }
+                else
+                {
+                    // Open the new Profile form in the panel container
+                    OpenChildForm(new Forms.FormProfile(), sender);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося авторизуватися. Спробуйте ще раз пізніше", "Помилка авторизації");
+            }
         }
 
         private void buttonWelcome_Click(object sender, EventArgs e)

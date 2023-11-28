@@ -3,11 +3,14 @@ using System.Windows.Forms;
 
 namespace code.Forms
 {
-    public partial class InputBox : Form
+    public partial class FormCodeConfirmation : Form
     {
-        public InputBox()
+        public FormCodeConfirmation()
         {
             InitializeComponent();
+
+            this.Text = string.Empty;
+            this.ControlBox = false;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
