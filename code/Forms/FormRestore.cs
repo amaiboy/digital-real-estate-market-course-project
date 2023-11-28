@@ -99,7 +99,15 @@ namespace code.Forms
         {
             FormLogin login = new FormLogin();
             this.Hide();
-            login.ShowDialog();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.OK;
+                LoginManager.IsLoggedIn = true;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
     }
 }
