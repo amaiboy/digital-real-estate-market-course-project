@@ -52,7 +52,6 @@ C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormMarket.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormAddListing.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfileError.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBuyListing.resources
@@ -117,7 +116,6 @@ D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\Newtonsoft.Json.xml
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.CopyComplete
 =======
-C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.InputBox.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MailKit.dll
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\bin\Debug\MimeKit.dll
@@ -224,3 +222,4 @@ D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
+C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
