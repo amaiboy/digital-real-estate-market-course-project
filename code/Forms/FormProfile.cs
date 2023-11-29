@@ -54,29 +54,6 @@ namespace code.Forms
             }
         }
 
-        private void OpenChildForm(Form newForm)
-        {
-            try
-            {
-                if (activeForm != null)
-                {
-                    activeForm.Hide();
-                }
-                activeForm = newForm;
-                newForm.TopLevel = false;
-                newForm.FormBorderStyle = FormBorderStyle.None;
-                newForm.Dock = DockStyle.Fill;
-                this.pnlMainContainer.Controls.Add(newForm);
-                this.pnlMainContainer.Tag = newForm;
-                newForm.BringToFront();
-                newForm.Show();
-            }
-            catch (Exception ex)
-            {
-                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
-            }
-        }
-
         private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
