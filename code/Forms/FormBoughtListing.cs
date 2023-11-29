@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using code.Classes;
 
@@ -26,7 +20,7 @@ namespace code.Forms
                 this.lblDescription.Text = truncatedDescription;
                 this.toolTipDescription.SetToolTip(this.lblDescription, listing.Description);
                 lblAddress.Text = listing.Address;
-                lblPrice.Text = $"{listing.Price} ₴";
+                lblPrice.Text = $"${listing.Price} або {listing.Price * Classes.СurrencyСonverter.GetDollarRate()} ₴";
                 lblOwner.Text = $"Власник: {LoginManager.CurrentUser.Name}";
                 pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
             }

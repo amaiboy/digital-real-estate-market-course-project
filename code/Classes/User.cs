@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using code.Forms;
+using System.ComponentModel;
 
 namespace code.Classes
 {
     // клас користувача
     public class User
     {
+        public string UserId
+        {
+            get; set;
+        }
         public string Name
         {
             get; set;
@@ -18,33 +18,34 @@ namespace code.Classes
         {
             get; set;
         }
-        // TODO: Add password hashing
         public string Password
         {
             get; set;
         }
-        public List<Advertisement> BoughtListings
+        public BindingList<Advertisement> BoughtListings
         {
             get; set;
         }
-        public List<Advertisement> AddedListings
+        public BindingList<Advertisement> AddedListings
         {
             get; set;
         }
 
         public User()
         {
-            BoughtListings = new List<Advertisement>();
-            AddedListings = new List<Advertisement>();
+            UserId = Guid.NewGuid().ToString();
+            BoughtListings = new BindingList<Advertisement>();
+            AddedListings = new BindingList<Advertisement>();
         }
 
         public User(string name, string email, string password)
         {
+            UserId = Guid.NewGuid().ToString();
             Name = name;
             Email = email;
             Password = password;
-            BoughtListings = new List<Advertisement>();
-            AddedListings = new List<Advertisement>();
+            BoughtListings = new BindingList<Advertisement>();
+            AddedListings = new BindingList<Advertisement>();
         }
     }
 }

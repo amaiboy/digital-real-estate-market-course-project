@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using code.Classes;
+using System;
 using System.Windows.Forms;
 
 namespace code
@@ -16,7 +14,13 @@ namespace code
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ApplicationExit += Application_ApplicationExit;
             Application.Run(new FormMenu());
+        }
+        private static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            FileHandler.UserFileWriter(GlobalData.Users);
+            FileHandler.saveAdToCSV(GlobalData.AvailableListings);
         }
     }
 }

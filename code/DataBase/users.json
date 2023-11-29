@@ -1,0 +1,18 @@
+[
+  {
+    "UserId": "02f7b03f-1553-414c-8835-d30ef42818cb",
+    "Name": "developer",
+    "Email": "digitalrealestatemarketcoursep@gmail.com",
+    "Password": "88fa0d759f845b47c044c2cd44e29082cf6fea665c30c146374ec7c8f3d699e3",
+    "BoughtListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_02f7b03f-1553-414c-8835-d30ef42818cb_BoughtListings.csv",
+    "AddedListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_02f7b03f-1553-414c-8835-d30ef42818cb_AddedListings.csv"
+  },
+  {
+    "UserId": "044b4ffe-c382-4e2f-ae39-532a982624ce",
+    "Name": "developer2",
+    "Email": "ukrmoto2013@gmail.com",
+    "Password": "fef2e26f3a6acfbca8c8f9f808f9a325da2dcc70bcb6ae9dd3f9bb2c7e988d69",
+    "BoughtListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_044b4ffe-c382-4e2f-ae39-532a982624ce_BoughtListings.csv",
+    "AddedListingsFilePath": "C:\\Users\\ukrmo\\source\\repos\\digital-real-estate-market-course-project\\code\\DataBase\\user_044b4ffe-c382-4e2f-ae39-532a982624ce_AddedListings.csv"
+  }
+]

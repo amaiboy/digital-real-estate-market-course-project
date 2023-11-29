@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using code.Classes;
 
@@ -32,6 +26,7 @@ namespace code.Forms
             InitializeComponent();
 
             txtPassword.PasswordChar = '*';
+            txtPasswordConfirm.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -55,13 +50,14 @@ namespace code.Forms
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
+            var passwordConfirm = txtPasswordConfirm.Text;
             var email = txtEmail.Text;
 
             List<string> errors = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(passwordConfirm))
             {
-                errors.Add("Ім'я користувача, пароль або електронна пошта не можуть бути порожніми.");
+                errors.Add("Ім'я користувача, пароль, підтвердження паролю або електронна пошта не можуть бути порожніми.");
             }
             if (DoesUsernameExist(username))
             {
@@ -79,15 +75,58 @@ namespace code.Forms
             {
                 errors.Add("Пароль повинен мати довжину не менше 8 символів.");
             }
+            if (password != passwordConfirm)
+            {
+                errors.Add("Пароль не співпадає з підтвердженням паролю.");
+            }
 
             try
             {
-                // TODO: Possibly add email verification
-                var validEmail = new System.Net.Mail.MailAddress(email);
+                if (!string.IsNullOrWhiteSpace(email))
+                {
+                    var validEmail = new System.Net.Mail.MailAddress(email);
+                }
+                else
+                {
+                    throw new FormatException();
+                }
             }
             catch (FormatException)
             {
                 errors.Add("Електронна пошта не дійсна.");
+            }
+
+            if (errors.Count == 0)
+            {
+                try
+                {
+                    string verificationCode = LoginManager.generateVerificationCode();
+                    Console.WriteLine(verificationCode);
+                    _ = LoginManager.sendVerificationCodeToEmail(email, verificationCode);
+
+                    FormCodeConfirmation InputForm = new FormCodeConfirmation();
+                    DialogResult result = InputForm.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string userEnteredVerificationCode = InputForm.getVerifyCode();
+                        if (userEnteredVerificationCode == verificationCode)
+                        {
+
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch (Exception)
+                {
+                    errors.Add("Електронна пошта не веріфікована.");
+                }
             }
 
             if (errors.Count > 0)
@@ -97,7 +136,7 @@ namespace code.Forms
             }
 
             this.Username = username;
-            this.Password = password;
+            this.Password = LoginManager.hashPassword(password);
             this.Email = email;
             this.DialogResult = DialogResult.OK;
         }
@@ -120,6 +159,32 @@ namespace code.Forms
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості пароля", "Помилка видимості пароля");
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTogglePasswordConfirmVisibility_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPasswordConfirm.PasswordChar == '*')
+                {
+                    txtPasswordConfirm.PasswordChar = '\0';
+                    btnTogglePasswordConfirmVisibility.Text = "0_0";
+                }
+                else
+                {
+                    txtPasswordConfirm.PasswordChar = '*';
+                    btnTogglePasswordConfirmVisibility.Text = ">_<";
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості підтвердження пароля", "Помилка видимості підтвердження пароля");
             }
         }
     }

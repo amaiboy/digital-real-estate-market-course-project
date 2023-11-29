@@ -1,13 +1,7 @@
 ﻿using code.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace code.Forms
@@ -27,7 +21,7 @@ namespace code.Forms
         {
             try
             {
-                return GlobalData.Users.FirstOrDefault(user => user.Name == username && user.Password == password);
+                return GlobalData.Users.FirstOrDefault(user => user.Name == username && LoginManager.verifyPassword(password, user.Password));
             }
             catch (Exception ex)
             {
@@ -86,7 +80,6 @@ namespace code.Forms
 
                 this.DialogResult = DialogResult.OK;
                 LoginManager.CurrentUser = user;
-                GlobalData.AvailableListings.AddRange(user.AddedListings);
                 LoginManager.IsLoggedIn = true;
             }
             catch (Exception ex)
@@ -146,6 +139,32 @@ namespace code.Forms
             {
                 ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості пароля", "Помилка видимості пароля");
             }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormRestore restoreForm = new FormRestore();
+                this.Hide();
+                if (restoreForm.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Виникла помилка під час зміни паролю", "Помилка зміни паролю");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Schema;
 using code.Classes;
+using System.IO;
 
 namespace code.Forms
 {
@@ -24,29 +19,9 @@ namespace code.Forms
             this.ControlBox = false;
             this.activeForm = this;
 
-            try
-            {
-                FormLogin login = new FormLogin();
-                if (!LoginManager.IsLoggedIn)
-                {
-                    if (login.ShowDialog() == DialogResult.OK)
-                    {
-                        LoginManager.IsLoggedIn = true;
-                    }
-                    else
-                    {
-                        OpenChildForm(new FormProfileError());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ExceptionManager.HandleException(ex, "Не вдалося авторизуватися. Спробуйте ще раз пізніше", "Помилка авторизації");
-            }
-
             txtUsername.Text = LoginManager.CurrentUser.Name;
             txtEmail.Text = LoginManager.CurrentUser.Email;
-            txtPassword.Text = LoginManager.CurrentUser.Password;
+            txtPassword.Text = "";
             txtPassword.PasswordChar = '*';
             formTitle.Text = $"Профіль користувача {LoginManager.CurrentUser.Name}";
 
@@ -79,29 +54,6 @@ namespace code.Forms
             }
         }
 
-        private void OpenChildForm(Form newForm)
-        {
-            try
-            {
-                if (activeForm != null)
-                {
-                    activeForm.Hide();
-                }
-                activeForm = newForm;
-                newForm.TopLevel = false;
-                newForm.FormBorderStyle = FormBorderStyle.None;
-                newForm.Dock = DockStyle.Fill;
-                this.pnlMainContainer.Controls.Add(newForm);
-                this.pnlMainContainer.Tag = newForm;
-                newForm.BringToFront();
-                newForm.Show();
-            }
-            catch (Exception ex)
-            {
-                ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
-            }
-        }
-
         private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
@@ -123,20 +75,132 @@ namespace code.Forms
             var currentPassword = LoginManager.CurrentUser.Password;
             var currentEmail = LoginManager.CurrentUser.Email;
 
-            if (newUsername == currentUsername && newPassword == currentPassword && newEmail == currentEmail)
+            if (newUsername == currentUsername && newEmail == currentEmail && newPassword.Length == 0)
             {
                 ExceptionManager.ShowInfo("Ви не внесли жодних змін.", "Внесіть зміни і спробуйте ще раз");
             }
-            else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword) && !string.IsNullOrEmpty(newEmail))
+            else if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newEmail))
             {
                 bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете змінити свої облікові дані?", "Підтвердження зміни");
-
+                List<string> errors = new List<string>();
                 if (isConfirmed)
                 {
-                    LoginManager.CurrentUser.Name = newUsername;
-                    LoginManager.CurrentUser.Password = newPassword;
-                    LoginManager.CurrentUser.Email = newEmail;
+                    if (newUsername != LoginManager.CurrentUser.Name)
+                    {
+                        foreach (var user in GlobalData.Users)
+                        {
+                            if (user.Name == newUsername)
+                            {
+                                errors.Add("Таке ім'я користувача вже існує.");
+                                break;
+                            }
+                        }
+                    }
+                    if (newEmail != LoginManager.CurrentUser.Email)
+                    {
+                        foreach (var user in GlobalData.Users)
+                        {
+                            if (user.Email == newEmail)
+                            {
+                                errors.Add("Така пошта вже використовується.");
+                                break;
+                            }
+                        }
+                    }
+                    if (newPassword.Length != 0 && LoginManager.hashPassword(newPassword) == LoginManager.CurrentUser.Password)
+                    {
+                        errors.Add("Пароль має бути різним.");
+                    }
+                    if (newUsername.Length < 3 || newUsername.Length > 16)
+                    {
+                        errors.Add("Ім'я користувача має містити від 3 до 16 символів.");
+                    }
+                    if (newPassword.Length != 0 && newPassword.Length < 8)
+                    {
+                        errors.Add("Пароль повинен мати довжину не менше 8 символів.");
+                    }
 
+                    if (newEmail != LoginManager.CurrentUser.Email)
+                    {
+                        try
+                        {
+                            if (!string.IsNullOrWhiteSpace(newEmail) && newEmail != LoginManager.CurrentUser.Email)
+                            {
+                                var validEmail = new System.Net.Mail.MailAddress(newEmail);
+                            }
+                            else
+                            {
+                                throw new FormatException();
+                            }
+                        }
+                        catch (FormatException)
+                        {
+                            errors.Add("Електронна пошта не дійсна.");
+                        }
+                    }
+
+                    if (errors.Count == 0)
+                    {
+                        try
+                        {
+                            string verificationCode = LoginManager.generateVerificationCode();
+                            Console.WriteLine(verificationCode);
+                            _ = LoginManager.sendVerificationCodeToEmail(newEmail, verificationCode);
+
+                            FormCodeConfirmation InputForm = new FormCodeConfirmation();
+                            DialogResult result = InputForm.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                string userEnteredVerificationCode = InputForm.getVerifyCode();
+                                if (userEnteredVerificationCode == verificationCode)
+                                {
+
+                                }
+                                else
+                                {
+                                    throw new Exception();
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            errors.Add("Електронна пошта не веріфікована.");
+                        }
+                    }
+
+                    if (errors.Count > 0)
+                    {
+                        ExceptionManager.HandleException(new Exception(string.Join("\n", errors)), string.Join("\n", errors), "Помилка реєстрації");
+                        return;
+                    }
+
+                    if (LoginManager.CurrentUser.Name != newUsername)
+                    {
+                        for (int i = 0; i < LoginManager.CurrentUser.AddedListings.Count; i++)
+                        {
+                            LoginManager.CurrentUser.AddedListings[i].Seller = newUsername;
+                        }
+
+                        foreach (var ad in GlobalData.AvailableListings)
+                        {
+                            if (ad.Seller == LoginManager.CurrentUser.Name)
+                            {
+                                ad.Seller = newUsername;
+                            }
+                        }
+
+                        LoginManager.CurrentUser.Name = newUsername;
+                    }
+                    if (newPassword.Length != 0)
+                    {
+                        LoginManager.CurrentUser.Password = LoginManager.hashPassword(newPassword);
+                    }
+                    LoginManager.CurrentUser.Email = newEmail;
+                    txtPassword.Text = "";
                     ExceptionManager.ShowInfo("Ви успішно змінили свої облікові дані!", "Зміни внесено успішно");
                 }
             }
@@ -214,6 +278,70 @@ namespace code.Forms
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, "Не вдалося відкрити форму. Спробуйте ще раз пізніше", "Помилка відкриття форми");
+            }
+        }
+
+        static void RemoveElement(BindingList<Advertisement> list, Advertisement elementToRemove)
+        {
+            int index = -1;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Name == elementToRemove.Name && list[i].Description == elementToRemove.Description && list[i].Price == elementToRemove.Price && list[i].Address == elementToRemove.Address && list[i].Seller == elementToRemove.Seller && list[i].ImagePath == elementToRemove.ImagePath)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            // If the element is found, remove it
+            if (index != -1)
+            {
+                list.RemoveAt(index);
+            }
+        }
+
+        private void deleteAdvertismentButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете видалити це оголошення?", "Підтвердження видалення");
+                if (dataGridViewAddedListings.SelectedRows.Count > 0 && isConfirmed)
+                {
+                    var selectedListing = dataGridViewAddedListings.SelectedRows[0];
+                    var selectedListingAdvertisment = (Advertisement)selectedListing.DataBoundItem; // Исправлено здесь
+                    dataGridViewAddedListings.Rows.Remove(selectedListing);
+
+                    // видалення з глобальної колекції
+                    //GlobalData.AvailableListings.Remove(selectedListingAdvertisment);
+                    RemoveElement(GlobalData.AvailableListings, selectedListingAdvertisment);
+
+                    //Видалення фото с каталогу
+                    File.Delete(selectedListingAdvertisment.ImagePath);
+
+                    // видалення з колекції поточного користувача
+                    LoginManager.CurrentUser.AddedListings.Remove(selectedListingAdvertisment);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося видалити оголошення. Спробуйте пізніше", "Помилка видалення");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            bool isConfirmed = ExceptionManager.Confirm("Ви впевнені що хочете вийти?", "Підтвердження виходу");
+            try
+            {
+                if (isConfirmed)
+                {
+                    LoginManager.IsLoggedIn = false;
+                    Application.Restart();
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, "Не вдалося вийти.", "Помилка виходу");
             }
         }
     }
