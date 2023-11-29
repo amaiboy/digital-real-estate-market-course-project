@@ -41,6 +41,7 @@
             this.btnTogglePasswordConfirmVisibility = new code.StyledButton();
             this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
             this.lblPasswordConfirm = new System.Windows.Forms.Label();
+            this.btnClose = new code.StyledButton();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -172,10 +173,26 @@
             this.lblPasswordConfirm.TabIndex = 22;
             this.lblPasswordConfirm.Text = "Підтвердіть пароль";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClose.Location = new System.Drawing.Point(395, 16);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(27, 20);
+            this.btnClose.TabIndex = 25;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormSignUp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(444, 311);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnTogglePasswordConfirmVisibility);
             this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.lblPasswordConfirm);
@@ -212,5 +229,6 @@
         private StyledButton btnTogglePasswordConfirmVisibility;
         private System.Windows.Forms.TextBox txtPasswordConfirm;
         private System.Windows.Forms.Label lblPasswordConfirm;
+        private StyledButton btnClose;
     }
 }

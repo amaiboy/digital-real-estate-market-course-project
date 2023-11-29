@@ -187,5 +187,10 @@ namespace code.Forms
                 ExceptionManager.HandleException(ex, "Виникла помилка при перемиканні видимості підтвердження пароля", "Помилка видимості підтвердження пароля");
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
