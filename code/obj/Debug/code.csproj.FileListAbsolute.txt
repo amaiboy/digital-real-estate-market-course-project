@@ -93,7 +93,6 @@ C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\D
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormMarket.resources
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormAddListing.resources
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfile.resources
-C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormProfileError.resources
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormSignUp.resources
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormWelcome.resources
 C:\Users\xquer\Source\Repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormBuyListing.resources
@@ -165,7 +164,6 @@ C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\bin\D
 C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\bin\Debug\System.ValueTuple.xml
 C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormRestore.resources
-C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.InputBox.resources
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\BouncyCastle.Cryptography.dll
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\MailKit.dll
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\MimeKit.dll
@@ -222,3 +220,4 @@ D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
+C:\Users\xquer\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
