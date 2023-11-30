@@ -39,7 +39,6 @@ C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormAddedListing.resour
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormBoughtListing.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormLogin.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormAddListing.resources
-C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormProfileError.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormSignUp.resources
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormBuyListing.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.csproj.AssemblyReference.cache
@@ -217,9 +216,9 @@ C:\Users\user\Desktop\projects\code\bin\Debug\System.Runtime.CompilerServices.Un
 C:\Users\user\Desktop\projects\code\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\user\Desktop\projects\code\bin\Debug\System.ValueTuple.xml
 C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormRestore.resources
-C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.InputBox.resources
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe.config
 D:\code\digital-real-estate-market-course-project\code\bin\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.exe
 D:\code\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
 C:\Users\ukrmo\source\repos\digital-real-estate-market-course-project\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
+C:\Users\user\Desktop\projects\code\obj\Debug\code.Forms.FormCodeConfirmation.resources
