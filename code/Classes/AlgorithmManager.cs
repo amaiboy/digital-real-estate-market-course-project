@@ -48,7 +48,6 @@ namespace code.Classes
         }
 
     }
-    // клас, що відповідає за керування функціями сортування
     public static class SortManager
     {
         private static void QuickSort(string type, List<Advertisement> list)
