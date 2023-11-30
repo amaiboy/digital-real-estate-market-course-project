@@ -29,12 +29,20 @@ namespace code
                 GlobalData.AvailableListings = predefinedListings;
                 GlobalData.Users = users;
                 var imageFiles = Directory.GetFiles(@"../../../assets/images/real-estate-pictures/", "*.jpg");
-                SetImagesForListings(predefinedListings, imageFiles);
+                var imagePaths = new Dictionary<string, string>();
+
+                foreach (var file in imageFiles)
+                {
+                    var fileName = Path.GetFileNameWithoutExtension(file);
+                    imagePaths[fileName] = file;
+                }
+
+                SetImagesForListings(predefinedListings, imagePaths);
 
                 foreach (var user in users)
                 {
-                    SetImagesForListings(user.BoughtListings, imageFiles);
-                    SetImagesForListings(user.AddedListings, imageFiles);
+                    SetImagesForListings(user.BoughtListings, imagePaths);
+                    SetImagesForListings(user.AddedListings, imagePaths);
                 }
             }
             catch (Exception ex)
@@ -44,19 +52,14 @@ namespace code
         }
 
         // Метод для синхронізації шляхів до фото
-        private void SetImagesForListings(BindingList<Advertisement> listings, string[] imageFiles)
+        private void SetImagesForListings(BindingList<Advertisement> listings, Dictionary<string, string> imagePaths)
         {
-            for (int i = 0; i < listings.Count; i++)
+            foreach (var listing in listings)
             {
-                for (int j = 0; j < imageFiles.Length; j++)
+                if (imagePaths.TryGetValue(listing.Name, out var imagePath))
                 {
-                    if (@"../../../assets/images/real-estate-pictures/" + listings[i].Name + ".jpg" == imageFiles[j])
-                    {
-                        var ad = listings[i];
-                        ad.ImagePath = imageFiles[j];
-                    }
+                    listing.ImagePath = imagePath;
                 }
-
             }
         }
 
