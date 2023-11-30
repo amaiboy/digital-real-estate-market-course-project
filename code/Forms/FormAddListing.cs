@@ -21,6 +21,7 @@ namespace code.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
@@ -56,6 +57,7 @@ namespace code.Forms
                     LoginManager.CurrentUser.AddedListings.Add(listing);
                     ExceptionManager.ShowInfo("Оголошення успішно додано", "Успіх");
 
+                    DialogResult = DialogResult.OK;
                     Close();
                 }
             }
@@ -111,11 +113,8 @@ namespace code.Forms
 
                     lblImageName.Text = fileName;
 
-
                     string destinationDirectory = @"../../../assets/images/real-estate-pictures";
-
                     string newFileName = txtName.Text + ".jpg";
-
                     string destinationPath = Path.Combine(destinationDirectory, newFileName);
                     File.Copy(selectedImagePath, destinationPath, true);
                 }

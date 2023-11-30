@@ -47,6 +47,7 @@ namespace code.Forms
                                     string newPassword = LoginManager.generateNewPassword();
                                     user.Password = LoginManager.hashPassword(newPassword);
                                     _ = LoginManager.sendNewPasswordToEmail(email, newPassword);
+                                    Console.WriteLine(newPassword);
 
                                     FormLogin login = new FormLogin();
                                     this.Hide();
