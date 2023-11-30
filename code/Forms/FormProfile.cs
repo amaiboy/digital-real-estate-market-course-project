@@ -59,10 +59,12 @@ namespace code.Forms
             if (txtPassword.PasswordChar == '*')
             {
                 txtPassword.PasswordChar = '\0';
+                btnTogglePasswordVisibility.Text = "Приховати пароль";
             }
             else
             {
                 txtPassword.PasswordChar = '*';
+                btnTogglePasswordVisibility.Text = "Показати пароль";
             }
         }
 
@@ -336,7 +338,9 @@ namespace code.Forms
                 if (isConfirmed)
                 {
                     LoginManager.IsLoggedIn = false;
-                    Application.Restart();
+                    this.Close();
+                    FormLogin formLogin = new FormLogin();
+                    formLogin.Show();
                 }
             }
             catch (Exception ex)

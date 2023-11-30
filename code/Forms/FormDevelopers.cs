@@ -30,7 +30,7 @@ namespace code.Forms
         {
             try
             {
-                System.Diagnostics.Process.Start("https://github.com/amaiboy/digital-real-estate-market-course-project/blob/dev/LICENSE");
+                System.Diagnostics.Process.Start("https://github.com/amaiboy/digital-real-estate-market-course-project/blob/main/LICENSE");
             }
             catch (Exception ex)
             {
