@@ -54,15 +54,38 @@ namespace code.Forms
             }
         }
 
+        public void UpdateEmptyLabels(object sender, EventArgs e)
+        {
+            if (dataGridViewBoughtListings.Rows.Count != 0)
+            {
+                lblEmptyBoughtListings.Visible = false;
+            }
+            else
+            {
+                lblEmptyBoughtListings.Visible = true;
+            }
+
+            if (dataGridViewAddedListings.Rows.Count != 0)
+            {
+                lblEmptyAddedListings.Visible = false;
+            }
+            else
+            {
+                lblEmptyAddedListings.Visible = true;
+            }
+        }
+
         private void btnTogglePasswordVisibility_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
             {
                 txtPassword.PasswordChar = '\0';
+                btnTogglePasswordVisibility.Text = "Приховати пароль";
             }
             else
             {
                 txtPassword.PasswordChar = '*';
+                btnTogglePasswordVisibility.Text = "Показати пароль";
             }
         }
 
@@ -274,6 +297,10 @@ namespace code.Forms
             {
                 FormAddListing formAddListing = new FormAddListing();
                 formAddListing.ShowDialog();
+                if (formAddListing.DialogResult == DialogResult.OK)
+                {
+                    UpdateEmptyLabels(sender, e);
+                }
             }
             catch (Exception ex)
             {
@@ -336,7 +363,9 @@ namespace code.Forms
                 if (isConfirmed)
                 {
                     LoginManager.IsLoggedIn = false;
-                    Application.Restart();
+                    this.Close();
+                    FormLogin formLogin = new FormLogin();
+                    formLogin.Show();
                 }
             }
             catch (Exception ex)

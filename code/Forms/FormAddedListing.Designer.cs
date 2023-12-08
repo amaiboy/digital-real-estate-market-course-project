@@ -61,6 +61,7 @@
             this.lblAddress.Size = new System.Drawing.Size(97, 16);
             this.lblAddress.TabIndex = 17;
             this.lblAddress.Text = "Address here...";
+            this.lblAddress.Click += new System.EventHandler(this.lblAddress_Click);
             // 
             // lblSeller
             // 

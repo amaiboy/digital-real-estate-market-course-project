@@ -4,7 +4,6 @@ using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 using System.ComponentModel;
-using System.Reflection;
 
 namespace code.Classes
 {
@@ -76,7 +75,7 @@ namespace code.Classes
         }
 
         // клас для роботи з JSON
-        public class UserObj
+        private class UserObj
         {
             public string UserId { get; set; }
             public string Name { get; set; }
@@ -157,7 +156,7 @@ namespace code.Classes
         }
 
         // метод для видалення зайвих даних перед записом
-        public static void DeleteFilesExcept(string directoryPath, string fileToKeep)
+        private static void DeleteFilesExcept(string directoryPath, string fileToKeep)
         {
             try
             {

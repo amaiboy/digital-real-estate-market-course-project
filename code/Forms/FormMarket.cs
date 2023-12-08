@@ -187,7 +187,7 @@ namespace code.Forms
             {
                 if (dropdownSortByName.SelectedItem.ToString() != "Сортування за назвою")
                 {
-                    Classes.AlgorithmManager.SortListings(dropdownSortByName, "byName", dataGridViewListings);
+                    Classes.AlgorithmManager.SortManager.SortListings(dropdownSortByName, "byName", dataGridViewListings);
 
                     reshowHint(dropdownSortByPrice, "Сортування за ціною");
                     dropdownSortByPrice.SelectedIndex = 0;
@@ -208,7 +208,7 @@ namespace code.Forms
             {
                 if (dropdownSortByPrice.SelectedItem.ToString() != "Сортування за ціною")
                 {
-                    Classes.AlgorithmManager.SortListings(dropdownSortByPrice, "byPrice", dataGridViewListings);
+                    Classes.AlgorithmManager.SortManager.SortListings(dropdownSortByPrice, "byPrice", dataGridViewListings);
 
                     reshowHint(dropdownSortByName, "Сортування за назвою");
                     dropdownSortByName.SelectedIndex = 0;
@@ -229,7 +229,7 @@ namespace code.Forms
             {
                 if (dropdownSortBySeller.SelectedItem.ToString() != "Сортування за продавцем")
                 {
-                    Classes.AlgorithmManager.SortListings(dropdownSortBySeller, "bySeller", dataGridViewListings);
+                    Classes.AlgorithmManager.SortManager.SortListings(dropdownSortBySeller, "bySeller", dataGridViewListings);
 
                     reshowHint(dropdownSortByPrice, "Сортування за ціною");
                     dropdownSortByPrice.SelectedIndex = 0;

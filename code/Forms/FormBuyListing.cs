@@ -24,7 +24,7 @@ namespace code.Forms
                 this.lblDescription.Text = truncatedDescription;
                 this.toolTipDescription.SetToolTip(this.lblDescription, listing.Description);
                 this.lblAddress.Text = $"{listing.Address} (натисніть щоб перейти на мапу)";
-                this.lblPrice.Text = $"${listing.Price} або {listing.Price * Classes.СurrencyСonverter.GetDollarRate()} ₴";
+                this.lblPrice.Text = $"${listing.Price} або {listing.Price * Classes.AlgorithmManager.СurrencyСonverter.GetDollarRate()} ₴";
                 this.lblSeller.Text = listing.Seller;
                 this.pictureBoxListingImage.Image = Image.FromFile(listing.ImagePath);
             }
@@ -67,7 +67,7 @@ namespace code.Forms
 
         private void lblAddress_Click(object sender, EventArgs e)
         {
-            Classes.ShowMap.GoToMap(listing.Address);
+            Classes.AlgorithmManager.ShowMap.GoToMap(listing.Address);
         }
     }
 }
